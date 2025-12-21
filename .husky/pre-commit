@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# TEST MODE: fail if `.husky/block-commits` file exists
+if [ -f ".husky/block-commits" ]; then
+  echo "TEST MODE: Simulating vulnerability detection. Commit will be blocked."
+  exit 1
+fi
+
+# PACKAGE AUDIT: fail if there are vulnerabilities
+npm audit --audit-level=moderate
