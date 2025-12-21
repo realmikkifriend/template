@@ -91,11 +91,7 @@ Create a new branch for your feature or bug fix:
 git checkout -b type/short-description
 ```
 
-Use the [Conventional Branch](https://conventional-branch.github.io/) naming convention for branches. For example:
-
--   `feature/add-login`
--   `bugfix/fix-header`
--   `docs/update-readme`
+Use the [Conventional Branch](https://conventional-branch.github.io/) naming convention for branches. Use the VS Code extension from the Command Palette.
 
 ### 3. Make and Stage Changes
 
@@ -108,6 +104,8 @@ git add .
 # Or stage specific files
 git add path/to/file
 ```
+
+If working locally: After making commits, switch to the main branch. Merge in changes from the new branch.
 
 ### 4. Push the Branch
 
@@ -124,3 +122,7 @@ git push
 ### 5. Create a Pull Request
 
 Use the [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) extension in VS Code to create a pull request for your branch.
+
+### 6. Delete the Old Branch
+
+Remove old branches to keep the dev environment tidy.
