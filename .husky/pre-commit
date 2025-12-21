@@ -6,5 +6,11 @@ if [ -f ".husky/block-commits" ]; then
   exit 1
 fi
 
+# DOCUMENTATION: Check that required documentation files exist and are not empty
+.husky/check-docs.sh
+
+# BRANCH NAMING: Enforce branch naming convention
+.husky/validate-branch-name.sh
+
 # PACKAGE AUDIT: fail if there are vulnerabilities
 npm audit --audit-level=moderate

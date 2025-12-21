@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# COMMIT MESSAGE: Enforce commit message conventions
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Check if the commit message is empty
+if [ -z "$COMMIT_MSG" ]; then
+  echo "ERROR: Commit message cannot be empty."
+  exit 1
+fi
+
+# Skip conventional commit format check for merge commits
+if ! echo "$COMMIT_MSG" | grep -qE '^Merge branch '; then
+  # Check if the commit message follows conventional commit format
+  if ! echo "$COMMIT_MSG" | grep -E '^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z-]+\))?: .+$'; then
+    echo "ERROR: Commit message must follow the Conventional Commits format (e.g., feat: add login feature, fix: correct header alignment)."
+    exit 1
+  fi
+fi
