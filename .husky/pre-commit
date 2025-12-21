@@ -8,3 +8,6 @@ fi
 
 # PACKAGE AUDIT: fail if there are vulnerabilities
 npm audit --audit-level=moderate
+
+# DOCUMENTATION: Check that required documentation files exist and are not empty
+.husky/check-docs.sh

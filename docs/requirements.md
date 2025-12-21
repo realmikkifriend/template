@@ -16,93 +16,50 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - Pre-commit/push hooks are set up to run locally using Husky and always catch failing code.
     - Commit requires `npm audit`.
 
-### 2. **Version Control Integration**a
+### 2. **Version Control Integration**
 
     - Version control (including Github integration) just works
     - Essential for collaboration and should be established early
 
-#### a. **Documented Version Control Commands**
+#### a. ✓ **Documented Version Control Commands**
 
     - Version control commands (e.g. setting up a new cloned project, pushing changes to template repo, pulling template changes into cloned projects) are documented.
-    - add documentation pre-commit rule requiring this file to exist and not be empty
-    - Write up Markdown file, `/docs/version-control.md` on using version control commands in cloned repos
-    - For cloning template repo, see readme init section (written later)
-    - Use `gh` to set up new Github repo
-    - ```bash
-        gh # look up commands, create new empty repo, turn off issues wiki project etc
-        git remote add origin git@github.com:you/my-new-project.git
-        git push -u origin main
-
-#### b. **Working Version Control Commands**
-
+    - A documentation pre-commit rule requires this file to exist and not be empty.
+    - Write up a Markdown file, `/docs/version-control.md` on using version control commands in cloned repos.
     - Version control commands work without much modification.
 
-#### c. **Implemented Version Control Flow**
+#### b. **Implemented Version Control Flow**
 
-    - A version control flow (e.g. feature branches, pull requests) is implemented and enforced.
-    - [§ Git elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
-    - Add branch steps to documentation
-    - Set up version control
-    - Pull changes from main
-    - Install and set up [Git Auto Pull - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=tapasthakkar.auto-git-pull)
-    - git checkout main
-    - git pull origin main
-    - Create branch from main
-    - git checkout -b type/short-description
-    - Use Command Palette in VS Code to call Conventional Branch
-    - Make and stage changes
-    - Push branch
-    - git push -u origin feature/short-description
-    - git push
-    - Create pull request
-    - [GitHub Pull Requests - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
-    - Enforce conventional branch naming
-    - [Conventional Branch](https://conventional-branch.github.io/)
-    - [technote-space/toc-generator: GitHub Actions to generate TOC (Table of Contents)](https://github.com/technote-space/toc-generator)
-    - [Branch name rules · Actions · GitHub Marketplace](https://github.com/marketplace/actions/branch-name-rules)
-    - [deepakputhraya/action-branch-name: Github action to enforce naming convention on branch name](https://github.com/deepakputhraya/action-branch-name)
-    - Set up automatic linting and tests on PRs
-    - [About status checks - GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks)
-    - [Super-Linter · Actions · GitHub Marketplace](https://github.com/marketplace/actions/super-linter)
-    - [Action ESLint · Actions · GitHub Marketplace](https://github.com/marketplace/actions/action-eslint)
-    - [actions/setup-node: Set up your GitHub Actions workflow with a specific version of node.js](https://github.com/actions/setup-node)
-    - [Setting up CI | Playwright](https://playwright.dev/docs/ci-intro)
-    - Automate version bumps on merge into main branch
-    - [Automated Version Bump · Actions · GitHub Marketplace](https://github.com/marketplace/actions/automated-version-bump)
-    - [christian-draeger/increment-semantic-version](https://github.com/christian-draeger/increment-semantic-version)
-    - [github action: automate version bump on merge to main | /*code-comments*/](https://stephencharlesweiss.com/github-action-automate-version-bump-on-merge-to-main)
-    - [Automating Releases with Semantic Versioning and GitHub Actions - DEV Community](https://dev.to/arpanaditya/automating-releases-with-semantic-versioning-and-github-actions-2a06)
-    - Auto-delete merged branches
-    - [Managing the automatic deletion of branches - GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches)
-    - [Delete merged branch · Actions · GitHub Marketplace](https://github.com/marketplace/actions/delete-merged-branch)
-    - Forbid pushing directly to main branch
-    - Official method is restricted to public repos on free accounts
-    - [Managing a branch protection rule - GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)
-    - [Restrict base branch · Actions · GitHub Marketplace](https://github.com/marketplace/actions/restrict-base-branch)
-    - [Git Prevent Push to Master: A Simple Guide](https://gitscripts.com/git-prevent-push-to-master)
-    - [How to Prevent Direct Pushes to the main Branch in Git | by Shubham Gupta | Medium](https://10shubham01.medium.com/how-to-prevent-direct-pushes-to-the-main-branch-in-git-18c9237c39e3)
-    - [Disable a direct push to GitHub main branch | Johnny Metz](https://johnnymetz.com/posts/disable-direct-push-to-main-branch/)
-    - Move to dev notes, version control approaches
-    - Gitflow (considered legacy), instead of branching off of main, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop
-    - [Gitflow Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-    - Github Flow
-    - [GitHub flow - GitHub Docs](https://docs.github.com/en/get-started/using-github/github-flow)
-    - Trunk-Based Development (TBD), also called Feature Branch Workflow, branches for features are merged/PRed directly into main instead of dev branch
-    - [Introduction to Trunk Based Development](https://trunkbaseddevelopment.com/)
-    - Flow diagrams [Styles and Trade-offs - Trunk Based Development](https://trunkbaseddevelopment.com/styles/)
-    - [Git Feature Branch Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+    - A version control flow (e.g. feature branches, pull requests) is documented.
+    - The version control flow is enforced with Husky rules.
 
-#### d. Github Actions
+#### c. Github Actions
 
     - CI/CD requirements are redundantly checked by Github on push to dev and PR to main.
     - A file size limit on /.github/workflows/\*.yml requirements files facilitates customization within projects.
     - CI must pass on a clean clone.
+    - Set up GitHub Actions to run linting and tests on pull requests:
+      -   [Super-Linter · Actions · GitHub Marketplace](https://github.com/marketplace/actions/super-linter)
+      -   [Action ESLint · Actions · GitHub Marketplace](https://github.com/marketplace/actions/action-eslint)
+    -   Automate version bumps when merging into the main branch:
+        -   [Automated Version Bump · Actions · GitHub Marketplace](https://github.com/marketplace/actions/automated-version-bump)
+        -   [christian-draeger/increment-semantic-version](https://github.com/christian-draeger/increment-semantic-version)
+    -   Configure automatic deletion of merged branches:
+        -   [Managing the automatic deletion of branches - GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches)
+        -   [Delete merged branch · Actions · GitHub Marketplace](https://github.com/marketplace/actions/delete-merged-branch)
+    -   Restrict direct pushes to the main branch:
+        -   [Managing a branch protection rule - GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)
+        -   [Restrict base branch · Actions · GitHub Marketplace](https://github.com/marketplace/actions/restrict-base-branch)
 
-#### e. **Enforced Commit Message Formatting**
+#### d. **Conventional Commit Messages & Branch Names**
 
     - Commit message formatting is enforced.
     - [§ writing good commit messages elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
     - [Enforce Conventional Commits with GitHub - by James Couball](https://github.com/main-branch/conventional_commit_sample)
+    - To enforce conventional branch naming, use the following tools:
+      -   [Conventional Branch](https://conventional-branch.github.io/)
+      -   [Branch name rules · Actions · GitHub Marketplace](https://github.com/marketplace/actions/branch-name-rules)
+      -   [deepakputhraya/action-branch-name](https://github.com/deepakputhraya/action-branch-name)
 
 ### 3. **Project Scaffolding**
 
@@ -164,6 +121,9 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
     - Updating dependencies while maintaining compatibility just works
     - Builds on working build scripts
+    -   Configure Dependabot to keep packages updated:
+        -   [Controlling which dependencies are updated by Dependabot - GitHub Docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/controlling-dependencies-updated#ignoring-specific-dependencies)
+        -   [Optimizing the creation of pull requests for Dependabot version updates - GitHub Docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/optimizing-pr-creation-version-updates)
 
 #### a. **Documented Update Commands**
 
