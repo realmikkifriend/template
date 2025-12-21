@@ -2,45 +2,31 @@
 
 This document outlines the requirements for an ideal template repository following BDD principles. Every heading with a ✓ between the numbering and name has been implemented.
 
-Find the first unimplemented lettered sub-heading. Design and implement a testing method. When finished, add a check to the heading and implementation details to the contents.
+Find the first unimplemented lettered sub-heading. If there are web links or checklist items, stop and alert the user that implementation details need to be added. Design and implement a testing method. When finished, add a check to the heading and implementation details to the contents.
 
 ## Build Requirements
 
-### 1. **Build Requirements Enforcement**
+### 1. ✓ **Build Requirements Enforcement**
 
     - Setting and enforcing build requirements (through pre-commit/push hooks and checks on push to dev and PR to main) just works
     - Foundational: Ensures all other requirements can be reliably built and tested
 
-#### a. **Pre-Commit/Push Hooks**
+#### a. ✓ **Pre-Commit/Push Hooks**
 
     - Pre-commit/push hooks are set up to run locally using Husky and always catch failing code.
-    - Commit requires npm scan, include npm package audit
-    - [Get started | Husky](https://typicode.github.io/husky/)
-    - [Husky: The Secret Weapon for Developers Who Want to Write Better Code | by Smart Saravanan | Medium](https://medium.com/@smartsaravanan/husky-the-secret-weapon-for-developers-who-want-to-write-better-code-1a2b3c4d5e6f)
+    - Commit requires `npm audit`.
 
-#### b. Pass on Clean Clone
-
-    - CI must pass on a clean clone.
-
-#### c. Pass on Push and PR
-
-    - CI/CD requirements are redundantly checked by Github on push to dev and PR to main.
-
-#### d. Limited Workflow Size
-
-    - A file size limit on /.github/workflows/\*.yml requirements files facilitates customization within projects.
-
-### 2. **Version Control Integration**
+### 2. **Version Control Integration**a
 
     - Version control (including Github integration) just works
     - Essential for collaboration and should be established early
 
 #### a. **Documented Version Control Commands**
 
-    - Version control commands (e.g. setup, pushing changes to template repo, pulling template changes into projects) are documented.
-    - Write up Markdown file, `/docs/version-control.md` on using version control commands
-    - For cloning template repo, see readme init section
-    - Init local versioning
+    - Version control commands (e.g. setting up a new cloned project, pushing changes to template repo, pulling template changes into cloned projects) are documented.
+    - add documentation pre-commit rule requiring this file to exist and not be empty
+    - Write up Markdown file, `/docs/version-control.md` on using version control commands in cloned repos
+    - For cloning template repo, see readme init section (written later)
     - Use `gh` to set up new Github repo
     - ```bash
         gh # look up commands, create new empty repo, turn off issues wiki project etc
@@ -106,7 +92,13 @@ Find the first unimplemented lettered sub-heading. Design and implement a testin
     - Flow diagrams [Styles and Trade-offs - Trunk Based Development](https://trunkbaseddevelopment.com/styles/)
     - [Git Feature Branch Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
-#### d. **Enforced Commit Message Formatting**
+#### d. Github Actions
+
+    - CI/CD requirements are redundantly checked by Github on push to dev and PR to main.
+    - A file size limit on /.github/workflows/\*.yml requirements files facilitates customization within projects.
+    - CI must pass on a clean clone.
+
+#### e. **Enforced Commit Message Formatting**
 
     - Commit message formatting is enforced.
     - [§ writing good commit messages elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
