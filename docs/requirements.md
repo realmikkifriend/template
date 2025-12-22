@@ -10,9 +10,10 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
         -   [b. ✓ **Implemented Version Control Flow**](#b--implemented-version-control-flow)
         -   [c. ✓ **Conventional Commit Messages \& Branch Names**](#c--conventional-commit-messages--branch-names)
     -   [3. **Scripts \& Dependency Management**](#3-scripts--dependency-management)
-        -   [a. **Essential NPM Scripts**](#a-essential-npm-scripts)
-        -   [b. **Working Update Commands**](#b-working-update-commands)
-        -   [c. **Clean Package Management**](#c-clean-package-management)
+        -   [a. **Svelte Installed**](#a-svelte-installed)
+        -   [b. **Essential NPM Scripts**](#b-essential-npm-scripts)
+        -   [c. **Working Update Commands**](#c-working-update-commands)
+        -   [d. **Clean Package Management**](#d-clean-package-management)
     -   [4. **Environment Variables**](#4-environment-variables)
         -   [a. **Prepared Development Environment**](#a-prepared-development-environment)
         -   [b. **Secure Environment Variable Management**](#b-secure-environment-variable-management)
@@ -124,14 +125,19 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 -   Core build scripts needed before dependencies and deployment.
 -   Updating dependencies while maintaining compatibility just works.
 
-### a. **Essential NPM Scripts**
+### a. **Svelte Installed**
+
+-   Svelte is set up in the repository using `npx sv create --types ts --add eslint prettier tailwindcss`
+
+### b. **Essential NPM Scripts**
 
 -   Basic NPM scripts run as expected.
 -   Scripts to include out of the box:
 
     -   `start`
+        `dotenv -- webpack serve --open --mode development --no-stats`
     -   `build`
-    -   `update` upgrades dependencies (see below)
+        `webpack --mode production`
     -   `check`
         ```
             "check:deps": "npm outdated",
@@ -146,14 +152,15 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
             "release": "npm run build && npm publish"
         ```
 
-### b. **Working Update Commands**
+### c. **Working Update Commands**
 
 -   Updating dependencies work without much modification.
+-   An npm `update` script ensures dependencies can be updated easily.
 -   Configure Dependabot to keep packages updated:
     -   [Controlling which dependencies are updated by Dependabot - GitHub Docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/controlling-dependencies-updated#ignoring-specific-dependencies)
     -   [Optimizing the creation of pull requests for Dependabot version updates - GitHub Docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/optimizing-pr-creation-version-updates)
 
-### c. **Clean Package Management**
+### d. **Clean Package Management**
 
 -   No outdated or problematic packages. Issues are easily handled.
 -   [§ dependencies elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
