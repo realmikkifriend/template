@@ -13,9 +13,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [a. ✓ **Essential Dependencies**](#a--essential-dependencies)
     - [b. ✓ **Essential NPM Scripts**](#b--essential-npm-scripts)
     - [c. ✓ **Clean Package Management**](#c--clean-package-management)
-  - [4. **Environment Variables**](#4-environment-variables)
-    - [a. **Prepared Development Environment**](#a-prepared-development-environment)
-    - [b. **Secure Environment Variable Management**](#b-secure-environment-variable-management)
+  - [4. ✓ **Environment Variables**](#4--environment-variables)
+    - [a. ✓ **Secure Environment Variable Management**](#a--secure-environment-variable-management)
   - [5. **Deployment**](#5-deployment)
     - [a. **Documented Deployment Commands**](#a-documented-deployment-commands)
 - [**Development Requirements**](#development-requirements)
@@ -144,22 +143,15 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Updating dependencies work without much modification.
 - No outdated or problematic packages. Issues are easily handled.
 
-## 4. **Environment Variables**
+## 4. ✓ **Environment Variables**
 
 - Environmental variables are handled easily (including in deployment)
 - Needed before deployment can work reliably
 
-### a. **Prepared Development Environment**
+### a. ✓ **Secure Environment Variable Management**
 
-- A development environment is already prepared.
-- Environmental variables are enabled out-of-the-box or easily enabled.
-- Sets of environmental variables are easily switched out.
-  - [cross-env - npm](https://www.npmjs.com/package/cross-env)
-- [§ environments elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
-
-### b. **Secure Environment Variable Management**
-
-- Environmental variables are not shared to remote, but a template .env.example is.
+- Environmental variables are enabled out-of-the-box, as demonstrated by an example value being displayed on the demo page.
+- Environmental variables are not shared to remote, but a `.env.example` template is.
 
 ## 5. **Deployment**
 
@@ -169,6 +161,14 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### a. **Documented Deployment Commands**
 
 - Deployment commands are documented.
+  - adding new Github repo with `gh repo create`
+  - deploying repo to Netlify
+    - `netlify init`
+  - adding environmental variables on Netlify
+    - `netlify env:import FILENAME`
+    - `netlify env:set VAR_NAME value`
+    - `netlify env:set VAR_NAME value --secret` makes it unreadable
+    - `netlify env:set VAR_NAME value --context production`
 - Deployment commands work without much modification.
 
 # **Development Requirements**
