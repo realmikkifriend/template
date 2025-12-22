@@ -1,0 +1,54 @@
+{
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"recommendations": [
+		// // DEBUG
+		// view debug console logs
+		"wallabyjs.console-ninja",
+		// improves display of errors
+		"usernamehw.errorlens",
+		// display ESLint issues
+		"dbaeumer.vscode-eslint",
+		//
+		// // CODE
+		// adds Svelte tools
+		"svelte.svelte-vscode",
+		// improves Svelte imports
+		"pivaszbs.svelte-autoimport",
+		// improves TS imports
+		"pmneo.tsimporter",
+		// displays import size inline
+		"wix.vscode-import-cost",
+		// improves indent display
+		"sirtori.indenticator",
+		// adds inline fold decorator
+		"ctf0.inline-fold-new",
+		// adds Prettier tools
+		"esbenp.prettier-vscode",
+		// view files by size
+		"jackiotyu.size-tree",
+		//
+		// // DOCUMENTATION
+		// adds Markdown tools
+		"yzhang.markdown-all-in-one",
+		//
+		// // AGENTS
+		// assistant of choice
+		"rooveterinaryinc.roo-cline",
+		//
+		// // VERSION CONTROL
+		// easily create branches
+		"pshaddel.conventional-branch",
+		// easily name commits
+		"vivaxy.vscode-conventional-commits",
+		// improves display of branches
+		"eamodio.gitlens",
+		//
+		// // DESIGN
+		// highlights Tailwidn classes
+		"ellreka.tailwindcss-highlight",
+		// autofills Tailwind classes
+		"bradlc.vscode-tailwindcss",
+	]
+}

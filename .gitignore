@@ -99,6 +99,18 @@ dist
 # Sveltekit cache directory
 .svelte-kit/
 
+# Svelte Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
 # vitepress build output
 **/.vitepress/dist
 
