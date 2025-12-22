@@ -9,11 +9,10 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [a. ✓ **Documented Version Control Commands**](#a--documented-version-control-commands)
     - [b. ✓ **Implemented Version Control Flow**](#b--implemented-version-control-flow)
     - [c. ✓ **Conventional Commit Messages \& Branch Names**](#c--conventional-commit-messages--branch-names)
-  - [3. **Scripts \& Dependency Management**](#3-scripts--dependency-management)
-    - [a. ✓ **Essential Dependencies Installed**](#a--essential-dependencies-installed)
-    - [b. **Essential NPM Scripts**](#b-essential-npm-scripts)
-    - [c. **Working Update Commands**](#c-working-update-commands)
-    - [d. **Clean Package Management**](#d-clean-package-management)
+  - [3. ✓ **Scripts \& Dependency Management**](#3--scripts--dependency-management)
+    - [a. ✓ **Essential Dependencies**](#a--essential-dependencies)
+    - [b. ✓ **Essential NPM Scripts**](#b--essential-npm-scripts)
+    - [c. ✓ **Clean Package Management**](#c--clean-package-management)
   - [4. **Environment Variables**](#4-environment-variables)
     - [a. **Prepared Development Environment**](#a-prepared-development-environment)
     - [b. **Secure Environment Variable Management**](#b-secure-environment-variable-management)
@@ -120,17 +119,17 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Commit message formatting is enforced.
 - Branch naming is enforced.
 
-## 3. **Scripts & Dependency Management**
+## 3. ✓ **Scripts & Dependency Management**
 
 - Core build scripts needed before dependencies and deployment.
 - Updating dependencies while maintaining compatibility just works.
 
-### a. ✓ **Essential Dependencies Installed**
+### a. ✓ **Essential Dependencies**
 
 - Svelte is set up in the repository using `npx sv create --types ts --add eslint prettier tailwindcss`
 - VS Code project `settings.json` file recommends extensions
 
-### b. **Essential NPM Scripts**
+### b. ✓ **Essential NPM Scripts**
 
 - Basic NPM scripts run as expected.
 - Scripts to include out of the box:
@@ -139,20 +138,11 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - `check`
   - `version`
 
-### c. **Working Update Commands**
+### c. ✓ **Clean Package Management**
 
+- Dependency management is documented in `dependencies.md`.
 - Updating dependencies work without much modification.
-- An npm `update` script ensures dependencies can be updated easily.
-- Configure Dependabot to keep packages updated:
-  - [Controlling which dependencies are updated by Dependabot - GitHub Docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/controlling-dependencies-updated#ignoring-specific-dependencies)
-  - [Optimizing the creation of pull requests for Dependabot version updates - GitHub Docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/optimizing-pr-creation-version-updates)
-
-### d. **Clean Package Management**
-
 - No outdated or problematic packages. Issues are easily handled.
-- [§ dependencies elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
-- ensure Node version and other system dependencies are installed
-  - find out reference for current ideal Node version
 
 ## 4. **Environment Variables**
 

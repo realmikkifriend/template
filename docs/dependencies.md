@@ -4,6 +4,8 @@ This document explains how to manage project dependencies.
   - [General Svelte Scan](#general-svelte-scan)
   - [Outdated Dependencies](#outdated-dependencies)
   - [Security Risks](#security-risks)
+  - [Major Packages](#major-packages)
+    - [Node.js](#nodejs)
 - [Updating Dependencies](#updating-dependencies)
   - [Getting Package Info](#getting-package-info)
   - [Manual Updates](#manual-updates)
@@ -25,6 +27,21 @@ This document explains how to manage project dependencies.
 ## Security Risks
 
 `npm run check:security` lists dependency security risks
+
+## Major Packages
+
+### Node.js
+
+- `node --version` to view current
+  - [Node.js | endoflife.date](https://endoflife.date/nodejs)
+
+To update Node.js:
+
+- `nvm install 0.0.0` to install specific version
+- `nvm install --lts` to install latest LTS
+- `nvm use --lts` to switch to LTS
+- `nvm alias default node` to always default to latest available version
+- `nvm alias default 0.0.0` to always default to a specific version
 
 # Updating Dependencies
 
