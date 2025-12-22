@@ -49,6 +49,6 @@
 		// highlights Tailwidn classes
 		"ellreka.tailwindcss-highlight",
 		// autofills Tailwind classes
-		"bradlc.vscode-tailwindcss",
+		"bradlc.vscode-tailwindcss"
 	]
 }
