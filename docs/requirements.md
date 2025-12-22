@@ -2,7 +2,7 @@ This document outlines the requirements for an ideal template repository followi
 
 Find the first unimplemented lettered sub-heading. If there are web links or checklist items, stop and alert the user that implementation details need to be added. Design and implement a testing method. When finished, add a check to the heading and implementation details to the contents.
 
-- [**Build Requirements**](#build-requirements)
+- [✓ **Build Requirements**](#-build-requirements)
   - [1. ✓ **Build Requirements Enforcement**](#1--build-requirements-enforcement)
     - [a. ✓ **Pre-Commit/Push Hooks**](#a--pre-commitpush-hooks)
   - [2. ✓ **Version Control Integration**](#2--version-control-integration)
@@ -15,8 +15,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [c. ✓ **Clean Package Management**](#c--clean-package-management)
   - [4. ✓ **Environment Variables**](#4--environment-variables)
     - [a. ✓ **Secure Environment Variable Management**](#a--secure-environment-variable-management)
-  - [5. **Deployment**](#5-deployment)
-    - [a. **Documented Deployment Commands**](#a-documented-deployment-commands)
+  - [5. ✓ **Deployment**](#5--deployment)
+    - [a. ✓ **Documented Deployment Commands**](#a--documented-deployment-commands)
 - [**Development Requirements**](#development-requirements)
   - [6. **Linting Rules \& Typing**](#6-linting-rules--typing)
     - [a. **Out-of-the-Box ESLint Configuration**](#a-out-of-the-box-eslint-configuration)
@@ -84,7 +84,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [c. **Documented License Selection**](#c-documented-license-selection)
     - [d. **Documentation Auto-Generation**](#d-documentation-auto-generation)
 
-# **Build Requirements**
+# ✓ **Build Requirements**
 
 ## 1. ✓ **Build Requirements Enforcement**
 
@@ -153,22 +153,14 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Environmental variables are enabled out-of-the-box, as demonstrated by an example value being displayed on the demo page.
 - Environmental variables are not shared to remote, but a `.env.example` template is.
 
-## 5. **Deployment**
+## 5. ✓ **Deployment**
 
 - Deployment (e.g. to Netlify) just works
 - Comes after all build prerequisites are in place
 
-### a. **Documented Deployment Commands**
+### a. ✓ **Documented Deployment Commands**
 
-- Deployment commands are documented.
-  - adding new Github repo with `gh repo create`
-  - deploying repo to Netlify
-    - `netlify init`
-  - adding environmental variables on Netlify
-    - `netlify env:import FILENAME`
-    - `netlify env:set VAR_NAME value`
-    - `netlify env:set VAR_NAME value --secret` makes it unreadable
-    - `netlify env:set VAR_NAME value --context production`
+- Deployment commands are documented in `/docs/deployment.md`.
 - Deployment commands work without much modification.
 
 # **Development Requirements**
