@@ -172,29 +172,30 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ### a. **Out-of-the-Box ESLint Configuration**
 
-- ESLint and basic rules are configured out-of-the-box.
+- ESLint and basic rulesets are configured out-of-the-box.
+- VS Code lints on file save.
 - An npm script `lint` is pre-configured.
 
 ### b. **Comprehensive ESLint Rules**
 
 - Comprehensive ESLint rules cover for all detectable code smells.
-- [] Process Ist ESLint rule configuration
-- Document linting rules with comments so that they double as LLM style guides
-- Set up ESLint rules
+  - [] Process Ist ESLint rule c onfiguration
+  - [§ code style elsewhencode/project-guidelines: A set of best practices for JavaScript projects]([elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines?tab=readme-ov-file#code-style))
+  - [kettanaito/naming-cheatsheet: Comprehensive language-agnostic guidelines on variables naming. Home of the A/HC/LC pattern.](https://github.com/kettanaito/naming-cheatsheet)
+  - [thedaviddias/Front-End-Checklist: 🗂 The perfect Front-End Checklist for modern websites and meticulous developers](https://github.com/thedaviddias/Front-End-Checklist)
   - Svelte 5 runes, see Svelte 5 cheatsheet
-    - [mark7p/svelte-5-cheatsheet: A concise Svelte 5 cheat sheet covering component structure, reactivity, props, event handling, bindings, loops, lifecycle functions, stores, and transitions. Perfect for quick reference!](https://github.com/mark7p/svelte-5-cheatsheet)
+    - [mark7p/svelte-5-cheatsheet](https://github.com/mark7p/svelte-5-cheatsheet)
   - No inline explanatory comments
-  - A file size limit on /.github/workflows/\*.yml and Husky requirements files facilitates customization within projects.
   - CSS and Tailwind usage
   - No style sections in Svelte components
   - Typing and interfaces
   - File relationships
   - File and function length
+    - A file size limit on /.github/workflows/\*.yml and Husky requirements files facilitates customization within projects.
   - Enforce no Javascript in Svelte files except import, onMount, and runes
   - Enforce no store setting in helper files, only in runes in Svelte files
-- [§ code style elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
-- [kettanaito/naming-cheatsheet: Comprehensive language-agnostic guidelines on variables naming. Home of the A/HC/LC pattern.](https://github.com/kettanaito/naming-cheatsheet)
-- [thedaviddias/Front-End-Checklist: 🗂 The perfect Front-End Checklist for modern websites and meticulous developers](https://github.com/thedaviddias/Front-End-Checklist)
+- Linting rules are well-organized and avoid redundancy.
+- Every linting rule is documented with a comment in order to double as a style guide.
 
 ### c. **TypeScript Linting**
 
