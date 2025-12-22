@@ -135,21 +135,9 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Basic NPM scripts run as expected.
 - Scripts to include out of the box:
   - `dev`
-    `dotenv -- webpack serve --open --mode development --no-stats`
   - `build`
   - `check`
-    ```
-        "check:deps": "npm outdated",
-        "check:security": "npm audit",
-        "check:duplicates": "npx depcheck"
-    ```
   - `version`
-    ```
-        "version:patch": "npm version patch",
-        "version:minor": "npm version minor",
-        "version:major": "npm version major",
-        "release": "npm run build && npm publish"
-    ```
 
 ### c. **Working Update Commands**
 

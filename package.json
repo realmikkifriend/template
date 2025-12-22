@@ -3,24 +3,34 @@
 	"private": true,
 	"version": "0.0.2",
 	"type": "module",
+	"overrides": {
+		"@sveltejs/kit": {
+			"cookie": "^0.7.0"
+		}
+	},
 	"scripts": {
 		"dev": "vite dev --open",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check:deps": "npm outdated",
+		"check:security": "npm audit",
 		"lint": "eslint . && prettier --check .",
+		"version:patch": "npm version patch",
+		"version:minor": "npm version minor",
+		"version:major": "npm version major",
 		"prepare": "svelte-kit sync || echo ''",
 		"build": "vite build"
 	},
 	"devDependencies": {
-		"@eslint/compat": "^1.4.0",
+		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^9.39.1",
 		"@sveltejs/adapter-auto": "^7.0.0",
-		"@sveltejs/kit": "^2.49.1",
+		"@sveltejs/kit": "^2.49.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.1.17",
-		"@types/node": "^22",
+		"@types/node": "^25.0.0",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.1",
