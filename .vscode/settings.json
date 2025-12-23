@@ -20,13 +20,13 @@
 	"eslint.enable": true,
 	"autoRestart.monitorFilesForESLint": true,
 	"autoRestart.fileGlobForESLint": [
-		"**/.eslint/*.js",
+		"**/.eslint/*.ts",
 		"**/.eslintrc.{js,cjs,mjs,yaml,yml,json}",
-		"**/eslint.config.{js,cjs,mjs}",
+		"**/eslint.config.{js,cjs,mjs,mts}",
 	],
 	"autoRestart.monitorFilesForTypescript": true,
 	"autoRestart.fileGlobForTypescript": [
-		"**/.eslint/*.js",
-		"**/tsconfig.{json,app.json,app.js,js,ts}",
+		"**/.eslint/*.ts",
+		"**/tsconfig.{json,app.json,ts}",
 	],
 }

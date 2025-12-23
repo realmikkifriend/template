@@ -1,0 +1,29 @@
+import js from '@eslint/js';
+import globals from 'globals';
+
+/**
+ * JavaScript-specific ESLint configuration
+ * This file contains all JavaScript-related ESLint rules and configurations
+ */
+
+export const jsRules = [
+	js.configs.recommended,
+	{
+		files: ['**/*.{js,mjs,cjs}'],
+		ignores: ['**/*.ts', '**/*.tsx', '**/*.svelte'],
+		languageOptions: {
+			sourceType: 'module',
+			globals: globals.browser
+		}
+	},
+	{
+		files: ['**/*.{js,mjs,cjs}'],
+		rules: {
+			// console.log() is for temporary use only
+			'no-console': ['warn', { allow: ['error'] }],
+
+			// functions have max of 3 parameters, consider passing an object
+			'max-params': ['error', 3]
+		}
+	}
+];

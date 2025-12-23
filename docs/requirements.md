@@ -19,7 +19,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [a. ✓ **Documented Deployment Commands**](#a--documented-deployment-commands)
 - [**Development Requirements**](#development-requirements)
   - [6. **Linting Rules \& Typing**](#6-linting-rules--typing)
-    - [a. **Out-of-the-Box ESLint Configuration**](#a-out-of-the-box-eslint-configuration)
+    - [✓ a. **Out-of-the-Box ESLint Configuration**](#-a-out-of-the-box-eslint-configuration)
     - [b. **Comprehensive ESLint Rules**](#b-comprehensive-eslint-rules)
     - [c. **TypeScript Linting**](#c-typescript-linting)
   - [7. **Testing Framework**](#7-testing-framework)
@@ -170,7 +170,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Linting rules are comprehensive and ready to moderate LLM output
 - Helps maintain code quality during development
 
-### a. **Out-of-the-Box ESLint Configuration**
+### ✓ a. **Out-of-the-Box ESLint Configuration**
 
 - ESLint and basic rulesets are configured out-of-the-box.
 - VS Code lints on file save.
@@ -178,21 +178,21 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ### b. **Comprehensive ESLint Rules**
 
+- An empty linting rules file is ready for project rules and overrides.
 - Comprehensive ESLint rules cover for all detectable code smells.
-  - [] Process Ist ESLint rule c onfiguration
   - [§ code style elsewhencode/project-guidelines: A set of best practices for JavaScript projects]([elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines?tab=readme-ov-file#code-style))
   - [kettanaito/naming-cheatsheet: Comprehensive language-agnostic guidelines on variables naming. Home of the A/HC/LC pattern.](https://github.com/kettanaito/naming-cheatsheet)
   - [thedaviddias/Front-End-Checklist: 🗂 The perfect Front-End Checklist for modern websites and meticulous developers](https://github.com/thedaviddias/Front-End-Checklist)
-  - Svelte 5 runes, see Svelte 5 cheatsheet
-    - [mark7p/svelte-5-cheatsheet](https://github.com/mark7p/svelte-5-cheatsheet)
   - No inline explanatory comments
-  - CSS and Tailwind usage
-  - No style sections in Svelte components
+  - Svelte 5 runes
+    - [mark7p/svelte-5-cheatsheet](https://github.com/mark7p/svelte-5-cheatsheet)
+    - No style sections in Svelte components
+    - Enforce no Javascript in Svelte files except import, onMount, and runes
   - Typing and interfaces
+    - [no-deprecated | typescript-eslint](https://typescript-eslint.io/rules/no-deprecated/)
+  - CSS and Tailwind usage
   - File relationships
   - File and function length
-    - A file size limit on /.github/workflows/\*.yml and Husky requirements files facilitates customization within projects.
-  - Enforce no Javascript in Svelte files except import, onMount, and runes
   - Enforce no store setting in helper files, only in runes in Svelte files
 - Linting rules are well-organized and avoid redundancy.
 - Every linting rule is documented with a comment in order to double as a style guide.
@@ -200,9 +200,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### c. **TypeScript Linting**
 
 - Code is typed
-- Fundamental quality requirement
 - TypeScript linting passes
-- [TypeScript Style Guide](https://mkosir.github.io/typescript-style-guide/)
+  - [TypeScript Style Guide](https://mkosir.github.io/typescript-style-guide/)
 
 ## 7. **Testing Framework**
 
@@ -233,9 +232,10 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - AGENTS.md is comprehensive.
 - Create `AGENTS.md` in project root
-- [AGENTS.md](https://agents.md/)
-- [rentprompts/awesome-agent-md](https://github.com/rentprompts/awesome-agent-md)
-- [Agents.md Examples Collection](https://agentsmd.net/agents-md-examples/)
+  - [AGENTS.md](https://agents.md/)
+  - [rentprompts/awesome-agent-md](https://github.com/rentprompts/awesome-agent-md)
+  - [Agents.md Examples Collection](https://agentsmd.net/agents-md-examples/)
+- AGENTS.md integrates existing linting rules.
 
 # **Quality Requirements**
 
@@ -583,4 +583,5 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### d. **Documentation Auto-Generation**
 
 - JSDoc is configured and can be used to generate documentation.
-- [Use JSDoc: Getting Started with JSDoc 3](https://jsdoc.app/about-getting-started)
+  - [Use JSDoc: Getting Started with JSDoc 3](https://jsdoc.app/about-getting-started)
+- Components and individual page elements are documented with comments. These appear as user help and are compiled into documentation.
