@@ -22,9 +22,9 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [✓ a. **Out-of-the-Box ESLint Configuration**](#-a-out-of-the-box-eslint-configuration)
     - [✓ b. **Comprehensive ESLint Rules**](#-b-comprehensive-eslint-rules)
     - [✓ c. **TypeScript Linting**](#-c-typescript-linting)
-  - [7. **Testing Framework**](#7-testing-framework)
+  - [7. ✓ **Testing Framework**](#7--testing-framework)
     - [a. ✓ **Out-of-the-Box Testing Architecture**](#a--out-of-the-box-testing-architecture)
-    - [b. **Pre-Commit Test Requirements**](#b-pre-commit-test-requirements)
+    - [b. ✓ **Pre-Commit Test Requirements**](#b--pre-commit-test-requirements)
   - [8. **LLM Assistance**](#8-llm-assistance)
     - [a. **Agent Documentation**](#a-agent-documentation)
 - [**Quality Requirements**](#quality-requirements)
@@ -186,7 +186,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Code is typed
 - TypeScript linting passes
 
-## 7. **Testing Framework**
+## 7. ✓ **Testing Framework**
 
 - Testing just works
 - Should be established early to validate other components
@@ -196,7 +196,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - E2E testing architecture is ready out-of-the-box.
   - Test files are placed alongside the modules they directly test. Test files with more general purposes go in the `tests/` directory.
 
-### b. **Pre-Commit Test Requirements**
+### b. ✓ **Pre-Commit Test Requirements**
 
 - Tests must pass before commits are pushed. CI must pass all tests on a clean clone.
 
