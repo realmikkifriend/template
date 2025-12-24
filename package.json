@@ -22,12 +22,15 @@
 		"version:minor": "npm --no-git-tag-version version minor",
 		"version:major": "npm --no-git-tag-version version major",
 		"prepare": "svelte-kit sync || echo ''",
-		"build": "vite build"
+		"build": "vite build",
+		"preview": "vite preview"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^9.39.1",
+		"@playwright/test": "^1.57.0",
 		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/adapter-netlify": "^5.2.4",
 		"@sveltejs/kit": "^2.49.2",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"@tailwindcss/forms": "^0.5.10",

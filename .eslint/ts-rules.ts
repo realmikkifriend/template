@@ -55,10 +55,14 @@ export const tsRules: ConfigWithExtends[] = [
 	} as ConfigWithExtends,
 
 	// functional code
-	functional.configs.all as ConfigWithExtends,
+	{
+		...(functional.configs.all as ConfigWithExtends),
+		ignores: ['**/*.spec.ts']
+	},
 	// functional.configs.disableTypeChecked,
 	{
 		files: ['src/**/*.{js,ts,svelte}'],
+		ignores: ['**/*.spec.ts'],
 		rules: {
 			// limits function complexity
 			complexity: ['warn', { max: 7 }] as const,
