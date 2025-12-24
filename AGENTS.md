@@ -6,45 +6,143 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 
 ## General Guidelines
 
-### 1. File Structure
+### File Structure
 
 - **Maximum file length**: Svelte and Typescript files should have limited length. Extract code to a new file when necessary.
-- **Maximum nesting depth**: Do not deeply nest code. Refactor or extract to functions.
 
-### 2. Code Style
+#### Key Directories
+
+- **`src/`**: Contains the main application code
+  - **`src/lib/`**: Reusable components and utilities (imported via `$lib` alias)
+  - **`src/routes/`**: Application routes and pages
+  - **`src/app.html`**: Main HTML template with SvelteKit placeholders
+
+- **`static/`**: Static assets served directly (e.g., `robots.txt`)
+
+- **`tests/`**: Playwright end-to-end tests
+
+#### Important Files
+
+- **`src/app.html`**: Contains SvelteKit placeholders:
+  - `%sveltekit.head%` - for `<link>` and `<script>` elements
+  - `%sveltekit.body%` - page markup (must be inside a container element)
+  - `%sveltekit.assets%` - asset paths
+  - `%sveltekit.nonce%` - CSP nonce
+  - `%sveltekit.env.[NAME]%` - public environment variables
+  - `%sveltekit.version%` - app version
+
+- **`src/error.html`**: Custom error page with:
+  - `%sveltekit.status%` - HTTP status code
+  - `%sveltekit.error.message%` - error message
+
+#### Configuration Files
+
+- **App:** `svelte.config.ts`, `vite.config.ts`
+- **Code Quality:** `tsconfig.json`, `eslint.config.mts`, `.prettierrc`, `knip.ts`, `.dependency-cruiser.ts`
+- **Testing:** `playwright.config.ts`
+
+### Code Style
 
 - **Don't Repeat Yourself**: If code is used more than once, extract it to a reusable function/component.
 - **No comments**: Do not include comments. Write code that is self-explanatory.
+- **Maximum nesting depth**: Do not deeply nest code. Refactor or extract to functions.
 - **Maximum parameters**: 2-3 parameters per function. Consider passing an object instead.
 - **Maximum function length**: Do not write long, complicated functions. Keep cyclomatic complexity low. Refactor or extract code where necessary.
 
-### 3. Console Usage
+#### Code Documentation
+
+- **JSDoc required** for all public/arrow functions
+- Include parameter types in JSDoc comments
+- Document return types and descriptions
+
+#### Functional Programming
+
+- Follow functional programming patterns where applicable
+- Avoid mutable state when possible
+- Functional programming rules are ignored in test files (`**/*.spec.ts`)
+
+#### Console Usage
 
 - **Allowed**: `console.error()` for error logging
 - **Avoid**: `console.log()`, `console.warn()`, etc.
 
-## TypeScript Guidelines
+### Development Workflow
 
-- Use ES modules (`import/export` syntax)
-- Browser globals are available
-- Use appropriate polyfills for Node.js environments
+#### Common Commands
 
-### Type Definitions
+```bash
+# Check dependencies for updates and security issues
+npm run check
 
-- **Location**: All type/interface definitions must be in `src/types/` directory
+# Lint and type check
+npm run lint
 
-### Code Quality
+# Builds dependency graph, checks for Svelte issues, runs Knip
+npm run scan
 
-- Avoid deprecated APIs and code patterns
-- Use proper TypeScript types (don't rely on `no-undef` rule)
+# Run tests
+npm test
 
-### Documentation
+# Start development server
+npm run dev
+```
 
-- **JSDoc required** for all public/arrow functions
-  - Include parameter types in JSDoc comments
-  - Document return types and descriptions
+#### Environment Variables
+
+- **Template**: `.env.example` provides variable templates
+- **Public Variables**: Prefix with `PUBLIC_` (e.g., `PUBLIC_API_URL`)
+- **Private Variables**: Use in server-side code only
+
+### Best Practices
+
+1. **Component Organization**:
+   - Keep components small and focused
+   - Use `$lib` for reusable components
+   - Colocate route-specific components
+
+2. **Type Safety**:
+   - Use TypeScript interfaces for props and data
+   - Define types in `src/types/` directory
+   - Document all public functions with JSDoc
+   - Use ES modules (`import/export` syntax)
+   - Browser globals are available
+   - Use appropriate polyfills for Node.js environments
+
+3. **Performance**:
+   - Use lazy loading for heavy components
+   - Optimize images and assets
+   - Minimize bundle size
+
+4. **Testing**:
+   - Write Playwright tests for critical user flows
+   - Test both happy paths and error cases
+   - Keep tests maintainable and fast
+
+5. **Accessibility**:
+   - Use semantic HTML
+   - Ensure proper ARIA attributes
+   - Test with keyboard navigation
 
 ## Svelte Guidelines
+
+### Routing Conventions
+
+- **File-based Routing**: Files in `src/routes/` define routes
+- **Layouts**: `+layout.svelte` files define shared layouts
+- **Pages**: `+page.svelte` files define page content
+- **Server-only**: Add `.server` suffix for server-only modules
+
+### State Management
+
+- **Svelte 5 Runes**: Use `$state`, `$derived`, or `$effect`
+  - Never use `writable` from `svelte/store`.
+  - Never use `$:`.
+- **Store initialization**: Always provide initial values to stores.
+
+### Event Handling
+
+- **Avoid**: `addEventListener` and `createEventDispatcher`
+- **Preferred**: Use callback props pattern for event handling
 
 ### Component Structure
 
@@ -54,34 +152,9 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 - **Attribute ordering**: Follow consistent attribute ordering (use `svelte/sort-attributes`)
 - **Button elements**: Must have `type` attribute (`button`, `submit`, or `reset`)
 
-### State Management
+### Styling Approach
 
-- **Avoid**: `writable` stores from `svelte/store` (use Svelte 5 runes instead)
-- **Store initialization**: Always provide initial values to stores
-
-### Event Handling
-
-- **Avoid**: `addEventListener` and `createEventDispatcher`
-- **Preferred**: Use callback props pattern for event handling
-
-### Svelte 5 Features
-
-- Use new generics and runes
-- Follow Svelte 5 patterns and conventions
-
-## Layer Architecture Guidelines
-
-### Utility Layer (`src/utils/`)
-
-- **Restrictions**:
-  - Cannot import from `../services/*`
-  - Cannot import from `../stores/*`
-- **Purpose**: Keep utility functions independent and reusable
-
-## Functional Programming Guidelines
-
-### Principles
-
-- Follow functional programming patterns where applicable
-- Avoid mutable state when possible
-- Functional programming rules are ignored in test files (`**/*.spec.ts`)
+- **TailwindCSS**: Primary styling framework
+- **DaisyUI**: Component library built on Tailwind
+- **External CSS**: Use `src/*.css` files for global styles
+- **Component Styles**: Use Tailwind classes directly in components
