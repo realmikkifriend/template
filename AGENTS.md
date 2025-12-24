@@ -15,10 +15,7 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 - **`src/`**: Contains the main application code
   - **`src/lib/`**: Reusable components and utilities (imported via `$lib` alias)
   - **`src/routes/`**: Application routes and pages
-  - **`src/app.html`**: Main HTML template with SvelteKit placeholders
-
 - **`static/`**: Static assets served directly (e.g., `robots.txt`)
-
 - **`tests/`**: Playwright end-to-end tests
 
 #### Important Files
@@ -29,17 +26,13 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
   - `%sveltekit.assets%` - asset paths
   - `%sveltekit.nonce%` - CSP nonce
   - `%sveltekit.env.[NAME]%` - public environment variables
-  - `%sveltekit.version%` - app version
-
-- **`src/error.html`**: Custom error page with:
-  - `%sveltekit.status%` - HTTP status code
-  - `%sveltekit.error.message%` - error message
+- **`src/error.html`**: Custom error page
 
 #### Configuration Files
 
-- **App:** `svelte.config.ts`, `vite.config.ts`
-- **Code Quality:** `tsconfig.json`, `eslint.config.mts`, `.prettierrc`, `knip.ts`, `.dependency-cruiser.ts`
-- **Testing:** `playwright.config.ts`
+- **App**: `svelte.config.ts`, `vite.config.ts`
+- **Code Quality**: `tsconfig.json`, `eslint.config.mts`, `.prettierrc`, `knip.ts`, `.dependency-cruiser.ts`
+- **Testing**: `playwright.config.ts`
 
 ### Code Style
 
@@ -108,17 +101,28 @@ npm run dev
    - Browser globals are available
    - Use appropriate polyfills for Node.js environments
 
-3. **Performance**:
+3. **Layer Boundaries**:
+   - **View**
+     - `src/routes/` contain Svelte pages that receive and display data.
+     - `src/styles/` contains stylesheets and style utilities.
+   - **Model**
+     - `src/types/` contains type/interface definitions.
+     - `src/lib/stores/` contains Svelte stores.
+   - **Controller**
+     - `src/lib/services/` contains scripts that access stores or handle business logic.
+     - `src/lib/utils` contains only pure, stateless functions and no side effects.
+
+4. **Performance**:
    - Use lazy loading for heavy components
    - Optimize images and assets
    - Minimize bundle size
 
-4. **Testing**:
+5. **Testing**:
    - Write Playwright tests for critical user flows
    - Test both happy paths and error cases
    - Keep tests maintainable and fast
 
-5. **Accessibility**:
+6. **Accessibility**:
    - Use semantic HTML
    - Ensure proper ARIA attributes
    - Test with keyboard navigation
