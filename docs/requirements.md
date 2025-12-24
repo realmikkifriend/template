@@ -23,14 +23,13 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [✓ b. **Comprehensive ESLint Rules**](#-b-comprehensive-eslint-rules)
     - [✓ c. **TypeScript Linting**](#-c-typescript-linting)
   - [7. **Testing Framework**](#7-testing-framework)
-    - [a. **Out-of-the-Box Testing Architecture**](#a-out-of-the-box-testing-architecture)
+    - [a. ✓ **Out-of-the-Box Testing Architecture**](#a--out-of-the-box-testing-architecture)
     - [b. **Pre-Commit Test Requirements**](#b-pre-commit-test-requirements)
   - [8. **LLM Assistance**](#8-llm-assistance)
     - [a. **Agent Documentation**](#a-agent-documentation)
 - [**Quality Requirements**](#quality-requirements)
   - [9. **Project Structure**](#9-project-structure)
     - [a. **Standard File Structure**](#a-standard-file-structure)
-    - [b. **Documented File Structure**](#b-documented-file-structure)
   - [10. **Separation of Concerns**](#10-separation-of-concerns)
     - [a. **Enforced Layer Boundaries**](#a-enforced-layer-boundaries)
     - [b. **Organized Dependency Graph**](#b-organized-dependency-graph)
@@ -192,17 +191,14 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Testing just works
 - Should be established early to validate other components
 
-### a. **Out-of-the-Box Testing Architecture**
+### a. ✓ **Out-of-the-Box Testing Architecture**
 
 - E2E testing architecture is ready out-of-the-box.
-  - Test files are placed alongside the modules they directly test. Test files with more general purposes go in a `__test__` directory.
-- Test coverage reporting is set up.
-  - High initial test coverage.
+  - Test files are placed alongside the modules they directly test. Test files with more general purposes go in the `tests/` directory.
 
 ### b. **Pre-Commit Test Requirements**
 
-- Tests must pass before commits are pushed.
-- CI must pass all tests on a clean clone.
+- Tests must pass before commits are pushed. CI must pass all tests on a clean clone.
 
 ## 8. **LLM Assistance**
 
@@ -211,8 +207,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ### a. **Agent Documentation**
 
-- AGENTS.md is comprehensive.
-- Create `AGENTS.md` in project root
+- `AGENTS.md` in project root is comprehensive.
   - [AGENTS.md](https://agents.md/)
   - [rentprompts/awesome-agent-md](https://github.com/rentprompts/awesome-agent-md)
   - [Agents.md Examples Collection](https://agentsmd.net/agents-md-examples/)
@@ -224,20 +219,16 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - Project file structure is well-organized and conforms to system design principles
 - Files are small and modular
-- Enables all other quality aspects
 
 ### a. **Standard File Structure**
 
 - File structure conforms to typical standards.
-- [§ structure and naming elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
-- [kriasoft/Folder-Structure-Conventions](https://github.com/kriasoft/Folder-Structure-Conventions)
-- [Best practices for repositories - GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories)
-- [Svelte Project Structure](https://svelte.dev/docs/project-structure)
-- [GitHub Repository Structure Best Practices | by Soulaiman Ghanem | Code Factory Berlin | Medium](https://medium.com/code-factory-berlin/github-repository-structure-best-practices-1a2b3c4d5e6f)
-
-### b. **Documented File Structure**
-
 - File structure is documented to facilitate development.
+  - [§ structure and naming elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
+  - [kriasoft/Folder-Structure-Conventions](https://github.com/kriasoft/Folder-Structure-Conventions)
+  - [Best practices for repositories - GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/best-practices-for-repositories)
+  - [Svelte Project Structure](https://svelte.dev/docs/project-structure)
+  - [GitHub Repository Structure Best Practices | by Soulaiman Ghanem | Code Factory Berlin | Medium](https://medium.com/code-factory-berlin/github-repository-structure-best-practices-1a2b3c4d5e6f)
 
 ## 10. **Separation of Concerns**
 

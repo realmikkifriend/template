@@ -50,6 +50,10 @@
         // highlights Tailwind classes
         "ellreka.tailwindcss-highlight",
         // autofills Tailwind classes
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        //
+        // // TESTING
+        // Playwright for e2e testing
+        "ms-playwright.playwright"
     ]
 }

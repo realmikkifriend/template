@@ -14,3 +14,6 @@ fi
 
 # PACKAGE AUDIT: fail if there are vulnerabilities
 npm audit --audit-level=moderate
+
+# RUN TESTS: fail if tests do not pass
+npm test
