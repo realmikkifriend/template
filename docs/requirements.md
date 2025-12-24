@@ -17,7 +17,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [a. ✓ **Secure Environment Variable Management**](#a--secure-environment-variable-management)
   - [5. ✓ **Deployment**](#5--deployment)
     - [a. ✓ **Documented Deployment Commands**](#a--documented-deployment-commands)
-- [**Development Requirements**](#development-requirements)
+- [✓ **Development Requirements**](#-development-requirements)
   - [6. ✓ **Linting Rules \& Typing**](#6--linting-rules--typing)
     - [✓ a. **Out-of-the-Box ESLint Configuration**](#-a-out-of-the-box-eslint-configuration)
     - [✓ b. **Comprehensive ESLint Rules**](#-b-comprehensive-eslint-rules)
@@ -25,8 +25,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - [7. ✓ **Testing Framework**](#7--testing-framework)
     - [a. ✓ **Out-of-the-Box Testing Architecture**](#a--out-of-the-box-testing-architecture)
     - [b. ✓ **Pre-Commit Test Requirements**](#b--pre-commit-test-requirements)
-  - [8. **LLM Assistance**](#8-llm-assistance)
-    - [a. **Agent Documentation**](#a-agent-documentation)
+  - [8. ✓ **LLM Assistance**](#8--llm-assistance)
+    - [a. ✓ **Agent Documentation**](#a--agent-documentation)
 - [**Quality Requirements**](#quality-requirements)
   - [9. **Project Structure**](#9-project-structure)
     - [a. **Standard File Structure**](#a-standard-file-structure)
@@ -161,7 +161,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Deployment commands are documented in `/docs/deployment.md`.
 - Deployment commands work without much modification.
 
-# **Development Requirements**
+# ✓ **Development Requirements**
 
 ## 6. ✓ **Linting Rules & Typing**
 
@@ -200,18 +200,14 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - Tests must pass before commits are pushed. CI must pass all tests on a clean clone.
 
-## 8. **LLM Assistance**
+## 8. ✓ **LLM Assistance**
 
 - LLM-assisted coding just works
 - Builds on established testing and linting
 
-### a. **Agent Documentation**
+### a. ✓ **Agent Documentation**
 
-- `AGENTS.md` in project root is comprehensive.
-  - [AGENTS.md](https://agents.md/)
-  - [rentprompts/awesome-agent-md](https://github.com/rentprompts/awesome-agent-md)
-  - [Agents.md Examples Collection](https://agentsmd.net/agents-md-examples/)
-- AGENTS.md integrates existing linting rules.
+- `AGENTS.md` in project root is comprehensive and integrates existing linting rules.
 
 # **Quality Requirements**
 
@@ -254,9 +250,9 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Review [HyperUI](https://www.hyperui.dev/)
 - Review [Preline UI](https://preline.co/examples.html) ([Svelte docs](https://preline.co/docs/frameworks-svelte.html))
 - Every example should have
-- Functional demo examples
-- Code to be copied
-- E2E tests
+  - Functional demo examples
+  - Code to be copied
+  - E2E tests
 
 ## 11. **Performance**
 
@@ -267,7 +263,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### a. **Out-of-the-Box Performance**
 
 - App meets performance metrics out-of-the-box.
-- [thedaviddias/Front-End-Performance-Checklist: 🎮 The only Front-End Performance Checklist that runs faster than the others](https://github.com/thedaviddias/Front-End-Performance-Checklist)
+  - [thedaviddias/Front-End-Performance-Checklist: 🎮 The only Front-End Performance Checklist that runs faster than the others](https://github.com/thedaviddias/Front-End-Performance-Checklist)
 
 ## 12. **Error Handling**
 
@@ -285,8 +281,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### c. **Comprehensive Error Logging**
 
 - All errors are logged for dev review.
-- [winstonjs/winston: A logger for just about everything.](https://github.com/winstonjs/winston)
-- [trentm/node-bunyan: a simple and fast JSON logging module for node.js services](https://github.com/trentm/node-bunyan)
+  - [winstonjs/winston: A logger for just about everything.](https://github.com/winstonjs/winston)
+  - [trentm/node-bunyan: a simple and fast JSON logging module for node.js services](https://github.com/trentm/node-bunyan)
 
 # **Usage Requirements**
 
@@ -295,9 +291,9 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Routing just works
 - Core usage requirement
 - Set up routing
-- [Frequently asked questions • Docs • Svelte](https://svelte.dev/docs/svelte/faq#Is-there-a-router) "Is there a router?"
-- Try [Svelte 5 SPA Router](https://docs.router.svelte.spa/) (SEO?)
-- Review [Project structure • Docs • Svelte](https://svelte.dev/docs/kit/project-structure)
+  - [Frequently asked questions • Docs • Svelte](https://svelte.dev/docs/svelte/faq#Is-there-a-router) "Is there a router?"
+  - Try [Svelte 5 SPA Router](https://docs.router.svelte.spa/) (SEO?)
+  - Review [Project structure • Docs • Svelte](https://svelte.dev/docs/kit/project-structure)
 
 ### a. **Out-of-the-Box Routing Setup**
 
@@ -307,9 +303,9 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - SEO is configured out-of-the-box.
 - App meets SEO metrics.
-- Research modern SEO metrics (e.g. app appears in results on major search engines)
-- Look into meta tags
-- Look into Open Graph
+  - Research modern SEO metrics (e.g. app appears in results on major search engines)
+  - Look into meta tags
+  - Look into Open Graph
 
 ## 14. **State Management**
 
