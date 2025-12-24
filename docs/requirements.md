@@ -18,14 +18,13 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - [5. ✓ **Deployment**](#5--deployment)
     - [a. ✓ **Documented Deployment Commands**](#a--documented-deployment-commands)
 - [**Development Requirements**](#development-requirements)
-  - [6. **Linting Rules \& Typing**](#6-linting-rules--typing)
+  - [6. ✓ **Linting Rules \& Typing**](#6--linting-rules--typing)
     - [✓ a. **Out-of-the-Box ESLint Configuration**](#-a-out-of-the-box-eslint-configuration)
-    - [b. **Comprehensive ESLint Rules**](#b-comprehensive-eslint-rules)
-    - [c. **TypeScript Linting**](#c-typescript-linting)
+    - [✓ b. **Comprehensive ESLint Rules**](#-b-comprehensive-eslint-rules)
+    - [✓ c. **TypeScript Linting**](#-c-typescript-linting)
   - [7. **Testing Framework**](#7-testing-framework)
     - [a. **Out-of-the-Box Testing Architecture**](#a-out-of-the-box-testing-architecture)
-    - [b. **High Test Coverage**](#b-high-test-coverage)
-    - [c. **Pre-Commit Test Requirements**](#c-pre-commit-test-requirements)
+    - [b. **Pre-Commit Test Requirements**](#b-pre-commit-test-requirements)
   - [8. **LLM Assistance**](#8-llm-assistance)
     - [a. **Agent Documentation**](#a-agent-documentation)
 - [**Quality Requirements**](#quality-requirements)
@@ -52,7 +51,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [a. **Out-of-the-Box Authentication**](#a-out-of-the-box-authentication)
 - [**Design Requirements**](#design-requirements)
   - [16. **Design Development**](#16-design-development)
-    - [a. **CSS File Structure**](#a-css-file-structure)
+    - [a. **CSS \& HTML File Structure**](#a-css--html-file-structure)
     - [b. **Tailwind \& DaisyUI**](#b-tailwind--daisyui)
     - [c. **Style Linting**](#c-style-linting)
   - [17. **User Experience**](#17-user-experience)
@@ -165,7 +164,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 # **Development Requirements**
 
-## 6. **Linting Rules & Typing**
+## 6. ✓ **Linting Rules & Typing**
 
 - Linting rules are comprehensive and ready to moderate LLM output
 - Helps maintain code quality during development
@@ -176,32 +175,17 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - VS Code lints on file save.
 - An npm script `lint` is pre-configured.
 
-### b. **Comprehensive ESLint Rules**
+### ✓ b. **Comprehensive ESLint Rules**
 
-- An empty linting rules file is ready for project rules and overrides.
 - Comprehensive ESLint rules cover for all detectable code smells.
-  - [§ code style elsewhencode/project-guidelines: A set of best practices for JavaScript projects]([elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines?tab=readme-ov-file#code-style))
-  - [kettanaito/naming-cheatsheet: Comprehensive language-agnostic guidelines on variables naming. Home of the A/HC/LC pattern.](https://github.com/kettanaito/naming-cheatsheet)
-  - [thedaviddias/Front-End-Checklist: 🗂 The perfect Front-End Checklist for modern websites and meticulous developers](https://github.com/thedaviddias/Front-End-Checklist)
-  - No inline explanatory comments
-  - Svelte 5 runes
-    - [mark7p/svelte-5-cheatsheet](https://github.com/mark7p/svelte-5-cheatsheet)
-    - No style sections in Svelte components
-    - Enforce no Javascript in Svelte files except import, onMount, and runes
-  - Typing and interfaces
-    - [no-deprecated | typescript-eslint](https://typescript-eslint.io/rules/no-deprecated/)
-  - CSS and Tailwind usage
-  - File relationships
-  - File and function length
-  - Enforce no store setting in helper files, only in runes in Svelte files
 - Linting rules are well-organized and avoid redundancy.
 - Every linting rule is documented with a comment in order to double as a style guide.
+- An empty linting rules file is ready for project rules and overrides.
 
-### c. **TypeScript Linting**
+### ✓ c. **TypeScript Linting**
 
 - Code is typed
 - TypeScript linting passes
-  - [TypeScript Style Guide](https://mkosir.github.io/typescript-style-guide/)
 
 ## 7. **Testing Framework**
 
@@ -210,18 +194,15 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ### a. **Out-of-the-Box Testing Architecture**
 
-- Testing architecture is ready out-of-the-box.
-- [§ testing elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
-- Experiment with E2E testing
-- CI must pass all tests on a clean clone.
+- E2E testing architecture is ready out-of-the-box.
+  - Test files are placed alongside the modules they directly test. Test files with more general purposes go in a `__test__` directory.
+- Test coverage reporting is set up.
+  - High initial test coverage.
 
-### b. **High Test Coverage**
-
-- High test coverage.
-
-### c. **Pre-Commit Test Requirements**
+### b. **Pre-Commit Test Requirements**
 
 - Tests must pass before commits are pushed.
+- CI must pass all tests on a clean clone.
 
 ## 8. **LLM Assistance**
 
@@ -361,14 +342,16 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ## 16. **Design Development**
 
-### a. **CSS File Structure**
+### a. **CSS & HTML File Structure**
 
 - Set up file structure for CSS files (app, base, utilities, components, layout)
-- `src/app.css` very short, configures Tailwind and plugins, imports stylesheets from `src/styles`
-- `src/styles/base.css` app-wide resets, typography tweaks, html/body defaults
-- `src/styles/utilities.css` custom `@layer` utility classes
-- `src/styles/components/COMPONENTTYPE.css` e.g. buttons, forms, cards
-- `src/styles/layout.css` e.g. grid/flex, spacing
+  - `src/app.css` very short, configures Tailwind and plugins, imports stylesheets from `src/styles`
+  - `src/styles/base.css` app-wide resets, typography tweaks, html/body defaults
+  - `src/styles/utilities.css` custom `@layer` utility classes
+  - `src/styles/components/COMPONENTTYPE.css` e.g. buttons, forms, cards
+  - `src/styles/layout.css` e.g. grid/flex, spacing
+- Set up compliant HTML file structure.
+  - [thedaviddias/Front-End-Checklist: 🗂 The perfect Front-End Checklist for modern websites and meticulous developers](https://github.com/thedaviddias/Front-End-Checklist)
 
 ### b. **Tailwind & DaisyUI**
 
@@ -388,6 +371,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - Add library to automatically sort/group CSS rules and Tailwind classes
 - Find ESLint library for Tailwind and DaisyUI
+  - [eslint-plugin-better-tailwindcss - npm](https://www.npmjs.com/package/eslint-plugin-better-tailwindcss)
 - Lint CSS selectors for issues
 - Enforce semantic classes only, disallow TailwindCSS inline color classes
 

@@ -1,15 +1,16 @@
 import svelte from 'eslint-plugin-svelte';
 import svelteConfig from '../svelte.config.js';
 import ts from 'typescript-eslint';
+import type { ConfigWithExtends } from './types.ts';
 
 /**
  * Svelte-specific ESLint configuration
  * This file contains all Svelte-related ESLint rules and configurations
  */
 
-export const svelteRules = [
-	...svelte.configs.recommended,
-	...svelte.configs.prettier,
+export const svelteRules: ConfigWithExtends[] = [
+	...(svelte.configs.recommended as ConfigWithExtends[]),
+	...(svelte.configs.prettier as ConfigWithExtends[]),
 	{
 		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
 
@@ -31,8 +32,8 @@ export const svelteRules = [
 			'@typescript-eslint/no-unused-vars': 'off',
 
 			// limits on file length and code nesting
-			'max-lines': ['warn', { max: 150, skipComments: true, skipBlankLines: true }],
-			'max-depth': ['warn', 2],
+			'max-lines': ['warn', { max: 150, skipComments: true, skipBlankLines: true }] as const,
+			'max-depth': ['warn', 2] as const,
 
 			// buttons must have type=button|submit|reset
 			'svelte/button-has-type': 'warn',
@@ -48,6 +49,9 @@ export const svelteRules = [
 			// always provide init values to stores
 			'svelte/require-stores-init': 'warn',
 
+			// no comments
+			'no-inline-comments': 'warn',
+
 			'no-restricted-syntax': [
 				'warn',
 				{
@@ -57,8 +61,12 @@ export const svelteRules = [
 				{
 					selector: 'CallExpression[callee.property.name="addEventListener"]',
 					message: 'Avoid using event listeners/dispatchers. Provide callback props instead.'
+				},
+				{
+					selector: 'SvelteStyleElement',
+					message: 'No <style> sections. Use Tailwind classes or `src/*.css` files.'
 				}
-			],
+			] as const,
 
 			'no-restricted-imports': [
 				'warn',
@@ -72,7 +80,7 @@ export const svelteRules = [
 					importNames: ['createEventDispatcher'],
 					message: 'Avoid using event listeners/dispatchers. Provide callback props instead.'
 				}
-			]
+			] as const
 		}
-	}
+	} as ConfigWithExtends
 ];

@@ -1,9 +1,11 @@
+import type { ConfigWithExtends } from './types.ts';
+
 /**
  * Layers ESLint configuration
  * This file contains rules that restrict app layers
  */
 
-export const layerRules = [
+export const layerRules: ConfigWithExtends[] = [
 	{
 		files: ['src/utils/**/*.ts'],
 		rules: {
@@ -21,7 +23,7 @@ export const layerRules = [
 						}
 					]
 				}
-			]
+			] as const
 		}
-	}
+	} as ConfigWithExtends
 ];
