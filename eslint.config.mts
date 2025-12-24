@@ -16,7 +16,7 @@ const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 export default defineConfig(
 	includeIgnoreFile(gitignorePath),
 	{
-		ignores: ['.eslint/', '**/*.config.{ts,mts}']
+		ignores: ['.eslint/', '**/*.config.{ts,mts}', '*.{ts,mts,js}']
 	},
 	{
 		languageOptions: {
