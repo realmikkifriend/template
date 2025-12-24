@@ -4,7 +4,11 @@
 
 <p>
 	<strong>
-		{import.meta.env.VITE_EXAMPLE_VAR ||
-			'Environmental variables are not set up. Is there a `.env` file?'}
+		{#if import.meta.env.VITE_EXAMPLE_VAR}
+			{import.meta.env.VITE_EXAMPLE_VAR}
+		{:else}
+			<span class="text-red-600">Environmental variables are not set up. Is there a .env file?</span
+			>
+		{/if}
 	</strong>
 </p>
