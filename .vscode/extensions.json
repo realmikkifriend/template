@@ -54,6 +54,10 @@
         //
         // // TESTING
         // Playwright for e2e testing
-        "ms-playwright.playwright"
+        "ms-playwright.playwright",
+        //
+        // // BROWSER
+        // open file in browser
+        "techer.open-in-browser"
     ]
 }

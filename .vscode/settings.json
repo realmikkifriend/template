@@ -29,4 +29,5 @@
 		"**/.eslint/*.ts",
 		"**/tsconfig.{json,app.json,ts}",
 	],
+	"open-in-browser.default": "firefox"
 }
