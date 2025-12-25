@@ -1,6 +1,6 @@
 import svelte from 'eslint-plugin-svelte';
-import svelteConfig from '../svelte.config.js';
 import ts from 'typescript-eslint';
+import svelteConfig from '../svelte.config.js';
 import type { ConfigWithExtends } from './types.ts';
 
 /**
@@ -65,6 +65,10 @@ export const svelteRules: ConfigWithExtends[] = [
 				{
 					selector: 'SvelteStyleElement',
 					message: 'No <style> sections. Use Tailwind classes or `src/*.css` files.'
+				},
+				{
+					selector: 'SvelteHTMLComment',
+					message: 'Comments are not allowed in Svelte files.'
 				}
 			] as const,
 
