@@ -65,7 +65,7 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 
 ```bash
 # Check dependencies for updates and security issues
-npm run check
+npm run deps
 
 # Lint and type check
 npm run lint

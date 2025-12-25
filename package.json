@@ -13,7 +13,8 @@
 	},
 	"scripts": {
 		"dev": "vite dev --open",
-		"check": "npm outdated && npm audit",
+		"check": "npm run deps && npm run lint && npm run scan",
+		"deps": "npm outdated && npm audit",
 		"lint": "eslint . && tsc --noEmit",
 		"scan": "npm run depcruiser --silent && svelte-check && npm run knip --silent",
 		"test": "npx playwright test",
