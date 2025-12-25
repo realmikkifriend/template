@@ -1,11 +1,11 @@
 export default {
-	project: ['**/*.ts', '**/*.svelte', '**/*.mjs', '**/*.css'],
+	project: ['**/*.ts', '**/*.svelte', '**/*.css'],
 	ignoreExportsUsedInFile: {
 		function: true,
 		interface: true,
 		type: true
 	},
-	ignoreDependencies: ['daisyui'],
+	ignoreDependencies: ['tailwindcss', '@tailwindcss/forms', '@tailwindcss/typography'],
 	compilers: {
 		css: (text: string) =>
 			[...text.matchAll(/(?:@(?:import|plugin)\s+"([^"]+)")/g)]
