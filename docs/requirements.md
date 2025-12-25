@@ -34,12 +34,11 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - [10. ✓ **Separation of Concerns**](#10--separation-of-concerns)
     - [a. ✓ **Organized Dependency Graph**](#a--organized-dependency-graph)
     - [b. ✓ **Enforced Layer Boundaries**](#b--enforced-layer-boundaries)
-  - [11. **Performance**](#11-performance)
-    - [a. **Out-of-the-Box Performance**](#a-out-of-the-box-performance)
+  - [11. ✓ **Performance**](#11--performance)
+    - [a. ✓ **Out-of-the-Box Performance**](#a--out-of-the-box-performance)
   - [12. **Error Handling**](#12-error-handling)
     - [a. **Out-of-the-Box Error Handling**](#a-out-of-the-box-error-handling)
-    - [b. **Useful Error Presentation**](#b-useful-error-presentation)
-    - [c. **Comprehensive Error Logging**](#c-comprehensive-error-logging)
+    - [b. **Comprehensive Error Logging**](#b-comprehensive-error-logging)
 - [D. **Usage Requirements**](#d-usage-requirements)
   - [13. **Routing**](#13-routing)
     - [a. **Out-of-the-Box Routing Setup**](#a-out-of-the-box-routing-setup)
@@ -240,16 +239,15 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Layer boundaries are enforced with lint rules.
 - Layer boundaries are documented in AGENTS.md.
 
-## 11. **Performance**
+## 11. ✓ **Performance**
 
 - The app runs well and meets performance metrics
 - Data is fetched efficiently with minimal redundancy
 
-### a. **Out-of-the-Box Performance**
+### a. ✓ **Out-of-the-Box Performance**
 
+- App bundle size can be visualized and is minimized.
 - App meets [performance metrics](https://github.com/thedaviddias/Front-End-Performance-Checklist) out-of-the-box.
-- App bundle size is minimized.
-- Performance measurement is documented in AGENTS.md.
 
 ## 12. **Error Handling**
 
@@ -258,14 +256,10 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ### a. **Out-of-the-Box Error Handling**
 
-- Errors are well-handled out-of-the-box.
-
-### b. **Useful Error Presentation**
-
 - If an error affects displayed data, it is delivered to the end user in a useful format. Expected error pages are designed and provide useful options.
-- Errors are accessible to code assistants, as documented in AGENTS.md.
+- Errors are accessible to code assistants when server running, as documented in AGENTS.md.
 
-### c. **Comprehensive Error Logging**
+### b. **Comprehensive Error Logging**
 
 - All errors are logged for dev review.
   - [winstonjs/winston: A logger for just about everything.](https://github.com/winstonjs/winston)
@@ -301,8 +295,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ### a. **Easy State Management Setup**
 
-- Persistent and local state management are easy to set up in new projects.
-- Working with state and stores are documented in AGENTS.md.
+- Persistent stores and local state management are easy to set up in new projects.
+- Working with stores and state is documented in AGENTS.md.
 
 ## 15. **Authentication**
 
