@@ -223,7 +223,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### a. ✓ **Standard File Structure**
 
 - File structure conforms to typical standards.
-- File structure is documented in AGENTS.md to facilitate development.
+- File structure is documented in `AGENTS.md` to facilitate development.
 
 ## 10. ✓ **Separation of Concerns**
 
@@ -237,7 +237,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### b. ✓ **Enforced Layer Boundaries**
 
 - Layer boundaries are enforced with lint rules.
-- Layer boundaries are documented in AGENTS.md.
+- Layer boundaries are documented in `AGENTS.md`.
 
 ## 11. ✓ **Performance**
 
@@ -252,7 +252,6 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ## 12. **Error Handling**
 
 - Errors are handled gracefully and displayed in useful ways
-- Important but builds on working code structure
 
 ### a. **Out-of-the-Box Error Handling**
 
@@ -277,7 +276,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - [Frequently asked questions • Docs • Svelte](https://svelte.dev/docs/svelte/faq#Is-there-a-router) "Is there a router?"
   - Try [Svelte 5 SPA Router](https://docs.router.svelte.spa/) (SEO?)
   - Review [Project structure • Docs • Svelte](https://svelte.dev/docs/kit/project-structure)
-- Routing is documented in AGENTS.md.
+- Routing is documented in `AGENTS.md`.
 
 ### b. **SEO Metrics Compliance**
 
@@ -286,7 +285,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - Research modern SEO metrics (e.g. app appears in results on major search engines)
   - Look into meta tags
   - Look into Open Graph
-- SEO approach is documented in AGENTS.md.
+- SEO approach is documented in `AGENTS.md`.
 
 ## 14. **State Management**
 
@@ -296,7 +295,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### a. **Easy State Management Setup**
 
 - Persistent stores and local state management are easy to set up in new projects.
-- Working with stores and state is documented in AGENTS.md.
+- Working with stores and state is documented in `AGENTS.md`.
 
 ## 15. **Authentication**
 
@@ -305,7 +304,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### a. **Out-of-the-Box Authentication**
 
 - Authentication is configured and ready to use out-of-the-box.
-- Authentication process is documented in AGENTS.md.
+- Authentication process is documented in `AGENTS.md`.
 
 # E. **Design Requirements**
 
@@ -321,7 +320,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - `src/styles/layout.css` e.g. grid/flex, spacing
 - Set up compliant HTML file structure.
   - [thedaviddias/Front-End-Checklist: 🗂 The perfect Front-End Checklist for modern websites and meticulous developers](https://github.com/thedaviddias/Front-End-Checklist)
-- Working with CSS files is documented in AGENTS.md.
+- Working with CSS files is documented in `AGENTS.md`.
 
 ### b. **Tailwind & DaisyUI**
 
@@ -336,7 +335,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     ````
 - Install DaisyUI
   - [disable themes](https://daisyui.com/docs/themes/#disable-a-theme)
-- Working with TailwindCSS and DaisyUI is documented in AGENTS.md.
+- Working with TailwindCSS and DaisyUI is documented in `AGENTS.md`.
 
 ### c. **Style Linting**
 
@@ -355,7 +354,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - App conforms to design checklists.
 - [thedaviddias/Front-End-Design-Checklist: 💎 The Design Checklist for Creative Web Designers and Patient Front-End Developers](https://github.com/thedaviddias/Front-End-Design-Checklist)
-- Essential design requirements are documented in AGENTS.md.
+- Essential design requirements are documented in `AGENTS.md`.
 
 ## 18. **Theming**
 
@@ -396,7 +395,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - Research metrics (e.g. axe or pa11y)
 - [§ accessibility elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
-- Essential accessibility standards are documented in AGENTS.md.
+- Essential accessibility standards are documented in `AGENTS.md`.
 
 ## 20. **UI Components**
 
@@ -410,27 +409,27 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### b. **Quality Icon Library**
 
 - A large number of quality icons are available for use in components.
-- Using the icon library is documented in AGENTS.md.
+- Using the icon library is documented in `AGENTS.md`.
 
 ### c. **Modal and Dialog Support**
 
 - Modals and dialogs are easy to implement and work consistently.
-- Working with modals and dialogs is documented in AGENTS.md.
+- Working with modals and dialogs is documented in `AGENTS.md`.
 
 ### d. **Form Validation**
 
 - Forms with validation are easy to set up and work reliably.
-- Working with forms is documented in AGENTS.md.
+- Working with forms is documented in `AGENTS.md`.
 
 ### e. **Notification System**
 
 - Notifications (e.g. toasts) are easy to implement and display properly.
-- Working with notifications is documented in AGENTS.md.
+- Working with notifications is documented in `AGENTS.md`.
 
 ### f. **Loading Status Indicators**
 
 - Loading status is easy to indicate through skeleton styling and other feedback mechanisms.
-- Working with loading status indicators is documented in AGENTS.md.
+- Working with loading status indicators is documented in `AGENTS.md`.
 
 ### g. **Example Components**
 
@@ -446,7 +445,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - Functional demo examples
   - Code to be copied
   - E2E tests
-- The nature and purpose of the example components collection are documented in AGENTS.md.
+- The nature and purpose of the example components collection are documented in `AGENTS.md`.
 
 ## 21. **Mobile Responsiveness**
 
@@ -457,7 +456,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### a. **Mobile Performance Metrics**
 
 - [ ] Research metrics
-- Mobile design is documented in AGENTS.md.
+- Mobile design is documented in `AGENTS.md`.
 
 ### b. **Perfect Responsiveness**
 
@@ -505,7 +504,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - Fontsource, Atkinson Hyperlegible
       - Add italic
       - Look for other Hyperlegible web fonts
-- The stack documentation is referenced in AGENTS.md.
+- The stack documentation is referenced in `AGENTS.md`.
 
 ### c. **High Documentation Coverage**
 
@@ -518,14 +517,14 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ### a. **Documentation Templates**
 
-- Templates for README.md and other minimal project documentation.
+- Templates for `README.md` and other minimal project documentation.
   - [Louis3797/awesome-readme-template: An awesome README template for your projects!](https://github.com/Louis3797/awesome-readme-template)
   - [noahbald/awesome-architecture-md: A list of awesome ARCHITECTURE.md files](https://github.com/noahbald/awesome-architecture-md)
   - [Awesome README | Curated list of awesome lists | Project-Awesome.org](https://github.com/sindresorhus/awesome#readme)
   - [matiassingers/awesome-readme: A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
-- CONTRIBUTING.md
-- CODE_OF_CONDUCT.md
-- SECURITY.md
+- `CONTRIBUTING.md`
+- `CODE_OF_CONDUCT.md`
+- `SECURITY.md`
 
 ### b. **IDE Setup Documentation**
 
@@ -535,7 +534,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - Licensing a project is quick and easy
 - Important but can be handled last
-- The process of choosing a LICENSE.md is documented.
+- The process of choosing a `LICENSE.md` is documented.
 
 ### d. **Documentation Auto-Generation**
 
