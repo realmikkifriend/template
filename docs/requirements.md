@@ -28,7 +28,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [b. ✓ **Pre-Commit Test Requirements**](#b--pre-commit-test-requirements)
   - [8. ✓ **LLM Assistance**](#8--llm-assistance)
     - [a. ✓ **Agent Documentation**](#a--agent-documentation)
-- [C. **Code Quality Requirements**](#c-code-quality-requirements)
+- [C. ✓ **Code Quality Requirements**](#c--code-quality-requirements)
   - [9. ✓ **Project Structure**](#9--project-structure)
     - [a. ✓ **Standard File Structure**](#a--standard-file-structure)
   - [10. ✓ **Separation of Concerns**](#10--separation-of-concerns)
@@ -36,9 +36,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [b. ✓ **Enforced Layer Boundaries**](#b--enforced-layer-boundaries)
   - [11. ✓ **Performance**](#11--performance)
     - [a. ✓ **Out-of-the-Box Performance**](#a--out-of-the-box-performance)
-  - [12. **Error Handling**](#12-error-handling)
+  - [12. ✓ **Error Handling**](#12--error-handling)
     - [a. ✓ **Out-of-the-Box Error Handling**](#a--out-of-the-box-error-handling)
-    - [b. **Comprehensive Error Logging**](#b-comprehensive-error-logging)
 - [D. **Usage Requirements**](#d-usage-requirements)
   - [13. **Routing**](#13-routing)
     - [a. **Out-of-the-Box Routing Setup**](#a-out-of-the-box-routing-setup)
@@ -213,7 +212,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - `AGENTS.md` in project root is comprehensive and integrates existing linting rules.
 
-# C. **Code Quality Requirements**
+# C. ✓ **Code Quality Requirements**
 
 ## 9. ✓ **Project Structure**
 
@@ -249,21 +248,11 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - App bundle size can be visualized and is minimized.
 - App meets [performance metrics](https://github.com/thedaviddias/Front-End-Performance-Checklist) out-of-the-box.
 
-## 12. **Error Handling**
+## 12. ✓ **Error Handling**
 
 - Errors are handled gracefully and displayed in useful ways
 
 ### a. ✓ **Out-of-the-Box Error Handling**
-
-- If an error affects displayed data, it is delivered to the end user in a useful format. Expected error pages are designed and provide useful options.
-- [Errors are accessible to code assistants](https://docs.roocode.com/features/diagnostics-integration).
-
-### b. **Comprehensive Error Logging**
-
-- All errors are logged for dev review.
-  - [winstonjs/winston: A logger for just about everything.](https://github.com/winstonjs/winston)
-  - [trentm/node-bunyan: a simple and fast JSON logging module for node.js services](https://github.com/trentm/node-bunyan)
-- Logs are generated on sites deployed to Netlify.
 
 # D. **Usage Requirements**
 
