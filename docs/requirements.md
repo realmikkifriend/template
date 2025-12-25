@@ -247,8 +247,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 ### a. **Out-of-the-Box Performance**
 
-- App meets performance metrics out-of-the-box.
-  - [thedaviddias/Front-End-Performance-Checklist: 🎮 The only Front-End Performance Checklist that runs faster than the others](https://github.com/thedaviddias/Front-End-Performance-Checklist)
+- App meets [performance metrics](https://github.com/thedaviddias/Front-End-Performance-Checklist) out-of-the-box.
+- App bundle size is minimized.
 - Performance measurement is documented in AGENTS.md.
 
 ## 12. **Error Handling**
@@ -494,36 +494,17 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Include:
   - VS Code
     - ESLint
-      - `eslint-plugin-svelte`
-      - `eslint-plugin-functional`
-    - Prettier?
+    - Prettier
     - Knip
-    - Cline
-      - Look for Cline MCP that caches and allows `@mention`
   - NodeJS, `npm`
-    - Ensure use of newer Node version
-  - Svelte/SvelteKit (?)
-    - Determine best scaffolding command to use
-      - ````
-            npx sv create myapp
-            cd myapp
-            npm install
-            npm run dev
-            ```
-        ````
-      - [sv add • Docs • Svelte](https://svelte.dev/docs/cli/sv-add#Official-add-ons) (eslint, prettier, playwright, tailwindcss)
-    - Use versions compatible with Console Ninja
-      - How to specify versions in `sv`
+  - Svelte
     - Add import aliases
       - [How to add module import aliases in SvelteKit - DEV Community](https://dev.to/danawoodman/how-to-add-module-import-aliases-in-sveltekit-2ck)
-  - Vite
     - Still recommended by official Svelte docs? try other PWA options
   - Helper libraries
-    - Environmental variables: `dotenv` (?)
     - Time: `luxon`, `chrono-node` for parsing strings
     - Markdown: `svelte-exmarkdown`
     - Persistent store: `svelte-persisted-store` (used before) or `svelte-persistent-store`
-    - Deployment to Netlify: `adapter-netlify`
   - TailwindCSS
     - DaisyUI
     - HeroIcons with `svelte-hero-icons`
@@ -544,10 +525,10 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### a. **Documentation Templates**
 
 - Templates for README.md and other minimal project documentation.
-- [Louis3797/awesome-readme-template: An awesome README template for your projects!](https://github.com/Louis3797/awesome-readme-template)
-- [noahbald/awesome-architecture-md: A list of awesome ARCHITECTURE.md files](https://github.com/noahbald/awesome-architecture-md)
-- [Awesome README | Curated list of awesome lists | Project-Awesome.org](https://github.com/sindresorhus/awesome#readme)
-- [matiassingers/awesome-readme: A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
+  - [Louis3797/awesome-readme-template: An awesome README template for your projects!](https://github.com/Louis3797/awesome-readme-template)
+  - [noahbald/awesome-architecture-md: A list of awesome ARCHITECTURE.md files](https://github.com/noahbald/awesome-architecture-md)
+  - [Awesome README | Curated list of awesome lists | Project-Awesome.org](https://github.com/sindresorhus/awesome#readme)
+  - [matiassingers/awesome-readme: A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
 - CONTRIBUTING.md
 - CODE_OF_CONDUCT.md
 - SECURITY.md
@@ -565,5 +546,4 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### d. **Documentation Auto-Generation**
 
 - JSDoc is configured and can be used to generate documentation.
-  - [Use JSDoc: Getting Started with JSDoc 3](https://jsdoc.app/about-getting-started)
 - Components and individual page elements are documented with comments. These appear as user help and are compiled into documentation.
