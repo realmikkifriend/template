@@ -37,7 +37,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - [11. ✓ **Performance**](#11--performance)
     - [a. ✓ **Out-of-the-Box Performance**](#a--out-of-the-box-performance)
   - [12. **Error Handling**](#12-error-handling)
-    - [a. **Out-of-the-Box Error Handling**](#a-out-of-the-box-error-handling)
+    - [a. ✓ **Out-of-the-Box Error Handling**](#a--out-of-the-box-error-handling)
     - [b. **Comprehensive Error Logging**](#b-comprehensive-error-logging)
 - [D. **Usage Requirements**](#d-usage-requirements)
   - [13. **Routing**](#13-routing)
@@ -253,16 +253,17 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - Errors are handled gracefully and displayed in useful ways
 
-### a. **Out-of-the-Box Error Handling**
+### a. ✓ **Out-of-the-Box Error Handling**
 
 - If an error affects displayed data, it is delivered to the end user in a useful format. Expected error pages are designed and provide useful options.
-- Errors are accessible to code assistants when server running, as documented in AGENTS.md.
+- [Errors are accessible to code assistants](https://docs.roocode.com/features/diagnostics-integration).
 
 ### b. **Comprehensive Error Logging**
 
 - All errors are logged for dev review.
   - [winstonjs/winston: A logger for just about everything.](https://github.com/winstonjs/winston)
   - [trentm/node-bunyan: a simple and fast JSON logging module for node.js services](https://github.com/trentm/node-bunyan)
+- Logs are generated on sites deployed to Netlify.
 
 # D. **Usage Requirements**
 
