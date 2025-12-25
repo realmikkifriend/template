@@ -26,7 +26,22 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
   - `%sveltekit.assets%` - asset paths
   - `%sveltekit.nonce%` - CSP nonce
   - `%sveltekit.env.[NAME]%` - public environment variables
-- **`src/error.html`**: Custom error page
+- **`src/routes/+error.svelte`**: Custom error page
+- **`src/routes/+layout.svelte**: Header, footer, and menus for every page
+- **`src/routes/+page.svelte**: Content of the homepage
+
+#### Layer Boundaries
+
+- **View**
+  - `src/routes/` contain Svelte components that receive and display data.
+  - `src/styles/` contains stylesheets and style utilities.
+  - `src/lib/components/` contains reusable Svelte components.
+- **Model**
+  - `src/types/` contains type/interface definitions.
+  - `src/lib/stores/` contains persistent Svelte stores.
+- **Controller**
+  - `src/lib/services/` contains functions that access stores or handle business logic.
+  - `src/lib/utils` contains only pure, stateless functions and no side effects.
 
 #### Configuration Files
 
@@ -90,7 +105,18 @@ npm run dev
 
 1. **Component Organization**:
    - Keep components small and focused
-   - Use `$lib` for reusable components
+   - Use `$lib` for reusable components and functions
+   - Create new page components under new route sub-directories
+     - `src/routes/blog/[slug]` creates a route with `slug` parameter (like `/blog/hello-world`)
+     - `src/routes/blog/+page.svelte` creates a `site.com/blog` page
+     - `src/routes/blog/+page.ts` exports load function before page render
+     - `src/routes/blog/+page.server.ts` only runs on server
+       - use for fetching, form actions, env variables
+     - `src/routes/blog/+layout.svelte` adds to surrounding layout
+     - `src/routes/blog/+layout.ts` exports load function for layout
+     - `src/routes/blog/+layout.server.ts` only runs on server
+     - `src/routes/blog/+server.ts` defines API endpoints
+     - `src/routes/blog/+error.svelte` creates a custom error page for this route
    - Colocate route-specific components
 
 2. **Type Safety**:
@@ -101,28 +127,17 @@ npm run dev
    - Browser globals are available
    - Use appropriate polyfills for Node.js environments
 
-3. **Layer Boundaries**:
-   - **View**
-     - `src/routes/` contain Svelte pages that receive and display data.
-     - `src/styles/` contains stylesheets and style utilities.
-   - **Model**
-     - `src/types/` contains type/interface definitions.
-     - `src/lib/stores/` contains Svelte stores.
-   - **Controller**
-     - `src/lib/services/` contains scripts that access stores or handle business logic.
-     - `src/lib/utils` contains only pure, stateless functions and no side effects.
-
-4. **Performance**:
+3. **Performance**:
    - Use lazy loading for heavy components
    - Optimize images and assets
    - Minimize bundle size
 
-5. **Testing**:
+4. **Testing**:
    - Write Playwright tests for critical user flows
    - Test both happy paths and error cases
    - Keep tests maintainable and fast
 
-6. **Accessibility**:
+5. **Accessibility**:
    - Use semantic HTML
    - Ensure proper ARIA attributes
    - Test with keyboard navigation

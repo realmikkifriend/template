@@ -40,12 +40,13 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [a. ✓ **Out-of-the-Box Error Handling**](#a--out-of-the-box-error-handling)
 - [D. **Usage Requirements**](#d-usage-requirements)
   - [13. **Routing**](#13-routing)
-    - [a. **Out-of-the-Box Routing Setup**](#a-out-of-the-box-routing-setup)
+    - [a. ✓ **Out-of-the-Box Routing Setup**](#a--out-of-the-box-routing-setup)
     - [b. **SEO Metrics Compliance**](#b-seo-metrics-compliance)
   - [14. **State Management**](#14-state-management)
     - [a. **Easy State Management Setup**](#a-easy-state-management-setup)
-  - [15. **Authentication**](#15-authentication)
+  - [15. **API Methods**](#15-api-methods)
     - [a. **Out-of-the-Box Authentication**](#a-out-of-the-box-authentication)
+    - [b. **API Data Retrieval**](#b-api-data-retrieval)
 - [E. **Design Requirements**](#e-design-requirements)
   - [16. **Design Development**](#16-design-development)
     - [a. **CSS \& HTML File Structure**](#a-css--html-file-structure)
@@ -58,6 +59,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - [b. **User-Facing Theme Switcher**](#b-user-facing-theme-switcher)
   - [19. **Accessibility**](#19-accessibility)
     - [a. **Accessibility Metrics Compliance**](#a-accessibility-metrics-compliance)
+    - [b. **Internationalization (i18n)**](#b-internationalization-i18n)
   - [20. **UI Components**](#20-ui-components)
     - [a. **Configurable Favicon**](#a-configurable-favicon)
     - [b. **Quality Icon Library**](#b-quality-icon-library)
@@ -260,21 +262,22 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - Routing just works
 
-### a. **Out-of-the-Box Routing Setup**
+### a. ✓ **Out-of-the-Box Routing Setup**
 
 - Routing is easy to set up out-of-the-box.
-  - [Frequently asked questions • Docs • Svelte](https://svelte.dev/docs/svelte/faq#Is-there-a-router) "Is there a router?"
-  - Try [Svelte 5 SPA Router](https://docs.router.svelte.spa/) (SEO?)
-  - Review [Project structure • Docs • Svelte](https://svelte.dev/docs/kit/project-structure)
-- Routing is documented in `AGENTS.md`.
+  - "SvelteKit provides a filesystem router, server-side rendering (SSR), and hot module reloading (HMR) in one easy-to-use package." ([docs](https://svelte.dev/docs/svelte/faq#Is-there-a-router))
+  - Svelte has a [SPA Router](https://docs.router.svelte.spa/) but it's not recommended due to performance and SEO concerns.
+- [Routing](https://svelte.dev/docs/kit/routing) is documented in `AGENTS.md`.
+  - [Advanced routing • SvelteKit Docs](https://svelte.dev/docs/kit/advanced-routing)
 
 ### b. **SEO Metrics Compliance**
 
 - SEO is configured out-of-the-box.
+  - [SEO • Packages • Svelte](https://svelte.dev/packages#seo)
 - App meets SEO metrics.
-  - Research modern SEO metrics (e.g. app appears in results on major search engines)
-  - Look into meta tags
-  - Look into Open Graph
+  - [ ] Research modern SEO metrics (e.g. app appears in results on major search engines)
+  - [ ] Look into meta tags
+  - [ ] Look into Open Graph
 - SEO approach is documented in `AGENTS.md`.
 
 ## 14. **State Management**
@@ -285,16 +288,26 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### a. **Easy State Management Setup**
 
 - Persistent stores and local state management are easy to set up in new projects.
+- Current stores/state can be inspected.
+  - [Getting Started - Svelte <Inspect {value} />](https://inspect.eirik.space/getting-started)
 - Working with stores and state is documented in `AGENTS.md`.
 
-## 15. **Authentication**
+## 15. **API Methods**
 
-- Common authentication methods (e.g. OAuth, manual access token entry) are documented and easy to set up
+- Accessing APIs just works
 
 ### a. **Out-of-the-Box Authentication**
 
-- Authentication is configured and ready to use out-of-the-box.
+- Common authentication methods (e.g. OAuth, manual access token entry) are documented and easy to set up
+  - [Auth • Packages • Svelte](https://svelte.dev/packages#auth)
 - Authentication process is documented in `AGENTS.md`.
+
+### b. **API Data Retrieval**
+
+- Retrieving data from remote APIs just works.
+  - [Remote functions • SvelteKit Docs](https://svelte.dev/docs/kit/remote-functions)
+  - [Data fetching • Packages • Svelte](https://svelte.dev/packages#data-fetching)
+- Setting up and accessing APIs is documented in `AGENTS.md`.
 
 # E. **Design Requirements**
 
@@ -387,6 +400,11 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - [§ accessibility elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
 - Essential accessibility standards are documented in `AGENTS.md`.
 
+### b. **Internationalization (i18n)**
+
+- Components are i18n-ready.
+  - [Internationalization (i18n) • Packages • Svelte](<https://svelte.dev/packages#internationalization-(i18n)>)
+
 ## 20. **UI Components**
 
 - Essential design elements are already included
@@ -399,6 +417,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### b. **Quality Icon Library**
 
 - A large number of quality icons are available for use in components.
+  - [Icons • SvelteKit Docs](https://svelte.dev/docs/kit/icons)
+  - [Icons • Packages • Svelte](https://svelte.dev/packages#icons)
 - Using the icon library is documented in `AGENTS.md`.
 
 ### c. **Modal and Dialog Support**
@@ -409,6 +429,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### d. **Form Validation**
 
 - Forms with validation are easy to set up and work reliably.
+  - [form • Remote functions • SvelteKit Docs](https://svelte.dev/docs/kit/remote-functions#form)
+  - [Forms • Packages • Svelte](https://svelte.dev/packages#forms)
 - Working with forms is documented in `AGENTS.md`.
 
 ### e. **Notification System**
@@ -455,6 +477,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### c. **PWA Support**
 
 - The app can be installed as a PWA.
+  - [How do I write a mobile app with Svelte? • Frequently asked questions • Svelte Docs](https://svelte.dev/docs/svelte/faq#How-do-I-write-a-mobile-app-with-Svelte)
 
 # F. **Documentation Requirements**
 
@@ -486,7 +509,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
     - Still recommended by official Svelte docs? try other PWA options
   - Helper libraries
     - Time: `luxon`, `chrono-node` for parsing strings
-    - Markdown: `svelte-exmarkdown`
+    - Markdown: `svelte-exmarkdown` or [`mdsvex`](https://svelte.dev/docs/cli/mdsvex)
     - Persistent store: `svelte-persisted-store` (used before) or `svelte-persistent-store`
   - TailwindCSS
     - DaisyUI
@@ -530,3 +553,4 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 
 - JSDoc is configured and can be used to generate documentation.
 - Components and individual page elements are documented with comments. These appear as user help and are compiled into documentation.
+  - [How do I document my components? • Frequently asked questions • Svelte Docs](https://svelte.dev/docs/svelte/faq#How-do-I-document-my-components)
