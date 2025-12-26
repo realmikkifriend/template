@@ -3,138 +3,90 @@ This document outlines the version control commands and workflows for using this
 - [Setting Up a New Cloned Project](#setting-up-a-new-cloned-project)
   - [1. Clone the Template Repository](#1-clone-the-template-repository)
   - [2. Set Up a New GitHub Repository](#2-set-up-a-new-github-repository)
-- [Template Changes](#template-changes)
-  - [Pulling Template Changes into Cloned Projects](#pulling-template-changes-into-cloned-projects)
-  - [Ignoring Upstream Changes](#ignoring-upstream-changes)
 - [Version Control Flow](#version-control-flow)
   - [1. Pull Changes from Main](#1-pull-changes-from-main)
-  - [2. Create a Feature Branch](#2-create-a-feature-branch)
-  - [3. Make and Stage Changes](#3-make-and-stage-changes)
+  - [2. Prep a Feature Branch](#2-prep-a-feature-branch)
+  - [3. Add Template Changes](#3-add-template-changes)
+  - [3. Make, Check, \& Commit Changes](#3-make-check--commit-changes)
   - [4. Push the Branch](#4-push-the-branch)
-  - [5. Create a Pull Request](#5-create-a-pull-request)
-  - [6. Delete the Old Branch](#6-delete-the-old-branch)
+    - [a. Local Projects](#a-local-projects)
+    - [b. Remote Projects](#b-remote-projects)
 
 # Setting Up a New Cloned Project
 
 ## 1. Clone the Template Repository
 
-To clone the template repository and set it up as a new project, follow these steps:
+To clone the template repository and set it up as a new project:
 
-```bash
-# Clone the template repository
-git clone git@github.com:you/template.git my-new-project
-
-# Navigate into the project directory
-cd my-new-project
-
-# Rename the remote to 'upstream' to track the template repository
-git remote rename origin upstream
-```
+1. Create a new project directory.
+2. Clone template repository (`git clone git@github.com:you/template.git .`).
+   - [ ] after pushing template to Github, replace URL with template remote
+3. Rename remote to `upstream` to track template repository (`git remote rename origin upstream`).
 
 ## 2. Set Up a New GitHub Repository
 
 Use the `gh` CLI to create a new empty repository on GitHub:
 
-```bash
-# Create a new empty repository on GitHub
-gh repo create my-new-project --public --disable-issues --disable-wiki --disable-projects
-
-# Add the new repository as the 'origin' remote
-git remote add origin git@github.com:you/my-new-project.git
-
-# Push the initial code to the new repository
-git push -u origin main
-```
-
-# Template Changes
-
-## Pulling Template Changes into Cloned Projects
-
-Install the [Git Auto Pull](https://marketplace.visualstudio.com/items?itemName=tapasthakkar.auto-git-pull) extension in VS Code to automatically pull changes from the remote repository.
-
-To manually pull changes from the template repository into your project:
-
-```bash
-# Fetch changes from the upstream template repository
-git fetch upstream
-
-# Merge the changes into your main branch
-git merge upstream/main
-```
-
-## Ignoring Upstream Changes
-
-To permanently exclude specific files from changes from the upstream repository:
-
-1. Create a `.gitattributes` file and specify the files you want to ignore:
-
-```bash
-echo "path/to/file merge=ours" >> .gitattributes
-```
-
-2. Configure Git to use a custom merge strategy for these files. Add the following to your Git configuration:
-
-```bash
-git config --global merge.ours.driver true
-```
-
-When merging upstream changes, Git will automatically use the "ours" strategy for the specified files, effectively ignoring changes from the upstream repository.
+1. Create new empty repository on GitHub:
+   `gh repo create my-new-project --public --disable-issues --disable-wiki --disable-projects`
+2. Add new repository as 'origin' remote:
+   `git remote add origin git@github.com:you/my-new-project.git`
+3. Push cloned template code to the new repository:
+   `git push -u origin main`
 
 # Version Control Flow
 
 ## 1. Pull Changes from Main
 
-Before starting new work, ensure your local repository is up to date:
+Before starting new work, ensure your local repository is up to date.
 
-```bash
-# Switch to the main branch
-git checkout main
+Install the [Git Auto Pull](https://marketplace.visualstudio.com/items?itemName=tapasthakkar.auto-git-pull) extension in VS Code to automatically pull changes from remote and upstream. Manually:
 
-# Pull the latest changes from the remote
-git pull origin main
-```
+1. Switch to main branch. (`git checkout main`)
+2. Pull latest changes from remote (`git pull origin main`)
 
-## 2. Create a Feature Branch
+## 2. Prep a Feature Branch
 
-Create a new branch for your feature or bug fix:
+Create a new branch for your feature or bug fix.
 
-```bash
-# Create and switch to a new branch
-git checkout -b type/short-description
-```
+1. Use the VS Code extension Conventional Branches from the Command Palette. (`git checkout -b type/short-description`)
+2. Run `npm run deps` to audit dependencies.
 
-Use the [Conventional Branch](https://conventional-branch.github.io/) naming convention for branches. Use the VS Code extension from the Command Palette.
+## 3. Add Template Changes
 
-## 3. Make and Stage Changes
+If template changes are expected to be minor, or if an update-specific branch has been created:
 
-After making changes, stage them for commit:
+1. Pull in changes from the upstream template repo (`git fetch upstream`).
+2. Merge desired changes using VS Code's interface.
+3. To permanently exclude specific files from upstream changes,
+   a. Create a `.gitattributes` file in project root.
+   b. Specify files to ignore: `path/to/file merge=ours`
+   c. Configure Git to use a custom merge strategy for these files.
+   `git config --global merge.ours.driver true`
 
-```bash
-# Stage all changes
-git add .
+## 3. Make, Check, & Commit Changes
 
-# Or stage specific files
-git add path/to/file
-```
+After making all desired changes:
 
-If working locally: After making commits, switch to the main branch. Merge in changes from the new branch.
+1. Run `npm run check` to re-check dependencies, confirm there are no linting errors, generate a dependency graph, and check the codebase for issues.
+   a. Resolve any issues and repeat this step until the command exits cleanly.
+2. Commit final changes.
 
 ## 4. Push the Branch
 
-Push your branch to the remote repository:
+### a. Local Projects
 
-```bash
-# Push the branch to the remote
-git push -u origin feature/short-description
+If working locally:
 
-# For subsequent pushes
-git push
-```
+1. Switch to the main branch.
+2. Merge in changes from the new branch.
+3. Delete the old branch.
 
-## 5. Create a Pull Request
+### b. Remote Projects
 
-Use the [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) extension in VS Code to create a pull request for your branch.
+If working with a remote repository:
 
-## 6. Delete the Old Branch
-
-Remove old branches to keep the dev environment tidy.
+1. Push new branch to remote repository (`git push -u origin BRANCHNAME`).
+2. Push any subsequent changes (`git push`).
+3. Create a branch pull request using the [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) extension in VS Code.
+4. After branch is merged into main, delete old branch.
