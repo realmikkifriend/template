@@ -273,12 +273,41 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 ### b. **SEO Metrics Compliance**
 
 - SEO is configured out-of-the-box.
-  - [SEO • Packages • Svelte](https://svelte.dev/packages#seo)
-- App meets SEO metrics.
-  - [ ] Research modern SEO metrics (e.g. app appears in results on major search engines)
-  - [ ] Look into meta tags
-  - [ ] Look into Open Graph
-- SEO approach is documented in `AGENTS.md`.
+  - Site maps are automatically generated.
+  - Meta tags are configurable.
+    - [ ] add to `AGENTS.md`, how to title page (if title meta tag doesn't affect display)
+      ```
+      <svelte:head>
+        <title>FAQ</title>
+      </svelte:head>
+      ```
+    - [ ] set up [SvelteMetaTags](https://oekazuma.github.io/svelte-meta-tags/usage/)
+- SEO can be tested with online tools.
+  - [Sharing Debugger - Meta for Developers](https://developers.facebook.com/tools/debug/)
+  - [ ] try browser tools
+    - [SiteAnalyzer SEO Tools – Get this Extension for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/siteanalyzer-seo-tools/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+    - [Detailed SEO Extension – Get this Extension for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/detailed-seo-extension/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+    - [SEO META 1 COPY – Get this Extension for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/seo-meta-1-copy/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+    - [WTM LAB Meta SEO Scanner – Get this Extension for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/wtm-lab-meta-seo-scanner/)
+    - [Instant Meta Checker – Get this Extension for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/instant-meta-checker/)
+    - [SEO Minion – Get this Extension for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/seo-minion/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+    - [SeoQuake SEO extension – Get this Extension for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/seoquake-seo-extension/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+    - [Metaview – Get this Extension for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/metaview/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+  - [ ] find meta tags tool that can check pasted `head` or local project
+    - [Check Yo Meta - Meta Tag Checker & Optimizer](https://www.checkyourmeta.com/)
+    - [HEY META - Website Meta Tag Check](https://www.heymeta.com/)
+    - [Free SEO Checker & Analysis Tool - SEOCheckr](https://www.seocheckr.com/seo-checker)
+    - [SEO Checker • Yoast](https://yoast.com/tools/seo-checker/)
+    - [Pocketools | Meta Tag Analyzer | SEO Meta Tags Checker & Optimizer](https://pocketools.app/tools/meta-tag-analyzer/)
+- SEO approach is documented in `AGENTS.md`. Essential meta and Open Graph tags are explained.
+  - `title`/`og:title` (50-60 characters), unique for each page, don't include site name
+  - `description`/`og:description` (150-160 characters), cohesive sentences containing important keywords
+  - `robots` with `noindex,nofollow` prevents indexing, following links
+    - [9 Tips To Optimize Crawl Budget for SEO](https://www.searchenginejournal.com/technical-seo/crawl-budget/)
+    - [Robots Meta Tags Specifications | Google Search Central  |  Documentation  |  Google for Developers](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag)
+  - `canonical`/`og:url` points to official URL without extra params
+  - `og:image` points to the image to display on sharing to social media
+  - [`og:type:article`](https://ogp.me/#type_article)
 
 ## 14. **State Management**
 
@@ -307,7 +336,7 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - Retrieving data from remote APIs just works.
   - [Remote functions • SvelteKit Docs](https://svelte.dev/docs/kit/remote-functions)
   - [Data fetching • Packages • Svelte](https://svelte.dev/packages#data-fetching)
-- Setting up and accessing APIs is documented in `AGENTS.md`.
+- Setting up and accessing external APIs is documented in `AGENTS.md`.
 
 # E. **Design Requirements**
 
