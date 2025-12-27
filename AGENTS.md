@@ -6,11 +6,7 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 
 ## General Guidelines
 
-### File Structure
-
-- **Maximum file length**: Svelte and Typescript files should have limited length. Extract code to a new file when necessary.
-
-#### Key Directories
+### Key Directories
 
 - **`src/`**: Contains the main application code
   - **`src/lib/`**: Reusable components and utilities (imported via `$lib` alias)
@@ -18,30 +14,12 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 - **`static/`**: Static assets served directly (e.g., `robots.txt`)
 - **`tests/`**: Playwright end-to-end tests
 
-#### Important Files
+### Important Files
 
-- **`src/app.html`**: Contains SvelteKit placeholders:
-  - `%sveltekit.head%` - for `<link>` and `<script>` elements
-  - `%sveltekit.body%` - page markup (must be inside a container element)
-  - `%sveltekit.assets%` - asset paths
-  - `%sveltekit.nonce%` - CSP nonce
-  - `%sveltekit.env.[NAME]%` - public environment variables
+- **`src/app.html`**: Contains SvelteKit placeholders
 - **`src/routes/+error.svelte`**: Custom error page
-- **`src/routes/+layout.svelte**: Header, footer, and menus for every page
-- **`src/routes/+page.svelte**: Content of the homepage
-
-#### Layer Boundaries
-
-- **View**
-  - `src/routes/` contain Svelte components that receive and display data.
-  - `src/styles/` contains stylesheets and style utilities.
-  - `src/lib/components/` contains reusable Svelte components.
-- **Model**
-  - `src/types/` contains type/interface definitions.
-  - `src/lib/stores/` contains persistent Svelte stores.
-- **Controller**
-  - `src/lib/services/` contains functions that access stores or handle business logic.
-  - `src/lib/utils` contains only pure, stateless functions and no side effects.
+- **`src/routes/+layout.svelte`**: `<head>`, header, footer, and menus for every page
+- **`src/routes/+page.svelte`**: Content of the homepage
 
 #### Configuration Files
 
@@ -49,19 +27,37 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 - **Code Quality**: `tsconfig.json`, `eslint.config.mts`, `.prettierrc`, `knip.ts`, `.dependency-cruiser.ts`
 - **Testing**: `playwright.config.ts`
 
+### Layer Boundaries
+
+- **View**
+  - `src/routes/` contain Svelte components that receive and display data.
+  - `src/lib/styles/` contains stylesheets and style utilities.
+  - `src/lib/components/` contains reusable Svelte components.
+- **Model**
+  - `src/lib/types` contains type/interface definitions.
+  - `src/lib/stores` contains persistent Svelte stores.
+- **Controller**
+  - `src/lib/services` contains functions that access stores or handle business logic.
+  - `src/lib/utils` contains only pure, stateless functions and no side effects.
+
 ### Code Style
 
+- **Maximum file length**: Svelte and Typescript files should have limited length. Extract code to a new file when necessary.
+- **JSDoc required** for all public/arrow functions
 - **Don't Repeat Yourself**: If code is used more than once, extract it to a reusable function/component.
 - **No comments**: Do not include comments. Write code that is self-explanatory.
 - **Maximum nesting depth**: Do not deeply nest code. Refactor or extract to functions.
 - **Maximum parameters**: 2-3 parameters per function. Consider passing an object instead.
 - **Maximum function length**: Do not write long, complicated functions. Keep cyclomatic complexity low. Refactor or extract code where necessary.
 
-#### Code Documentation
+#### **Type Safety**:
 
-- **JSDoc required** for all public/arrow functions
-- Include parameter types in JSDoc comments
-- Document return types and descriptions
+- Use TypeScript interfaces for props and data
+- Define types in `$lib/types` directory
+- Document all public functions with JSDoc
+- Use ES modules (`import/export` syntax)
+- Browser globals are available
+- Use appropriate polyfills for Node.js environments
 
 #### Functional Programming
 
@@ -74,9 +70,9 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 - **Allowed**: `console.error()` for error logging
 - **Avoid**: `console.log()`, `console.warn()`, etc.
 
-### Development Workflow
+## Development Workflow
 
-#### Common Commands
+### Common Commands
 
 ```bash
 # Check dependencies for updates and security issues
@@ -95,61 +91,43 @@ npm test
 npm run dev
 ```
 
-#### Environment Variables
+### Environment Variables
 
 - **Template**: `.env.example` provides variable templates
 - **Public Variables**: Prefix with `PUBLIC_` (e.g., `PUBLIC_API_URL`)
 - **Private Variables**: Use in server-side code only
 
-### Best Practices
+### Testing:
 
-1. **Component Organization**:
-   - Keep components small and focused
-   - Use `$lib` for reusable components and functions
-   - Create new page components under new route sub-directories
-     - `src/routes/blog/[slug]` creates a route with `slug` parameter (like `/blog/hello-world`)
-     - `src/routes/blog/+page.svelte` creates a `site.com/blog` page
-     - `src/routes/blog/+page.ts` exports load function before page render
-     - `src/routes/blog/+page.server.ts` only runs on server
-       - use for fetching, form actions, env variables
-     - `src/routes/blog/+layout.svelte` adds to surrounding layout
-     - `src/routes/blog/+layout.ts` exports load function for layout
-     - `src/routes/blog/+layout.server.ts` only runs on server
-     - `src/routes/blog/+server.ts` defines API endpoints
-     - `src/routes/blog/+error.svelte` creates a custom error page for this route
-   - Colocate route-specific components
-
-2. **Type Safety**:
-   - Use TypeScript interfaces for props and data
-   - Define types in `src/types/` directory
-   - Document all public functions with JSDoc
-   - Use ES modules (`import/export` syntax)
-   - Browser globals are available
-   - Use appropriate polyfills for Node.js environments
-
-3. **Performance**:
-   - Use lazy loading for heavy components
-   - Optimize images and assets
-   - Minimize bundle size
-
-4. **Testing**:
-   - Write Playwright tests for critical user flows
-   - Test both happy paths and error cases
-   - Keep tests maintainable and fast
-
-5. **Accessibility**:
-   - Use semantic HTML
-   - Ensure proper ARIA attributes
-   - Test with keyboard navigation
+- Write Playwright tests for critical user flows
+- Test both happy paths and error cases
+- Keep tests maintainable and fast
 
 ## Svelte Guidelines
 
-### Routing Conventions
+### Component Organization:
 
-- **File-based Routing**: Files in `src/routes/` define routes
-- **Layouts**: `+layout.svelte` files define shared layouts
-- **Pages**: `+page.svelte` files define page content
-- **Server-only**: Add `.server` suffix for server-only modules
+- Keep components small and focused
+- Use `$lib` for reusable components and functions
+  - `$lib/assets` for images and other static files
+  - `$lib/components` for re-used Svelte components
+  - `$lib/styles` for stylesheets and style utilities
+  - `$lib/types` for type/interface definitions
+  - `$lib/stores` contains persistent Svelte stores
+  - `$lib/services` contains functions that access stores or handle business logic.
+  - `$lib/utils` contains only pure, stateless functions and no side effects.
+- Create new page components under new route sub-directories
+  - `src/routes/blog/[slug]` creates a route with `slug` parameter (like `/blog/hello-world`)
+  - `src/routes/blog/+page.svelte` creates a `site.com/blog` page
+  - `src/routes/blog/+page.ts` exports load function before page render
+  - `src/routes/blog/+page.server.ts` only runs on server
+    - use for fetching, form actions, env variables
+  - `src/routes/blog/+layout.svelte` adds to surrounding layout (especially `<head>`)
+  - `src/routes/blog/+layout.ts` exports load function for layout
+  - `src/routes/blog/+layout.server.ts` only runs on server
+  - `src/routes/blog/_components/BlogPost.svelte` is page sub-component
+  - `src/routes/blog/+error.svelte` creates a custom error page for this route
+  - `src/routes/blog/+server.ts` defines API endpoints by exporting GET/POST/etc HTTP methods
 
 ### State Management
 
@@ -166,6 +144,13 @@ npm run dev
 ### Component Structure
 
 - **No `<style>` sections**: Use Tailwind CSS classes or external CSS files in `src/*.css`
+- **Use ``svelte:head>`**: Set essential page attributes:
+  - `og:site_name`, name of app
+  - `title`/`og:title` (50-60 characters), unique for each page, don't include site name
+  - `description`/`og:description` (150-160 characters), cohesive sentences containing important keywords
+  - `canonical`/`og:url` points to official URL without extra params
+  - `og:image` points to the image to display on sharing to social media
+  - `robots` with `noindex,nofollow` prevents indexing, following links
 - **Class attributes**: Use `class:CLASSNAME` directive instead of ternary operators
 - **Style attributes**: Use `style:RULE` directive instead of inline styles with ternaries
 - **Attribute ordering**: Follow consistent attribute ordering (use `svelte/sort-attributes`)

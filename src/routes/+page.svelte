@@ -2,6 +2,8 @@
 
 <p>This app is ready to customize.</p>
 
+<h2>Environmental Variables</h2>
+
 <p>
 	<strong>
 		{#if import.meta.env.VITE_EXAMPLE_VAR}
