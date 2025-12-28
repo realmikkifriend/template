@@ -67,8 +67,10 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 
 #### Console Usage
 
-- **Allowed**: `console.error()` for error logging
-- **Avoid**: `console.log()`, `console.warn()`, etc.
+- **Allowed**:
+  - `console.error()` for error logging
+  - `{@debug VALUE}` logs the value when changed, pauses execution if devtools open
+- **Avoid**: `console.log()`, `console.warn()`, Svelte's `$inspect(count, message)` rune, etc.
 
 ## Development Workflow
 
@@ -105,7 +107,7 @@ npm run dev
 
 ## Svelte Guidelines
 
-### Component Organization:
+### Component Organization
 
 - Keep components small and focused
 - Use `$lib` for reusable components and functions
@@ -131,10 +133,17 @@ npm run dev
 
 ### State Management
 
-- **Svelte 5 Runes**: Use `$state`, `$derived`, or `$effect`
+- **Svelte 5 Runes**:
+  - `$state` creates reactive values
+  - `$derived` runs again if relevant values change
+  - `$effect` functions run when state changes
   - Never use `writable` from `svelte/store`.
   - Never use `$:`.
-- **Store initialization**: Always provide initial values to stores.
+- **Store initialization**:
+  - Create new stores in `lib/stores` as `storeName.svelte.ts`.
+  - Always provide initial values to stores.
+  - Use `persistedState` from `svelte-persisted-state` to make stores persist across page loads.
+  - Minimal functions that directly mutate state live in a store's file or co-located utility file.
 
 ### Event Handling
 

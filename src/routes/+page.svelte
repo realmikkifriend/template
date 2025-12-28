@@ -1,6 +1,18 @@
+<script lang="ts">
+	import { exampleCount, incrementCount, resetCount } from '$lib/stores/example.svelte';
+</script>
+
 <h1>Welcome to SvelteKit</h1>
 
 <p>This app is ready to customize.</p>
+
+<h2>Persistent Stores</h2>
+
+<p>
+	Example value: {exampleCount.current}
+	<button onclick={incrementCount} type="button">Increment</button>
+	<button onclick={resetCount} type="reset">Reset</button>
+</p>
 
 <h2>Environmental Variables</h2>
 

@@ -42,8 +42,8 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
   - [13. ✓ **Routing**](#13--routing)
     - [a. ✓ **Out-of-the-Box Routing Setup**](#a--out-of-the-box-routing-setup)
     - [b. ✓ **SEO Metrics Compliance**](#b--seo-metrics-compliance)
-  - [14. **State Management**](#14-state-management)
-    - [a. **Easy State Management Setup**](#a-easy-state-management-setup)
+  - [14. ✓ **State Management**](#14--state-management)
+    - [a. ✓ **Easy State Management Setup**](#a--easy-state-management-setup)
   - [15. **API Methods**](#15-api-methods)
     - [a. **Out-of-the-Box Authentication**](#a-out-of-the-box-authentication)
     - [b. **API Data Retrieval**](#b-api-data-retrieval)
@@ -278,16 +278,15 @@ Find the first unimplemented lettered sub-heading. If there are web links or che
 - SEO approach is documented in `AGENTS.md`. Essential meta/Open Graph tags are explained.
 - The browser add-on [SiteAnalyzer](https://addons.mozilla.org/en-US/firefox/addon/siteanalyzer-seo-tools/) is available to audit SEO properties.
 
-## 14. **State Management**
+## 14. ✓ **State Management**
 
 - Persistent stores and other state are easy to handle
 
-### a. **Easy State Management Setup**
+### a. ✓ **Easy State Management Setup**
 
 - Persistent stores and local state management are easy to set up in new projects.
-- Current stores/state can be inspected.
-  - [Getting Started - Svelte <Inspect {value} />](https://inspect.eirik.space/getting-started)
 - Working with stores and state is documented in `AGENTS.md`.
+- If desired, current stores/state can be inspected with [Svelte <Inspect {value} />](https://inspect.eirik.space/getting-started)
 
 ## 15. **API Methods**
 

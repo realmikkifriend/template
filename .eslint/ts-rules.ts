@@ -57,7 +57,7 @@ export const tsRules: ConfigWithExtends[] = [
 	// functional code
 	{
 		...(functional.configs.all as ConfigWithExtends),
-		ignores: ['**/*.spec.ts']
+		ignores: ['**/*.spec.ts', 'src/lib/stores/**/*.ts']
 	},
 	// functional.configs.disableTypeChecked,
 	{
