@@ -1,32 +1,22 @@
+# Managing Dependencies
+
 This document explains how to manage project dependencies.
 
-- [Checking for Issues](#checking-for-issues)
-  - [General Svelte Scan](#general-svelte-scan)
-  - [Outdated Dependencies](#outdated-dependencies)
-  - [Security Risks](#security-risks)
+- [Managing Dependencies](#managing-dependencies)
+  - [Checking for Issues](#checking-for-issues)
   - [Major Packages](#major-packages)
     - [Node.js](#nodejs)
-- [Updating Dependencies](#updating-dependencies)
-  - [Getting Package Info](#getting-package-info)
-  - [Manual Updates](#manual-updates)
-  - [Specific Versions](#specific-versions)
-  - [Audit Issues](#audit-issues)
+  - [Updating Dependencies](#updating-dependencies)
+    - [Getting Package Info](#getting-package-info)
+    - [Manual Updates](#manual-updates)
+    - [Specific Versions](#specific-versions)
+    - [Audit Issues](#audit-issues)
 
-# Checking for Issues
-
-## General Svelte Scan
+## Checking for Issues
 
 `npm run check`
 
-`npm run check:watch` to monitor file changes
-
-## Outdated Dependencies
-
-`npm run check:deps` shows outdated dependencies
-
-## Security Risks
-
-`npm run check:security` lists dependency security risks
+`npm run deps` shows outdated dependencies
 
 ## Major Packages
 
@@ -43,21 +33,21 @@ To update Node.js:
 - `nvm alias default node` to always default to latest available version
 - `nvm alias default 0.0.0` to always default to a specific version
 
-# Updating Dependencies
+## Updating Dependencies
 
-## Getting Package Info
+### Getting Package Info
 
 To view the list of versions:
 
 `npm view PACKAGENAME versions`
 
-## Manual Updates
+### Manual Updates
 
 To manually update packages and save new semver to `package.json` while respecting dependency constraints:
 
 `npm update --save PACKAGENAME PACKAGENAME2`
 
-## Specific Versions
+### Specific Versions
 
 To update a package to a specific version:
 
@@ -73,7 +63,7 @@ If it is a sub-dependency, the original version will probably still be used. Thi
 	}
 ```
 
-## Audit Issues
+### Audit Issues
 
 To fix issues that come up in audits, start with:
 
