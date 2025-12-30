@@ -29,6 +29,8 @@ export const svelteRules: ConfigWithExtends[] = [
 		rules: {
 			// disable rules as required by Svelte 5
 			'functional/no-let': 'off',
+			'functional/no-expression-statements': 'off',
+			'functional/no-return-void': 'off',
 			'@typescript-eslint/no-unused-vars': 'off',
 
 			// limits on file length and code nesting

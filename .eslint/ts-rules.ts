@@ -13,7 +13,7 @@ export const tsRules: ConfigWithExtends[] = [
 	...(ts.configs.recommendedTypeChecked as ConfigWithExtends[]),
 	{
 		files: ['**/*.ts', '**/*.tsx', '**/*.mts'],
-		// ignores: ['.eslint/**/*.ts', 'eslint.config.mts'],
+		ignores: ['src/lib/types/**/*.ts'],
 		languageOptions: {
 			parserOptions: {
 				projectService: true,
@@ -73,8 +73,9 @@ export const tsRules: ConfigWithExtends[] = [
 				{ max: 45, skipComments: true, skipBlankLines: true }
 			] as const,
 
-			// disable rules I don't understand
-			'functional/prefer-immutable-types': 'off'
+			'functional/prefer-immutable-types': 'off',
+			'functional/no-conditional-statements': 'off',
+			'functional/functional-parameters': 'off'
 		}
 	} as ConfigWithExtends,
 
