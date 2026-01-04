@@ -13,7 +13,6 @@ export const tsRules: ConfigWithExtends[] = [
 	...(ts.configs.recommendedTypeChecked as ConfigWithExtends[]),
 	{
 		files: ['**/*.ts', '**/*.tsx', '**/*.mts'],
-		ignores: ['src/lib/types/**/*.ts'],
 		languageOptions: {
 			parserOptions: {
 				projectService: true,
@@ -42,22 +41,28 @@ export const tsRules: ConfigWithExtends[] = [
 
 			// typescript-eslint strongly recommend disabling no-undef on TypeScript
 			// https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-			'no-undef': 'off',
+			'no-undef': 'off'
+		}
+	} as ConfigWithExtends,
 
+	// Type/interface location restriction (applies to all TS files except types directory)
+	{
+		files: ['**/*.ts'],
+		ignores: ['src/lib/types/**/*.ts'],
+		rules: {
 			'no-restricted-syntax': [
 				'warn',
 				{
 					selector: 'TSTypeAliasDeclaration, TSInterfaceDeclaration',
-					message: 'Type/interface definitions are only allowed in src/types/.'
+					message: 'Type/interface definitions are only allowed in src/lib/types/.'
 				}
 			] as const
 		}
 	} as ConfigWithExtends,
-
 	// functional code
 	{
 		...(functional.configs.all as ConfigWithExtends),
-		ignores: ['**/*.spec.ts', 'src/lib/stores/**/*.ts']
+		ignores: ['**/*.spec.ts', 'src/lib/stores/**/*.ts', 'src/lib/types/**/*.ts']
 	},
 	// functional.configs.disableTypeChecked,
 	{
