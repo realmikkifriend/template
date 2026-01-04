@@ -43,8 +43,7 @@ This document outlines the requirements for architecture of an ideal template re
   - [14. ✓ **State Management**](#14--state-management)
     - [a. ✓ **Easy State Management Setup**](#a--easy-state-management-setup)
   - [15. **API Methods**](#15-api-methods)
-    - [a. **Out-of-the-Box Authentication**](#a-out-of-the-box-authentication)
-    - [b. **API Data Retrieval**](#b-api-data-retrieval)
+    - [a. **API Data Retrieval**](#a-api-data-retrieval)
 
 # A. ✓ **Build Requirements**
 
@@ -254,21 +253,15 @@ This document outlines the requirements for architecture of an ideal template re
 ## 15. **API Methods**
 
 - Accessing APIs just works
-
-### a. **Out-of-the-Box Authentication**
-
-- Common authentication methods (e.g. OAuth, manual access token entry) are documented and easy to set up
+- Authentication methods can be implemented using these libraries. When a quick and effective library is found, update this file and add instructions to `AGENTS.md`.
   - [Better Auth](https://www.better-auth.com/) ([SvelteKit Integration](https://www.better-auth.com/docs/integrations/svelte-kit))
   - [Svelte Clerk](https://svelte-clerk.netlify.app/)
   - [Passlock](https://passlock.dev/) ([@passlock/sveltekit](https://www.npmjs.com/package/@passlock/sveltekit))
-  - [Auth.js | Sveltekit](https://authjs.dev/reference/sveltekit)
-    - [Auth.js | Providers](https://authjs.dev/reference/core/providers)
-    - [Auth.js | Todoist](https://authjs.dev/reference/core/providers/todoist)
-- Authentication process is documented in `AGENTS.md`.
+  - [Auth.js](https://authjs.dev/reference/core/providers) ([Sveltekit integration](https://authjs.dev/reference/sveltekit))
 
-### b. **API Data Retrieval**
+### a. **API Data Retrieval**
 
 - Retrieving data from remote APIs just works.
-  - [Remote functions • SvelteKit Docs](https://svelte.dev/docs/kit/remote-functions)
-  - [Data fetching • Packages • Svelte](https://svelte.dev/packages#data-fetching)
 - Setting up and accessing external APIs is documented in `AGENTS.md`.
+- [ ] look into SSWR
+  - [ConsoleTVs/sswr](https://github.com/ConsoleTVs/sswr)
