@@ -45,13 +45,13 @@
 	}
 </script>
 
-<fieldset id="weatherField" class="fieldset">
+<fieldset id="weatherField" class="fieldset max-w-80">
 	<legend class="fieldset-legend">Weather</legend>
 	<div class="join">
 		<div class="flex flex-col">
 			<input
 				bind:this={locationInput}
-				class="input-bordered validator input w-full max-w-xs"
+				class="input-bordered validator input w-full"
 				minlength="4"
 				pattern="[A-Za-z0-9 ]*"
 				placeholder="Enter location or ZIP code"

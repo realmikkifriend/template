@@ -80,7 +80,8 @@ export const tsRules: ConfigWithExtends[] = [
 
 			'functional/prefer-immutable-types': 'off',
 			'functional/no-conditional-statements': 'off',
-			'functional/functional-parameters': 'off'
+			'functional/functional-parameters': 'off',
+			'functional/type-declaration-immutability': 'off'
 		}
 	} as ConfigWithExtends,
 

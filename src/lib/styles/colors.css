@@ -1,0 +1,13 @@
+:root {
+	--color-base-content: white;
+	--color-accent-content: var(--color-primary);
+	--color-error-content: red;
+}
+
+h1 {
+	@apply text-accent-content;
+}
+
+.stat {
+	@apply bg-base-200;
+}

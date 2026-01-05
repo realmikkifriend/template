@@ -122,16 +122,19 @@ npm run dev
   - `src/routes/blog/[slug]` creates a route with `slug` parameter (like `/blog/hello-world`)
   - `src/routes/blog/+page.svelte` creates a `site.com/blog` page
   - `src/routes/blog/+page.ts` exports load function before page render
-  - `src/routes/blog/+page.server.ts` load function that only runs on server
-    - use for fetching, form actions, env variables
   - `src/routes/blog/+layout.svelte` adds to surrounding layout (especially `<head>`)
   - `src/routes/blog/+layout.ts` exports load function for layout
-  - `src/routes/blog/+layout.server.ts` only runs on server
-  - `src/routes/blog/_components/BlogPost.svelte` is page sub-component
   - `src/routes/blog/+error.svelte` creates a custom error page for this route
+- Couple sub-components with their parents where possible.
+  - `src/routes/blog/_components/BlogPost.svelte` is page sub-component
+  - `$lib/components` for re-used components
+- Create server functions for fetching, form actions, and handling `env` variables.
   - `src/routes/blog/+server.ts` defines API endpoints by exporting `GET`/`POST`/etc HTTP methods
     - couple server endpoints with the pages they directly support
     - use `src/routes/api/` to organize projects with many endpoints not coupled to pages
+  - `src/routes/blog/+page.server.ts` load function that only runs on server
+  - `src/routes/blog/+layout.server.ts` only runs on server
+  - `src/*/name.remote.ts` exports functions that run on server
 
 ### State Management
 
@@ -171,5 +174,11 @@ npm run dev
 
 - **TailwindCSS**: Primary styling framework
 - **DaisyUI**: Component library built on Tailwind
-- **External CSS**: Use `src/*.css` files for global styles
-- **Component Styles**: Use Tailwind classes directly in components
+- **External CSS**: Use stylesheets in `src/lib/styles/` for global styles
+  - `src/lib/styles/app.css` very short, configures Tailwind and plugins, imports other stylesheets
+  - `src/lib/styles/base.css` app-wide resets, html/body defaults
+  - `src/lib/styles/color.css` applies color schemes
+  - `src/lib/styles/layout.css` grid/flex, spacing
+  - `src/lib/styles/typography.css` styling text and paragraphs
+  - `src/lib/styles/components/COMPONENTTYPE.css` e.g. buttons, forms, cards
+- **Component Styles**: Use Tailwind classes directly in components for initial designs, but move them to `src/lib/styles`

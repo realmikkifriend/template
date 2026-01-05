@@ -5,7 +5,7 @@ export default {
 		interface: true,
 		type: true
 	},
-	ignoreDependencies: ['tailwindcss', '@tailwindcss/forms', '@tailwindcss/typography'],
+	ignoreDependencies: ['tailwindcss', '@tailwindcss/forms', '@tailwindcss/typography', 'daisyui'],
 	compilers: {
 		css: (text: string) =>
 			[...text.matchAll(/(?:@(?:import|plugin)\s+"([^"]+)")/g)]

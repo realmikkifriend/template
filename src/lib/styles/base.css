@@ -1,0 +1,7 @@
+body {
+	@apply p-6;
+}
+
+footer {
+	@apply absolute bottom-4;
+}

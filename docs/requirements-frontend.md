@@ -2,14 +2,15 @@ This document outlines the requirements for front-end design of an ideal templat
 
 - [A. **Design Requirements**](#a-design-requirements)
   - [1. **Design Development**](#1-design-development)
-    - [a. **CSS \& HTML File Structure**](#a-css--html-file-structure)
-    - [b. **Tailwind \& DaisyUI**](#b-tailwind--daisyui)
+    - [a. ✓ **CSS \& HTML File Structure**](#a--css--html-file-structure)
+    - [b. ✓ **Tailwind \& DaisyUI**](#b--tailwind--daisyui)
     - [c. **Style Linting**](#c-style-linting)
   - [2. **User Experience**](#2-user-experience)
     - [a. **Design Checklist Compliance**](#a-design-checklist-compliance)
   - [3. **Theming**](#3-theming)
     - [a. **Automatic System Theme Detection**](#a-automatic-system-theme-detection)
     - [b. **User-Facing Theme Switcher**](#b-user-facing-theme-switcher)
+    - [c. **Print Styling**](#c-print-styling)
   - [4. **Accessibility**](#4-accessibility)
     - [a. **Accessibility Metrics Compliance**](#a-accessibility-metrics-compliance)
     - [b. **Internationalization (i18n)**](#b-internationalization-i18n)
@@ -40,40 +41,26 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ## 1. **Design Development**
 
-### a. **CSS & HTML File Structure**
+### a. ✓ **CSS & HTML File Structure**
 
-- Set up file structure for CSS files (app, base, utilities, components, layout)
-  - `src/app.css` very short, configures Tailwind and plugins, imports stylesheets from `src/styles`
-  - `src/styles/base.css` app-wide resets, typography tweaks, html/body defaults
-  - `src/styles/utilities.css` custom `@layer` utility classes
-  - `src/styles/components/COMPONENTTYPE.css` e.g. buttons, forms, cards
-  - `src/styles/layout.css` e.g. grid/flex, spacing
-- Set up compliant HTML file structure.
-  - [thedaviddias/Front-End-Checklist: 🗂 The perfect Front-End Checklist for modern websites and meticulous developers](https://github.com/thedaviddias/Front-End-Checklist)
-- Working with CSS files is documented in `AGENTS.md`.
+- File structure for CSS files is already set up and documented in `AGENTS.md`.
+- Compliant and [semantic](https://htmlreference.io/semantic/) HTML is ready out-of-the-box, though [more `<head>` elements](https://github.com/joshbuchea/HEAD) can be added later.
 
-### b. **Tailwind & DaisyUI**
+### b. ✓ **Tailwind & DaisyUI**
 
-- Look over [TailwindCSS | Project-Awesome.org](https://project-awesome.org/aniftyco/awesome-tailwindcss)
-- Install and set up Tailwind
-  - In `app.css`
-  - ````
-        @theme {
-          --*: initial;
-        }
-        ```
-    ````
-- Install DaisyUI
-  - [disable themes](https://daisyui.com/docs/themes/#disable-a-theme)
 - Working with TailwindCSS and DaisyUI is documented in `AGENTS.md`.
 
 ### c. **Style Linting**
 
-- Add library to automatically sort/group CSS rules and Tailwind classes
-- Find ESLint library for Tailwind and DaisyUI
-  - [eslint-plugin-better-tailwindcss - npm](https://www.npmjs.com/package/eslint-plugin-better-tailwindcss)
-- Lint CSS selectors for issues
-- Enforce semantic classes only, disallow TailwindCSS inline color classes
+- CSS stylesheets and inline class-based styling just works.
+  - [ ] add library to automatically sort/group CSS rules and Tailwind classes
+    - [heybourn/headwind: An opinionated Tailwind CSS class sorter built for Visual Studio Code](https://github.com/heybourn/headwind)
+  - [ ] find ESLint library for Tailwind and DaisyUI
+    - [eslint-plugin-better-tailwindcss - npm](https://www.npmjs.com/package/eslint-plugin-better-tailwindcss)
+    - [Stylelint](https://stylelint.io/)
+  - [ ] enforce semantic classes only, disallow TailwindCSS inline color classes
+
+- [ ] add tests for page components
 
 ## 2. **User Experience**
 
@@ -98,23 +85,24 @@ This document outlines the requirements for front-end design of an ideal templat
 ### b. **User-Facing Theme Switcher**
 
 - User-facing theme switcher is available.
-- Set up color themes
-- Read over DaisyUI docs on [Colors](https://daisyui.com/docs/colors/#list-of-all-daisyui-color-names)
+  - [ ] set up settings demo with color theme switcher
+  - [ ] read over DaisyUI docs on [Colors](https://daisyui.com/docs/colors/#list-of-all-daisyui-color-names)
 - Read up on semantic color palettes
-- [How to define color usage through semantic sets for design systems | by Katie Cooper | UX Collective](https://uxdesign.cc/how-to-define-color-usage-through-semantic-sets-for-design-systems-99445804233d)
-- [Designing semantic colors for your system](https://imperavi.com/blog/designing-semantic-colors-for-your-system/)
-- [Vercel Geist system](https://vercel.com/geist/colors)
-- [Overview - Color new - Atlassian Design System](https://atlassian.design/foundations/color-new)
-- [Design tokens explained - Tokens - Atlassian Design System](https://atlassian.design/tokens/design-tokens)
-- [Design tokens - All tokens - Components - Atlassian Design System](https://atlassian.design/components/tokens/all-tokens)
-- [Siddharth11/Colorful: A curated list of awesome resources to choose your next color scheme](https://github.com/Siddharth11/Colorful)
+  - [How to define color usage through semantic sets for design systems | by Katie Cooper | UX Collective](https://uxdesign.cc/how-to-define-color-usage-through-semantic-sets-for-design-systems-99445804233d)
+  - [Designing semantic colors for your system](https://imperavi.com/blog/designing-semantic-colors-for-your-system/)
+  - [Vercel Geist system](https://vercel.com/geist/colors)
+  - [Overview - Color new - Atlassian Design System](https://atlassian.design/foundations/color-new)
+  - [Design tokens explained - Tokens - Atlassian Design System](https://atlassian.design/tokens/design-tokens)
+  - [Design tokens - All tokens - Components - Atlassian Design System](https://atlassian.design/components/tokens/all-tokens)
+  - [Siddharth11/Colorful: A curated list of awesome resources to choose your next color scheme](https://github.com/Siddharth11/Colorful)
 - Settle on semantic color scheme list and quality/accessibility checklist
-- Look in notes or emails
-- Set up color theming in CSS
-- Review [Tailwind color theming docs](https://tailwindcss.com/docs/theme), [custom semantic classes](https://tailwindcss.com/docs/adding-custom-styles#functional-utilities)
-- Review [Tailwind Color Schemes | Tailwind | Steve Kinney](https://stevekinney.com/courses/tailwind/tailwind-color-schemes)
-- How to use Tailwind classes in CSS file, [Functions and directives - Core concepts - Tailwind CSS](https://tailwindcss.com/docs/functions-and-directives#apply-directive) `@apply`
-- Set up settings demo with color theme switcher
+  - Review [Tailwind color theming docs](https://tailwindcss.com/docs/theme), [custom semantic classes](https://tailwindcss.com/docs/adding-custom-styles#functional-utilities)
+  - Review [Tailwind Color Schemes | Tailwind | Steve Kinney](https://stevekinney.com/courses/tailwind/tailwind-color-schemes)
+  - How to use Tailwind classes in CSS file, [Functions and directives - Core concepts - Tailwind CSS](https://tailwindcss.com/docs/functions-and-directives#apply-directive) `@apply`
+
+### c. **Print Styling**
+
+- The app looks good when printed.
 
 ## 4. **Accessibility**
 
@@ -188,7 +176,7 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ## 6. **Mobile Responsiveness**
 
-- The app functions well on mobile
+- The app functions well on mobile (breakpoints: 320px, 768px, 1024px)
 - Builds on all other design aspects
 - Mobile must be flawless and easy to use
 
@@ -244,6 +232,7 @@ This document outlines the requirements for front-end design of an ideal templat
     - Fontsource, Atkinson Hyperlegible
       - Add italic
       - Look for other Hyperlegible web fonts
+      - webfonts § [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist?tab=readme-ov-file#webfonts)
 - The stack documentation is referenced in `AGENTS.md`.
 
 ### c. **High Documentation Coverage**
