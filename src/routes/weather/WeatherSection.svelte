@@ -1,6 +1,6 @@
 <script lang="ts">
-	// import { toggleSkeleton, getWeather } from './weather.service';
 	import type { WeatherData } from '$lib/types/weather';
+	import { getWeatherData } from './data.remote';
 
 	let locationInput = $state() as HTMLInputElement;
 	let weatherData = $state<WeatherData | null>();
@@ -30,15 +30,15 @@
 	async function getWeather(locationInput: HTMLInputElement): Promise<void> {
 		toggleSkeleton(true);
 
-		const response = await fetch(`/weather/${locationInput.value}`);
+		const result = await getWeatherData(locationInput.value);
 
 		const alert = document.querySelector('#weatherField .alert-warning');
-		if (response.status === 404) {
+		if (result.error) {
 			if (alert) alert.classList.remove('hidden');
 			weatherData = null;
-		} else {
+		} else if (result.data) {
 			if (alert) alert.classList.add('hidden');
-			weatherData = (await response.json()) as WeatherData;
+			weatherData = result.data;
 		}
 
 		toggleSkeleton(false);
@@ -61,7 +61,7 @@
 			/>
 			<div class="validator-hint h-fit">Must be 4+ characters, numbers or letters only.</div>
 			<div class="alert hidden alert-soft alert-warning" role="alert">
-				No weather data for this location!
+				Error while fetching or no weather data for this location!
 			</div>
 		</div>
 		<button class="btn btn-primary" onclick={() => getWeather(locationInput)} type="submit">
@@ -70,7 +70,7 @@
 	</div>
 </fieldset>
 
-{#if weatherData}
+{#if weatherData?.nearest_area[0]?.areaName[0]?.value}
 	<div class="rounded-lg bg-base-200 p-4">
 		<strong>
 			Weather for {weatherData.nearest_area[0].areaName[0].value}, {weatherData.nearest_area[0]

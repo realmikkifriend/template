@@ -20,3 +20,11 @@ export type WeatherData = {
 		windspeedKmph: number;
 	}>;
 };
+
+export type WeatherResult = {
+	data?: WeatherData;
+	error?: {
+		status: number;
+		message: string;
+	};
+};
