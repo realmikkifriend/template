@@ -36,14 +36,14 @@ This document outlines the requirements for architecture of an ideal template re
     - [a. ✓ **Out-of-the-Box Performance**](#a--out-of-the-box-performance)
   - [12. ✓ **Error Handling**](#12--error-handling)
     - [a. ✓ **Out-of-the-Box Error Handling**](#a--out-of-the-box-error-handling)
-- [D. **Usage Requirements**](#d-usage-requirements)
+- [D. ✓ **Usage Requirements**](#d--usage-requirements)
   - [13. ✓ **Routing**](#13--routing)
     - [a. ✓ **Out-of-the-Box Routing Setup**](#a--out-of-the-box-routing-setup)
     - [b. ✓ **SEO Metrics Compliance**](#b--seo-metrics-compliance)
   - [14. ✓ **State Management**](#14--state-management)
     - [a. ✓ **Easy State Management Setup**](#a--easy-state-management-setup)
-  - [15. **API Methods**](#15-api-methods)
-    - [a. **API Data Retrieval**](#a-api-data-retrieval)
+  - [15. ✓ **API Methods**](#15--api-methods)
+    - [a. ✓ **API Data Retrieval**](#a--api-data-retrieval)
 
 # A. ✓ **Build Requirements**
 
@@ -218,7 +218,7 @@ This document outlines the requirements for architecture of an ideal template re
 
 ### a. ✓ **Out-of-the-Box Error Handling**
 
-# D. **Usage Requirements**
+# D. ✓ **Usage Requirements**
 
 ## 13. ✓ **Routing**
 
@@ -250,7 +250,7 @@ This document outlines the requirements for architecture of an ideal template re
 - Working with stores and state is documented in `AGENTS.md`.
 - If desired, current stores/state can be inspected with [Svelte <Inspect {value} />](https://inspect.eirik.space/getting-started)
 
-## 15. **API Methods**
+## 15. ✓ **API Methods**
 
 - Accessing APIs just works
 - Authentication methods can be implemented using these libraries. When a quick and effective library is found, update this file and add instructions to `AGENTS.md`.
@@ -259,9 +259,8 @@ This document outlines the requirements for architecture of an ideal template re
   - [Passlock](https://passlock.dev/) ([@passlock/sveltekit](https://www.npmjs.com/package/@passlock/sveltekit))
   - [Auth.js](https://authjs.dev/reference/core/providers) ([Sveltekit integration](https://authjs.dev/reference/sveltekit))
 
-### a. **API Data Retrieval**
+### a. ✓ **API Data Retrieval**
 
 - Retrieving data from remote APIs just works.
-- Setting up and accessing external APIs is documented in `AGENTS.md`.
-- [ ] look into SSWR
-  - [ConsoleTVs/sswr](https://github.com/ConsoleTVs/sswr)
+- Setting up and accessing external APIs is documented through a working example.
+- Stale while revalidate (SWR) data fetching strategy is available through [a library](https://github.com/ConsoleTVs/sswr).
