@@ -12,7 +12,6 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
   - **`src/lib/`**: Reusable components and utilities (imported via `$lib` alias)
   - **`src/routes/`**: Application routes and pages
 - **`static/`**: Static assets served directly (e.g., `robots.txt`)
-- **`tests/`**: Playwright end-to-end tests
 
 ### Important Files
 
@@ -99,9 +98,10 @@ npm run dev
 - **Public Variables**: Prefix with `PUBLIC_` (e.g., `PUBLIC_API_URL`)
 - **Private Variables**: Use in server-side code only
 
-### Testing:
+### Testing
 
 - Write Playwright tests for critical user flows
+- Store tests next to the code they test
 - Test both happy paths and error cases
 - Keep tests maintainable and fast
 
