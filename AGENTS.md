@@ -100,10 +100,14 @@ npm run dev
 
 ### Testing
 
-- Write Playwright tests for critical user flows
+- Write Playwright tests for critical user flows (both happy paths and error cases)
 - Store tests next to the code they test
-- Test both happy paths and error cases
-- Keep tests maintainable and fast
+- Use `test.describe()` to group related tests for a component or feature
+- Define locators at the top level if reused across tests
+- Use `test.beforeEach()` for common setup that runs before each test
+- Use descriptive test names starting with "should"
+- Use `page.route()` to mock API responses
+- Create helper functions for repeated logic
 
 ## Svelte Guidelines
 
