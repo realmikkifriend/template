@@ -51,6 +51,8 @@
         "ellreka.tailwindcss-highlight",
         // autofills Tailwind classes
         "bradlc.vscode-tailwindcss",
+        // sorts Tailwind classes
+        "heybourn.headwind",
         //
         // // TESTING
         // Playwright for e2e testing

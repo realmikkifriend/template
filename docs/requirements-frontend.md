@@ -1,10 +1,10 @@
 This document outlines the requirements for front-end design of an ideal template repository. Every heading with a ✓ between the numbering and name has been implemented.
 
 - [A. **Design Requirements**](#a-design-requirements)
-  - [1. **Design Development**](#1-design-development)
+  - [1. ✓ **Design Development**](#1--design-development)
     - [a. ✓ **CSS \& HTML File Structure**](#a--css--html-file-structure)
     - [b. ✓ **Tailwind \& DaisyUI**](#b--tailwind--daisyui)
-    - [c. **Style Linting**](#c-style-linting)
+    - [c. ✓ **Style Linting**](#c--style-linting)
   - [2. **User Experience**](#2-user-experience)
     - [a. **Design Checklist Compliance**](#a-design-checklist-compliance)
   - [3. **Theming**](#3-theming)
@@ -39,7 +39,7 @@ This document outlines the requirements for front-end design of an ideal templat
 
 # A. **Design Requirements**
 
-## 1. **Design Development**
+## 1. ✓ **Design Development**
 
 ### a. ✓ **CSS & HTML File Structure**
 
@@ -50,15 +50,10 @@ This document outlines the requirements for front-end design of an ideal templat
 
 - Working with TailwindCSS and DaisyUI is documented in `AGENTS.md`.
 
-### c. **Style Linting**
+### c. ✓ **Style Linting**
 
 - CSS stylesheets and inline class-based styling just works.
-  - [ ] add library to automatically sort/group CSS rules and Tailwind classes
-    - [heybourn/headwind: An opinionated Tailwind CSS class sorter built for Visual Studio Code](https://github.com/heybourn/headwind)
-  - [ ] find ESLint library for Tailwind and DaisyUI
-    - [eslint-plugin-better-tailwindcss - npm](https://www.npmjs.com/package/eslint-plugin-better-tailwindcss)
-    - [Stylelint](https://stylelint.io/)
-  - [ ] enforce semantic classes only, disallow TailwindCSS inline color classes
+- A VS Code extension ([Headwind](https://github.com/heybourn/headwind)) is configured to sort classes.
 
 - [ ] add tests for page components
 
