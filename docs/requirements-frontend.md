@@ -61,8 +61,9 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ### a. **Design Checklist Compliance**
 
-- App conforms to design expectations (grid layout, ).
-  - [thedaviddias/Front-End-Design-Checklist: 💎 The Design Checklist for Creative Web Designers and Patient Front-End Developers](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#13---fonts-and-texts)
+- App conforms to design expectations (grid layout, link styling, ).
+  - [ ] add [necessary styles and elements to forms](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#16-forms-and-buttons)
+  - [ ] ensure that [example components conform to component style guide](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#18---style-guide-and-component-approach)
 - Essential design requirements are documented in `AGENTS.md`.
 
 ## 3. **UI Components**
@@ -231,6 +232,7 @@ This document outlines the requirements for front-end design of an ideal templat
       - Add italic
       - Look for other Hyperlegible web fonts
       - webfonts § [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist?tab=readme-ov-file#webfonts)
+      - fonts § [thedaviddias/Front-End-Design-Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#13---fonts-and-texts)
 - The stack documentation is referenced in `AGENTS.md`.
 
 ### c. **High Documentation Coverage**

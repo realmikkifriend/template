@@ -4,10 +4,24 @@
 	--color-error-content: red;
 }
 
+@theme {
+	--color-accent-content-500: color-mix(in srgb, var(--color-accent-content) 50%, white 50%);
+}
+
 h1 {
 	@apply text-accent-content;
 }
 
 .stat {
 	@apply bg-base-200;
+}
+
+a:visited {
+	@apply text-accent-content-500;
+}
+
+a:hover,
+a:focus,
+a:active {
+	@apply text-accent-content;
 }

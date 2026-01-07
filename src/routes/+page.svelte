@@ -6,7 +6,7 @@
 <section>
 	<h2>Welcome to My SvelteKit Template</h2>
 
-	<p>This app is ready to customize.</p>
+	<p>This <a href="https://svelte.dev/" target="_blank">Svelte</a> app is ready to customize.</p>
 </section>
 
 <section>
