@@ -5,6 +5,7 @@
 @plugin 'daisyui' {
 	themes: dark --default;
 	logs: false;
+	exclude: properties;
 }
 
 @import './base.css';
