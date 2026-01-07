@@ -55,12 +55,9 @@ This document outlines the requirements for front-end design of an ideal templat
 - CSS stylesheets and inline class-based styling just works.
 - A VS Code extension ([Headwind](https://github.com/heybourn/headwind)) is configured to sort classes.
 
-- [ ] add tests for page components
-
 ## 2. **User Experience**
 
 - App has well-designed UX
-- Foundational for all design aspects
 
 ### a. **Design Checklist Compliance**
 
