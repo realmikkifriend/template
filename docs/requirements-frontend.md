@@ -7,14 +7,7 @@ This document outlines the requirements for front-end design of an ideal templat
     - [c. ✓ **Style Linting**](#c--style-linting)
   - [2. **User Experience**](#2-user-experience)
     - [a. **Design Checklist Compliance**](#a-design-checklist-compliance)
-  - [3. **Theming**](#3-theming)
-    - [a. **Automatic System Theme Detection**](#a-automatic-system-theme-detection)
-    - [b. **User-Facing Theme Switcher**](#b-user-facing-theme-switcher)
-    - [c. **Print Styling**](#c-print-styling)
-  - [4. **Accessibility**](#4-accessibility)
-    - [a. **Accessibility Metrics Compliance**](#a-accessibility-metrics-compliance)
-    - [b. **Internationalization (i18n)**](#b-internationalization-i18n)
-  - [5. **UI Components**](#5-ui-components)
+  - [3. **UI Components**](#3-ui-components)
     - [a. **Configurable Favicon**](#a-configurable-favicon)
     - [b. **Quality Icon Library**](#b-quality-icon-library)
     - [c. **Modal and Dialog Support**](#c-modal-and-dialog-support)
@@ -22,6 +15,13 @@ This document outlines the requirements for front-end design of an ideal templat
     - [e. **Notification System**](#e-notification-system)
     - [f. **Loading Status Indicators**](#f-loading-status-indicators)
     - [g. **Example Components**](#g-example-components)
+  - [4. **Theming**](#4-theming)
+    - [a. **Automatic System Theme Detection**](#a-automatic-system-theme-detection)
+    - [b. **User-Facing Theme Switcher**](#b-user-facing-theme-switcher)
+    - [c. **Print Styling**](#c-print-styling)
+  - [5. **Accessibility**](#5-accessibility)
+    - [a. **Accessibility Metrics Compliance**](#a-accessibility-metrics-compliance)
+    - [b. **Internationalization (i18n)**](#b-internationalization-i18n)
   - [6. **Mobile Responsiveness**](#6-mobile-responsiveness)
     - [a. **Mobile Performance Metrics**](#a-mobile-performance-metrics)
     - [b. **Perfect Responsiveness**](#b-perfect-responsiveness)
@@ -61,58 +61,11 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ### a. **Design Checklist Compliance**
 
-- App conforms to design checklists.
-- [thedaviddias/Front-End-Design-Checklist: 💎 The Design Checklist for Creative Web Designers and Patient Front-End Developers](https://github.com/thedaviddias/Front-End-Design-Checklist)
+- App conforms to design expectations (grid layout, ).
+  - [thedaviddias/Front-End-Design-Checklist: 💎 The Design Checklist for Creative Web Designers and Patient Front-End Developers](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#13---fonts-and-texts)
 - Essential design requirements are documented in `AGENTS.md`.
 
-## 3. **Theming**
-
-- Theming (e.g. dark/light) just works
-- Builds on UX foundation
-
-### a. **Automatic System Theme Detection**
-
-- App automatically switches dark/light according to user system preference.
-
-### b. **User-Facing Theme Switcher**
-
-- User-facing theme switcher is available.
-  - [ ] set up settings demo with color theme switcher
-  - [ ] read over DaisyUI docs on [Colors](https://daisyui.com/docs/colors/#list-of-all-daisyui-color-names)
-- Read up on semantic color palettes
-  - [How to define color usage through semantic sets for design systems | by Katie Cooper | UX Collective](https://uxdesign.cc/how-to-define-color-usage-through-semantic-sets-for-design-systems-99445804233d)
-  - [Designing semantic colors for your system](https://imperavi.com/blog/designing-semantic-colors-for-your-system/)
-  - [Vercel Geist system](https://vercel.com/geist/colors)
-  - [Overview - Color new - Atlassian Design System](https://atlassian.design/foundations/color-new)
-  - [Design tokens explained - Tokens - Atlassian Design System](https://atlassian.design/tokens/design-tokens)
-  - [Design tokens - All tokens - Components - Atlassian Design System](https://atlassian.design/components/tokens/all-tokens)
-  - [Siddharth11/Colorful: A curated list of awesome resources to choose your next color scheme](https://github.com/Siddharth11/Colorful)
-- Settle on semantic color scheme list and quality/accessibility checklist
-  - Review [Tailwind color theming docs](https://tailwindcss.com/docs/theme), [custom semantic classes](https://tailwindcss.com/docs/adding-custom-styles#functional-utilities)
-  - Review [Tailwind Color Schemes | Tailwind | Steve Kinney](https://stevekinney.com/courses/tailwind/tailwind-color-schemes)
-  - How to use Tailwind classes in CSS file, [Functions and directives - Core concepts - Tailwind CSS](https://tailwindcss.com/docs/functions-and-directives#apply-directive) `@apply`
-
-### c. **Print Styling**
-
-- The app looks good when printed.
-
-## 4. **Accessibility**
-
-- Design meets accessibility (a11y) metrics (e.g. color contrast, font use)
-- Builds on theming
-
-### a. **Accessibility Metrics Compliance**
-
-- Research metrics (e.g. axe or pa11y)
-- [§ accessibility elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
-- Essential accessibility standards are documented in `AGENTS.md`.
-
-### b. **Internationalization (i18n)**
-
-- Components are i18n-ready.
-  - [Internationalization (i18n) • Packages • Svelte](<https://svelte.dev/packages#internationalization-(i18n)>)
-
-## 5. **UI Components**
+## 3. **UI Components**
 
 - Essential design elements are already included
 - Customizing essential design elements is easy
@@ -165,6 +118,59 @@ This document outlines the requirements for front-end design of an ideal templat
   - Code to be copied
   - E2E tests
 - The nature and purpose of the example components collection are documented in `AGENTS.md`.
+
+## 4. **Theming**
+
+- Theming (e.g. dark/light) just works
+- Builds on UX foundation
+
+### a. **Automatic System Theme Detection**
+
+- App automatically switches dark/light according to user system preference.
+
+### b. **User-Facing Theme Switcher**
+
+- User-facing theme switcher is available.
+  - [ ] set up settings demo with color theme switcher
+    - [ ] add `Cog6Tooth` icon button in corner
+    - [ ] clicking button opens small menu
+    - [ ] menu lists possible themes configured
+    - [ ] selecting theme implements it immediately
+  - [ ] read over DaisyUI docs on [Colors](https://daisyui.com/docs/colors/#list-of-all-daisyui-color-names)
+- Read up on semantic color palettes
+  - [How to define color usage through semantic sets for design systems | by Katie Cooper | UX Collective](https://uxdesign.cc/how-to-define-color-usage-through-semantic-sets-for-design-systems-99445804233d)
+  - [Designing semantic colors for your system](https://imperavi.com/blog/designing-semantic-colors-for-your-system/)
+  - [Vercel Geist system](https://vercel.com/geist/colors)
+  - [Overview - Color new - Atlassian Design System](https://atlassian.design/foundations/color-new)
+  - [Design tokens explained - Tokens - Atlassian Design System](https://atlassian.design/tokens/design-tokens)
+  - [Design tokens - All tokens - Components - Atlassian Design System](https://atlassian.design/components/tokens/all-tokens)
+  - [Siddharth11/Colorful: A curated list of awesome resources to choose your next color scheme](https://github.com/Siddharth11/Colorful)
+- Settle on semantic color scheme list and quality/accessibility checklist
+  - Review [Tailwind color theming docs](https://tailwindcss.com/docs/theme), [custom semantic classes](https://tailwindcss.com/docs/adding-custom-styles#functional-utilities)
+  - Review [Tailwind Color Schemes | Tailwind | Steve Kinney](https://stevekinney.com/courses/tailwind/tailwind-color-schemes)
+  - How to use Tailwind classes in CSS file, [Functions and directives - Core concepts - Tailwind CSS](https://tailwindcss.com/docs/functions-and-directives#apply-directive) `@apply`
+
+### c. **Print Styling**
+
+- The app looks good when printed.
+
+## 5. **Accessibility**
+
+- Design meets accessibility (a11y) metrics (e.g. color contrast, font use)
+- Builds on theming
+
+### a. **Accessibility Metrics Compliance**
+
+- Research metrics (e.g. axe or pa11y)
+- [§ accessibility elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
+- Colors have sufficient contrast.
+  - [WCAG - Contrast Checker](https://contrastchecker.com/)
+- Essential accessibility standards are documented in `AGENTS.md`.
+
+### b. **Internationalization (i18n)**
+
+- Components are i18n-ready.
+  - [Internationalization (i18n) • Packages • Svelte](<https://svelte.dev/packages#internationalization-(i18n)>)
 
 ## 6. **Mobile Responsiveness**
 

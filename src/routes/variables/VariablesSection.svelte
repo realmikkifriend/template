@@ -2,8 +2,8 @@
 	import { exampleCount, incrementCount, resetCount } from '$lib/stores/example.svelte';
 </script>
 
-<div class="flex flex-row gap-10">
-	<div>
+<div class="row-container">
+	<section>
 		<h3>Persistent Stores</h3>
 		<div class="stat">
 			<div class="stat-title">Example Value</div>
@@ -15,9 +15,9 @@
 				<button class="btn btn-dash btn-sm" onclick={resetCount} type="reset">Reset</button>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div>
+	<section class="collapse">
 		<h3>Environmental Variables</h3>
 		<p>
 			<strong>
@@ -30,5 +30,5 @@
 				{/if}
 			</strong>
 		</p>
-	</div>
+	</section>
 </div>
