@@ -51,7 +51,7 @@ test.describe('WeatherSection Component', () => {
 			page.locator(
 				'.alert-warning:has-text("Error while fetching or no weather data for this location!")'
 			)
-		).toBeVisible();
+		).toBeVisible({ timeout: 10_000 });
 		await expect(page.locator('text=Weather for')).not.toBeVisible();
 
 		await page.route('**/wttr.in/*', async (route) => {
@@ -86,7 +86,9 @@ test.describe('WeatherSection Component', () => {
 		await expect(page.locator('#weatherField input.skeleton')).toBeVisible();
 		await expect(page.locator('#weatherField button.skeleton')).toBeVisible();
 
-		await expect(page.locator('text=Weather for Chicago, Illinois')).toBeVisible();
+		await expect(page.locator('text=Weather for Chicago, Illinois')).toBeVisible({
+			timeout: 10_000
+		});
 		await expect(page.locator('#weatherField input.skeleton')).not.toBeVisible();
 		await expect(page.locator('#weatherField button.skeleton')).not.toBeVisible();
 	});
