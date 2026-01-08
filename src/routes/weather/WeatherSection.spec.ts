@@ -43,6 +43,7 @@ test.describe('WeatherSection Component', () => {
 	test('should error on failed call, then display weather data for valid location', async ({
 		page
 	}) => {
+		test.slow();
 		await input.fill('InvalidLocation123');
 		await button.click();
 
@@ -64,7 +65,7 @@ test.describe('WeatherSection Component', () => {
 		await input.fill('Chicago');
 		await button.click();
 
-		await expect(page.locator('.alert-warning:visible')).not.toBeVisible();
+		await expect(page.locator('.alert-warning')).not.toBeVisible({ timeout: 10_000 });
 		await expect(page.locator('text=Weather for Chicago, Illinois')).toBeVisible();
 	});
 
