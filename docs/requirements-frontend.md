@@ -5,33 +5,29 @@ This document outlines the requirements for front-end design of an ideal templat
     - [a. ✓ **CSS \& HTML File Structure**](#a--css--html-file-structure)
     - [b. ✓ **Tailwind \& DaisyUI**](#b--tailwind--daisyui)
     - [c. ✓ **Style Linting**](#c--style-linting)
-  - [2. **User Experience**](#2-user-experience)
-    - [a. **Design Checklist Compliance**](#a-design-checklist-compliance)
-  - [3. **UI Components**](#3-ui-components)
-    - [a. **Configurable Favicon**](#a-configurable-favicon)
+  - [2. **UI Components**](#2-ui-components)
+    - [a. ✓ **Design Checklist Compliance**](#a--design-checklist-compliance)
     - [b. **Quality Icon Library**](#b-quality-icon-library)
     - [c. **Modal and Dialog Support**](#c-modal-and-dialog-support)
-    - [d. **Form Validation**](#d-form-validation)
-    - [e. **Notification System**](#e-notification-system)
-    - [f. **Loading Status Indicators**](#f-loading-status-indicators)
-    - [g. **Example Components**](#g-example-components)
-  - [4. **Theming**](#4-theming)
+    - [d. **Notification System**](#d-notification-system)
+    - [e. **Example Components**](#e-example-components)
+  - [3. **Theming**](#3-theming)
     - [a. **Automatic System Theme Detection**](#a-automatic-system-theme-detection)
     - [b. **User-Facing Theme Switcher**](#b-user-facing-theme-switcher)
     - [c. **Print Styling**](#c-print-styling)
-  - [5. **Accessibility**](#5-accessibility)
+  - [4. **Accessibility**](#4-accessibility)
     - [a. **Accessibility Metrics Compliance**](#a-accessibility-metrics-compliance)
     - [b. **Internationalization (i18n)**](#b-internationalization-i18n)
-  - [6. **Mobile Responsiveness**](#6-mobile-responsiveness)
+  - [5. **Mobile Responsiveness**](#5-mobile-responsiveness)
     - [a. **Mobile Performance Metrics**](#a-mobile-performance-metrics)
     - [b. **Perfect Responsiveness**](#b-perfect-responsiveness)
     - [c. **PWA Support**](#c-pwa-support)
 - [B. **Documentation Requirements**](#b-documentation-requirements)
-  - [7. **Feature Documentation**](#7-feature-documentation)
+  - [6. **Feature Documentation**](#6-feature-documentation)
     - [a. **README.md Creation**](#a-readmemd-creation)
     - [b. **Stack Documentation**](#b-stack-documentation)
     - [c. **High Documentation Coverage**](#c-high-documentation-coverage)
-  - [8. **Project Documentation**](#8-project-documentation)
+  - [7. **Project Documentation**](#7-project-documentation)
     - [a. **Documentation Templates**](#a-documentation-templates)
     - [b. **IDE Setup Documentation**](#b-ide-setup-documentation)
     - [c. **Documented License Selection**](#c-documented-license-selection)
@@ -55,62 +51,46 @@ This document outlines the requirements for front-end design of an ideal templat
 - CSS stylesheets and inline class-based styling just works.
 - A VS Code extension ([Headwind](https://github.com/heybourn/headwind)) is configured to sort classes.
 
-## 2. **User Experience**
-
-- App has well-designed UX
-
-### a. **Design Checklist Compliance**
-
-- App conforms to design expectations (grid layout, link styling, ).
-  - [ ] add [necessary styles and elements to forms](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#16-forms-and-buttons)
-  - [ ] ensure that [example components conform to component style guide](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#18---style-guide-and-component-approach)
-- Essential design requirements are documented in `AGENTS.md`.
-
-## 3. **UI Components**
+## 2. **UI Components**
 
 - Essential design elements are already included
 - Customizing essential design elements is easy
 
-### a. **Configurable Favicon**
+### a. ✓ **Design Checklist Compliance**
 
+- App conforms to design expectations (grid layout, link styling, etc).
 - The app comes with a default favicon that is easily configured.
+- Forms with [validation](https://daisyui.com/components/validator/) are easy to set up and work reliably.
+- Loading status is easy to indicate through skeleton styling.
 
 ### b. **Quality Icon Library**
 
 - A large number of quality icons are available for use in components.
-  - [Icons • SvelteKit Docs](https://svelte.dev/docs/kit/icons)
-  - [Icons • Packages • Svelte](https://svelte.dev/packages#icons)
+  - [Iconify for Tailwind CSS 4](https://iconify.design/docs/usage/css/tailwind/tailwind4/)
 - Using the icon library is documented in `AGENTS.md`.
 
 ### c. **Modal and Dialog Support**
 
 - Modals and dialogs are easy to implement and work consistently.
+  - [ ] set up settings demo with color theme switcher
+    - [ ] add `Cog6Tooth` icon button in corner
+    - [ ] clicking button opens small menu
+    - [ ] menu lists possible themes configured
+    - [ ] selecting theme implements it immediately
 - Working with modals and dialogs is documented in `AGENTS.md`.
 
-### d. **Form Validation**
-
-- Forms with validation are easy to set up and work reliably.
-  - [form • Remote functions • SvelteKit Docs](https://svelte.dev/docs/kit/remote-functions#form)
-  - [Forms • Packages • Svelte](https://svelte.dev/packages#forms)
-- Working with forms is documented in `AGENTS.md`.
-
-### e. **Notification System**
+### d. **Notification System**
 
 - Notifications (e.g. toasts) are easy to implement and display properly.
 - Working with notifications is documented in `AGENTS.md`.
 
-### f. **Loading Status Indicators**
-
-- Loading status is easy to indicate through skeleton styling and other feedback mechanisms.
-- Working with loading status indicators is documented in `AGENTS.md`.
-
-### g. **Example Components**
+### e. **Example Components**
 
 - Create `demo` directory of example components
-- Directory is ignored when pulling upstream template changes into project
-- In Svelte, use context to share functions and values
+  - Directory is ignored when pulling upstream template changes into project
+- In Svelte, use `context` to share functions and values
 - Use persistent stores only when data should persist, otherwise use context
-- Enforce with lint rules
+  - Enforce with lint rules
 - Review existing projects, make list of every kind of component and element used
 - Review [HyperUI](https://www.hyperui.dev/)
 - Review [Preline UI](https://preline.co/examples.html) ([Svelte docs](https://preline.co/docs/frameworks-svelte.html))
@@ -120,7 +100,7 @@ This document outlines the requirements for front-end design of an ideal templat
   - E2E tests
 - The nature and purpose of the example components collection are documented in `AGENTS.md`.
 
-## 4. **Theming**
+## 3. **Theming**
 
 - Theming (e.g. dark/light) just works
 - Builds on UX foundation
@@ -132,11 +112,6 @@ This document outlines the requirements for front-end design of an ideal templat
 ### b. **User-Facing Theme Switcher**
 
 - User-facing theme switcher is available.
-  - [ ] set up settings demo with color theme switcher
-    - [ ] add `Cog6Tooth` icon button in corner
-    - [ ] clicking button opens small menu
-    - [ ] menu lists possible themes configured
-    - [ ] selecting theme implements it immediately
   - [ ] read over DaisyUI docs on [Colors](https://daisyui.com/docs/colors/#list-of-all-daisyui-color-names)
 - Read up on semantic color palettes
   - [How to define color usage through semantic sets for design systems | by Katie Cooper | UX Collective](https://uxdesign.cc/how-to-define-color-usage-through-semantic-sets-for-design-systems-99445804233d)
@@ -155,7 +130,7 @@ This document outlines the requirements for front-end design of an ideal templat
 
 - The app looks good when printed.
 
-## 5. **Accessibility**
+## 4. **Accessibility**
 
 - Design meets accessibility (a11y) metrics (e.g. color contrast, font use)
 - Builds on theming
@@ -173,7 +148,7 @@ This document outlines the requirements for front-end design of an ideal templat
 - Components are i18n-ready.
   - [Internationalization (i18n) • Packages • Svelte](<https://svelte.dev/packages#internationalization-(i18n)>)
 
-## 6. **Mobile Responsiveness**
+## 5. **Mobile Responsiveness**
 
 - The app functions well on mobile (breakpoints: 320px, 768px, 1024px)
 - Builds on all other design aspects
@@ -195,7 +170,7 @@ This document outlines the requirements for front-end design of an ideal templat
 
 # B. **Documentation Requirements**
 
-## 7. **Feature Documentation**
+## 6. **Feature Documentation**
 
 - Documentation of template features is comprehensive and useful
 - Comes after features are implemented
@@ -239,7 +214,7 @@ This document outlines the requirements for front-end design of an ideal templat
 
 - High template documentation coverage.
 
-## 8. **Project Documentation**
+## 7. **Project Documentation**
 
 - Subsequent project documentation is easy to write, organize, access, and maintain
 - Builds on initial docs
