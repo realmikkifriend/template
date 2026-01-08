@@ -8,6 +8,10 @@
 	exclude: properties;
 }
 
+@plugin '@iconify/tailwind4' {
+	prefixes: octicon, material-symbols;
+}
+
 @import './base.css';
 @import './layout.css';
 @import './typography.css';

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { WeatherData } from '$lib/types/weather';
 	import { getWeatherData } from './data.remote';
+	import type { WeatherData } from '$lib/types/weather';
 
 	let locationInput = $state() as HTMLInputElement;
 	let weatherData = $state<WeatherData | null>();
@@ -46,7 +46,10 @@
 </script>
 
 <fieldset id="weatherField" class="fieldset max-w-80">
-	<legend class="fieldset-legend">Weather</legend>
+	<div class="icon-header-container">
+		<span class="iconify material-symbols--partly-cloudy-day-outline-rounded"></span>
+		<legend class="fieldset-legend">Weather</legend>
+	</div>
 	<div class="join">
 		<div class="flex flex-col">
 			<input
@@ -76,9 +79,11 @@
 			Weather for {weatherData.nearest_area[0].areaName[0].value}, {weatherData.nearest_area[0]
 				.region[0].value}
 		</strong>
-		<p>{weatherData.current_condition[0].weatherDesc[0].value}</p>
-		<p>{weatherData.current_condition[0].temp_F}°F ({weatherData.current_condition[0].temp_C}°C)</p>
 		<p>
+			{weatherData.current_condition[0].weatherDesc[0].value}
+		</p>
+		<p>
+			{weatherData.current_condition[0].temp_F}°F ({weatherData.current_condition[0].temp_C}°C),
 			<em>feels like </em>
 			{weatherData.current_condition[0].FeelsLikeF}°F ({weatherData.current_condition[0]
 				.FeelsLikeC}°C)

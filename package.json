@@ -30,6 +30,10 @@
 	"devDependencies": {
 		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^9.39.1",
+		"@iconify-json/material-symbols": "^1.2.51",
+		"@iconify-json/octicon": "^1.2.19",
+		"@iconify/tailwind4": "^1.2.0",
+		"@iconify/utils": "^3.1.0",
 		"@playwright/test": "^1.57.0",
 		"@sveltejs/adapter-netlify": "^5.2.4",
 		"@sveltejs/kit": "^2.49.2",

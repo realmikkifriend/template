@@ -4,7 +4,10 @@
 
 <div class="row-container">
 	<section>
-		<h3>Persistent Stores</h3>
+		<div class="icon-header-container">
+			<span class="iconify material-symbols--database"></span>
+			<h3>Persistent Stores</h3>
+		</div>
 		<div class="stat">
 			<div class="stat-title">Example Value</div>
 			<div class="stat-value">{exampleCount.current}</div>
@@ -18,7 +21,10 @@
 	</section>
 
 	<section class="collapse">
-		<h3>Environmental Variables</h3>
+		<div class="icon-header-container">
+			<span class="iconify material-symbols--source-environment-rounded"></span>
+			<h3>Environmental Variables</h3>
+		</div>
 		<p>
 			<strong>
 				{#if import.meta.env.VITE_EXAMPLE_VAR}

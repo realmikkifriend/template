@@ -209,7 +209,7 @@ This document outlines the requirements for architecture of an ideal template re
 
 ### a. ✓ **Out-of-the-Box Performance**
 
-- App bundle size can be visualized and is minimized.
+- App bundle size is visualized in `build/stats.html` and is minimized.
 - App meets [performance metrics](https://github.com/thedaviddias/Front-End-Performance-Checklist) out-of-the-box.
 
 ## 12. ✓ **Error Handling**

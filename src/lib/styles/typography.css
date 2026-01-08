@@ -2,15 +2,20 @@ body {
 	@apply text-sm;
 }
 
-h1 {
-	@apply text-3xl;
+header,
+header span {
+	@apply mb-1 text-2xl;
+}
+header h1 {
+	@apply mb-2 text-3xl;
 }
 
 h2 {
 	@apply text-xl underline;
 }
 
-h3 {
+h3,
+.icon-header-container {
 	@apply text-lg font-bold;
 }
 

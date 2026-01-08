@@ -8,7 +8,7 @@
 	--color-accent-content-500: color-mix(in srgb, var(--color-accent-content) 50%, white 50%);
 }
 
-h1 {
+header {
 	@apply text-accent-content;
 }
 

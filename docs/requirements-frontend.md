@@ -65,23 +65,25 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ### b. **Quality Icon Library**
 
-- A large number of quality icons are available for use in components.
-  - [Iconify for Tailwind CSS 4](https://iconify.design/docs/usage/css/tailwind/tailwind4/)
-- Using the icon library is documented in `AGENTS.md`.
+- A [large number of quality icons](https://icon-sets.iconify.design/) are available for use in components via [Iconify](https://iconify.design/docs/usage/css/tailwind/tailwind4/).
+  - [ ] update dependencies
 
 ### c. **Modal and Dialog Support**
 
 - Modals and dialogs are easy to implement and work consistently.
   - [ ] set up settings demo with color theme switcher
-    - [ ] add `Cog6Tooth` icon button in corner
+    - [ ] add cog icon button in corner
     - [ ] clicking button opens small menu
     - [ ] menu lists possible themes configured
     - [ ] selecting theme implements it immediately
+    - [ ] add tests
 - Working with modals and dialogs is documented in `AGENTS.md`.
 
 ### d. **Notification System**
 
 - Notifications (e.g. toasts) are easy to implement and display properly.
+  - [ ] set up [Tailwind Alert Component – daisyUI](https://daisyui.com/components/alert/)
+  - [ ] write tests
 - Working with notifications is documented in `AGENTS.md`.
 
 ### e. **Example Components**
