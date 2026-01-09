@@ -162,6 +162,8 @@ This document outlines the requirements for architecture of an ideal template re
 
 - E2E testing architecture is ready out-of-the-box.
   - Test files are placed alongside the modules they directly test. Test files with more general purposes go in the `tests/` directory.
+- Tests can be monitored via `npx playwright test --ui`.
+- Port issues can be resolved with `killport 4173`.
 
 ### b. ✓ **Pre-Commit Test Requirements**
 

@@ -9,7 +9,7 @@ import type { WeatherData, WeatherResult } from '$lib/types/weather';
 export const getWeatherData = query(
 	'unchecked',
 	async (location: string): Promise<WeatherResult> => {
-		const apiUrl = `https://wttr.in/${encodeURIComponent(location)}?format=j1`;
+		const apiUrl = `https://wttr.in/${encodeURIComponent(location)}?0&format=j1`;
 		const response = await fetch(apiUrl);
 
 		if (!response.ok) {

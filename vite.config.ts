@@ -13,10 +13,15 @@ export default defineConfig({
 		})
 	],
 	build: {
+		chunkSizeWarningLimit: 1000,
 		rollupOptions: {
 			output: {
 				manualChunks: (id) => {
-					return 'my-app';
+					if (id.includes('node_modules')) {
+						if (id.includes('@iconify')) return 'iconify';
+						if (id.includes('svelte')) return 'svelte';
+						return 'vendor';
+					}
 				}
 			}
 		}
