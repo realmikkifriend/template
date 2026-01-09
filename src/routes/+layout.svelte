@@ -1,8 +1,11 @@
 <script lang="ts">
 	import '$lib/styles/app.css';
+	import { onMount } from 'svelte';
 	// import favicon from '$lib/assets/favicon.svg';
 	import { icons } from '@iconify-json/octicon';
 	import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
+	import { themeChange } from 'theme-change';
+	import SettingsMenu from './settings/SettingsMenu.svelte';
 	import type { IconifyIcon } from '@iconify/types';
 	import type { Snippet } from 'svelte';
 
@@ -23,6 +26,9 @@
 		};
 		favicon = iconToHTML(replaceIDs(renderData.body), attributes);
 	});
+	onMount(() => {
+		themeChange(false);
+	});
 </script>
 
 <svelte:head>
@@ -38,6 +44,10 @@
 	<span class="iconify octicon--repo-template-24"></span>
 	<h1>Svelte 5 Template Repo</h1>
 </header>
+
+<div class="right-corner">
+	<SettingsMenu />
+</div>
 
 {#if children}
 	<main>{@render children()}</main>

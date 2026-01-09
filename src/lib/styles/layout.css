@@ -24,6 +24,19 @@ h2 {
 	@apply mb-3 flex flex-row items-center gap-1;
 }
 
+.right-corner {
+	@apply fixed top-4 right-4 z-50;
+}
+.right-corner button {
+	@apply p-2 text-xl;
+}
+.right-corner ul {
+	@apply -top-2 -left-34.5 w-44;
+}
+.right-corner ul select {
+	@apply h-6 w-36 px-1 py-0 text-sm;
+}
+
 main section {
 	@apply mb-6 grid;
 }

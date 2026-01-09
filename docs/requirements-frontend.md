@@ -70,12 +70,7 @@ This document outlines the requirements for front-end design of an ideal templat
 ### c. **Modal and Dialog Support**
 
 - Modals and dialogs are easy to implement and work consistently.
-  - [ ] set up settings demo with color theme switcher
-    - [ ] add cog icon button in corner
-    - [ ] clicking button opens small menu
-    - [ ] menu lists possible themes configured
-    - [ ] selecting theme implements it immediately
-    - [ ] add tests
+  - [ ] add tests of theme switcher
 - Working with modals and dialogs is documented in `AGENTS.md`.
 
 ### d. **Notification System**

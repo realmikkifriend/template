@@ -3,7 +3,18 @@
 @plugin '@tailwindcss/typography';
 
 @plugin 'daisyui' {
-	themes: dark --default;
+	themes:
+		dark --default,
+		abyss,
+		aqua,
+		black,
+		coffee,
+		dracula,
+		forest,
+		luxury,
+		night,
+		sunset,
+		synthwave;
 	logs: false;
 	exclude: properties;
 }

@@ -1,18 +1,25 @@
 :root {
-	--color-base-content: white;
 	--color-accent-content: var(--color-primary);
-	--color-error-content: red;
 }
 
 @theme {
 	--color-accent-content-500: color-mix(in srgb, var(--color-accent-content) 50%, white 50%);
+	--color-base-content: white;
+	--color-error-content: red;
 }
 
 header {
 	@apply text-accent-content;
 }
 
-.stat {
+.right-corner ul select {
+	@apply bg-base-100;
+}
+
+.stat,
+.right-corner ul,
+.right-corner button:focus,
+#popover-settings:popover-open + button {
 	@apply bg-base-200;
 }
 
