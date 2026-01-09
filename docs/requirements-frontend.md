@@ -69,9 +69,15 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ### c. **Modal and Dialog Support**
 
-- Modals and dialogs are easy to implement and work consistently.
-  - [ ] add tests of theme switcher
-- Working with modals and dialogs is documented in `AGENTS.md`.
+- Modals and dialogs are easy to implement and work consistently, as demonstrated by the settings popover and about modal.
+  - [ ] add 'About' link to bottom of settings popover
+  - [ ] clicking link opens modal
+  - [ ] clicking footer opens modal
+  - [ ] modal contains about text and links
+  - [ ] rest of page is dim when modal is open
+  - [ ] clicking outside modal closes it
+  - [ ] modal has close button that works
+  - [ ] modal has test of opening and closing
 
 ### d. **Notification System**
 
