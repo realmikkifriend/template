@@ -7,7 +7,7 @@ This document outlines the requirements for front-end design of an ideal templat
     - [c. ✓ **Style Linting**](#c--style-linting)
   - [2. **UI Components**](#2-ui-components)
     - [a. ✓ **Design Checklist Compliance**](#a--design-checklist-compliance)
-    - [b. **Quality Icon Library**](#b-quality-icon-library)
+    - [b. ✓ **Quality Icon Library**](#b--quality-icon-library)
     - [c. **Modal and Dialog Support**](#c-modal-and-dialog-support)
     - [d. **Notification System**](#d-notification-system)
     - [e. **Example Components**](#e-example-components)
@@ -63,10 +63,9 @@ This document outlines the requirements for front-end design of an ideal templat
 - Forms with [validation](https://daisyui.com/components/validator/) are easy to set up and work reliably.
 - Loading status is easy to indicate through skeleton styling.
 
-### b. **Quality Icon Library**
+### b. ✓ **Quality Icon Library**
 
 - A [large number of quality icons](https://icon-sets.iconify.design/) are available for use in components via [Iconify](https://iconify.design/docs/usage/css/tailwind/tailwind4/).
-  - [ ] update dependencies
 
 ### c. **Modal and Dialog Support**
 
