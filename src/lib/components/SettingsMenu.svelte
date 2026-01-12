@@ -1,8 +1,7 @@
 <script lang="ts">
 	import AboutModal from '$lib/components/AboutModal.svelte';
-	import type { SvelteComponent } from 'svelte';
 
-	let modal_about: HTMLDialogElement;
+	let modal_about: HTMLDialogElement | undefined = $state();
 </script>
 
 <ul
@@ -27,7 +26,7 @@
 		<option value="synthwave">Synthwave</option>
 	</select>
 
-	<button class="btn btn-link" onclick={() => modal_about.showModal()} type="button">About</button>
+	<button class="btn btn-link" onclick={() => modal_about?.showModal()} type="button">About</button>
 </ul>
 <button
 	style:anchor-name="--anchor-settings"

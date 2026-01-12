@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 
-	let { modal_about = $bindable() }: { modal_about: HTMLDialogElement } = $props();
+	let { modal_about = $bindable() }: { modal_about?: HTMLDialogElement } = $props();
 </script>
 
 <dialog bind:this={modal_about} id="modal_about" class="modal">
@@ -20,7 +20,7 @@
 		href={resolve('/')}
 		onclick={(e) => {
 			e.preventDefault();
-			modal_about.close();
+			modal_about?.close();
 		}}
 		onkeyup={(e) => {
 			e.preventDefault();
