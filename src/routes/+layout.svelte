@@ -5,7 +5,7 @@
 	import { icons } from '@iconify-json/octicon';
 	import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
 	import { themeChange } from 'theme-change';
-	import SettingsMenu from './settings/SettingsMenu.svelte';
+	import SettingsMenu from '$lib/components/SettingsMenu.svelte';
 	import type { IconifyIcon } from '@iconify/types';
 	import type { Snippet } from 'svelte';
 
