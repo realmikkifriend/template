@@ -8,6 +8,10 @@
 	--color-error-content: red;
 }
 
+dialog * button {
+	@apply bg-base-content!;
+}
+
 header {
 	@apply text-accent-content;
 }

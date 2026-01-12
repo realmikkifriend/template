@@ -36,6 +36,13 @@ h2 {
 .right-corner ul select {
 	@apply h-6 w-36 px-1 py-0 text-sm;
 }
+.modal-action.right-corner {
+	@apply mt-2 mr-2;
+}
+
+dialog * p {
+	@apply py-4;
+}
 
 main section {
 	@apply mb-6 grid;
@@ -64,4 +71,8 @@ footer {
 
 .row-container {
 	@apply col-span-full sm:grid-flow-col;
+}
+
+#popover-settings .btn-link {
+	@apply m-0 mt-2 h-fit p-0;
 }

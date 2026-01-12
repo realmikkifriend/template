@@ -13,6 +13,9 @@ header h1 {
 h2 {
 	@apply text-xl underline;
 }
+dialog * h2 {
+	@apply text-lg font-bold;
+}
 
 h3,
 .icon-header-container {
@@ -21,4 +24,12 @@ h3,
 
 a {
 	@apply underline;
+}
+
+a.modal-backdrop {
+	@apply no-underline;
+}
+
+#popover-settings .btn-link {
+	@apply text-sm;
 }
