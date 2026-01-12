@@ -13,7 +13,8 @@
 >
 	<strong>Theme</strong>
 	<select data-choose-theme>
-		<option value="dark">Default (Dark)</option>
+		<option value="light">Default (Light)</option>
+		<option value="dark">Dark</option>
 		<option value="abyss">Abyss</option>
 		<option value="aqua">Aqua</option>
 		<option value="black">Black</option>
