@@ -1,6 +1,6 @@
 <script lang="ts">
-	import WeatherSection from './weather/WeatherSection.svelte';
-	import VariablesSection from './variables/VariablesSection.svelte';
+	import WeatherSection from '$lib/components/demo/weather/WeatherSection.svelte';
+	import VariablesSection from '$lib/components/demo/variables/VariablesSection.svelte';
 </script>
 
 <section>
