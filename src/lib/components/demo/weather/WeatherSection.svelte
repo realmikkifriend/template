@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { getWeatherData } from './data.remote';
 	import type { WeatherData } from '$lib/types/weather';
+	import { getNotificationsContext } from '$lib/components/Notifications';
 
 	let locationInput = $state() as HTMLInputElement;
 	let weatherData = $state<WeatherData | null>();
+	const notifications = getNotificationsContext();
 
 	/**
 	 * Toggles skeleton class on weather field elements.
@@ -32,12 +34,19 @@
 
 		const result = await getWeatherData(locationInput.value);
 
-		const alert = document.querySelector('#weatherField .alert-warning');
 		if (result.error) {
-			if (alert) alert.classList.remove('hidden');
+			notifications.addNotification({
+				message: 'Error while fetching or no weather data for this location!',
+				type: 'error',
+				timeout: 5000
+			});
 			weatherData = null;
 		} else if (result.data) {
-			if (alert) alert.classList.add('hidden');
+			notifications.addNotification({
+				message: `Weather data fetched successfully for ${result.data.nearest_area[0].areaName[0].value}`,
+				type: 'success',
+				timeout: 3000
+			});
 			weatherData = result.data;
 		}
 
@@ -63,9 +72,6 @@
 				type="text"
 			/>
 			<div class="validator-hint h-fit">Must be 4+ characters, numbers or letters only.</div>
-			<div class="alert hidden alert-soft alert-warning" role="alert">
-				Error while fetching or no weather data for this location!
-			</div>
 		</div>
 		<button class="btn btn-primary" onclick={() => getWeather(locationInput)} type="submit">
 			Get Weather

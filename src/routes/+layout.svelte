@@ -6,6 +6,7 @@
 	import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
 	import { themeChange } from 'theme-change';
 	import SettingsMenu from '$lib/components/SettingsMenu.svelte';
+	import Notifications from '$lib/components/Notifications.svelte';
 	import type { IconifyIcon } from '@iconify/types';
 	import type { Snippet } from 'svelte';
 
@@ -49,8 +50,12 @@
 	<SettingsMenu />
 </div>
 
-{#if children}
-	<main>{@render children()}</main>
-{/if}
+<Notifications>
+	<main>
+		{#if children}
+			{@render children()}
+		{/if}
+	</main>
+</Notifications>
 
 <footer>created 2025-2026</footer>

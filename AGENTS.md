@@ -153,6 +153,32 @@ npm run dev
   - Always provide initial values to stores.
   - Use `persistedState` from `svelte-persisted-state` to make stores persist across page loads.
   - Minimal functions that directly mutate state live in a store's file or co-located utility file.
+- **Context**:
+  - Context enables components to access parent component values without prop-drilling.
+    - `setContext(key, value)` in parent components
+    - `getContext(key)` in child components
+    - `hasContext` and `getAllContexts` utilities
+    - For type safety, use `createContext` inside a `.ts` file:
+      ```ts
+      import { createContext } from 'svelte';
+      export const [getUserContext, setUserContext] = createContext<User>();
+      ```
+  - Keys and values can be any JavaScript type.
+  - `Notifications.svelte` provides a context-based notification system.
+
+    ```svelte
+    <script lang="ts">
+    	import { getNotificationsContext } from '$lib/components/Notifications';
+
+    	const notifications = getNotificationsContext();
+
+    	notifications.addNotification({
+    		message: 'Error while fetching data!',
+    		type: 'error',
+    		timeout: 5000
+    	});
+    </script>
+    ```
 
 ### Event Handling
 

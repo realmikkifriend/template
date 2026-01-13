@@ -44,7 +44,7 @@ test.describe('WeatherSection Component', () => {
 		await input.fill('InvalidLocation123');
 		await button.click();
 
-		await expect(page.locator('.alert-warning')).toBeVisible();
+		await expect(page.locator('.alert-error')).toBeVisible();
 		await expect(page.locator('text=Weather for')).not.toBeVisible();
 
 		await page.route('**/getWeatherData*', async (route) => {
@@ -58,7 +58,7 @@ test.describe('WeatherSection Component', () => {
 		await input.fill('Chicago');
 		await button.click();
 
-		await expect(page.locator('.alert-warning')).not.toBeVisible();
+		await expect(page.locator('.alert-success')).toBeVisible();
 		await expect(page.locator('text=Weather for Chicago, Illinois')).toBeVisible();
 	});
 

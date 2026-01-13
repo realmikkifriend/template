@@ -5,15 +5,14 @@ This document outlines the requirements for front-end design of an ideal templat
     - [a. ✓ **CSS \& HTML File Structure**](#a--css--html-file-structure)
     - [b. ✓ **Tailwind \& DaisyUI**](#b--tailwind--daisyui)
     - [c. ✓ **Style Linting**](#c--style-linting)
-  - [2. **UI Components**](#2-ui-components)
+  - [2. ✓ **UI Components**](#2--ui-components)
     - [a. ✓ **Design Checklist Compliance**](#a--design-checklist-compliance)
     - [b. ✓ **Quality Icon Library**](#b--quality-icon-library)
-    - [c. **Modal and Dialog Support**](#c-modal-and-dialog-support)
-    - [d. **Notification System**](#d-notification-system)
-    - [e. **Example Components**](#e-example-components)
+    - [c. ✓ **Modal and Dialog Support**](#c--modal-and-dialog-support)
+    - [d. ✓ **Notification System**](#d--notification-system)
   - [3. **Theming**](#3-theming)
-    - [a. **Automatic System Theme Detection**](#a-automatic-system-theme-detection)
-    - [b. **User-Facing Theme Switcher**](#b-user-facing-theme-switcher)
+    - [a. ✓ **Automatic System Theme Detection**](#a--automatic-system-theme-detection)
+    - [b. ✓ **User-Facing Theme Switcher**](#b--user-facing-theme-switcher)
     - [c. **Print Styling**](#c-print-styling)
   - [4. **Accessibility**](#4-accessibility)
     - [a. **Accessibility Metrics Compliance**](#a-accessibility-metrics-compliance)
@@ -51,10 +50,11 @@ This document outlines the requirements for front-end design of an ideal templat
 - CSS stylesheets and inline class-based styling just works.
 - A VS Code extension ([Headwind](https://github.com/heybourn/headwind)) is configured to sort classes.
 
-## 2. **UI Components**
+## 2. ✓ **UI Components**
 
 - Essential design elements are already included
-- Customizing essential design elements is easy
+  - Customizing essential design elements is easy
+- New components can be started from [DaisyUI](https://daisyui.com/components/) and [HyperUI](https://www.hyperui.dev/) elements
 
 ### a. ✓ **Design Checklist Compliance**
 
@@ -67,67 +67,26 @@ This document outlines the requirements for front-end design of an ideal templat
 
 - A [large number of quality icons](https://icon-sets.iconify.design/) are available for use in components via [Iconify](https://iconify.design/docs/usage/css/tailwind/tailwind4/).
 
-### c. **Modal and Dialog Support**
+### c. ✓ **Modal and Dialog Support**
 
 - Modals and dialogs are easy to implement and work consistently, as demonstrated by the settings popover and about modal.
 
-- [ ] set up test coverage
-  - [ ] install [doomedramen/playwright-coverage-reporter](https://github.com/doomedramen/playwright-coverage-reporter)
-  - [ ] process into requirements, [15 Best Practices for Playwright testing in 2026 | BrowserStack](https://www.browserstack.com/guide/playwright-best-practices)
-  - [ ] add to Husky, check test coverage and fail if too low
-  - [ ] document in `requirements-backend.md` and `AGENTS.md`
-    - goal is not 100% coverage, focus on component functionality that is critical (important to users) and high-risk (likely to fail)
-    - [The Reality of Achieving Full Test Coverage](https://www.testdevlab.com/blog/full-test-coverage-explained)
-
-### d. **Notification System**
+### d. ✓ **Notification System**
 
 - Notifications (e.g. toasts) are easy to implement and display properly.
-  - [ ] set up [Tailwind Alert Component – daisyUI](https://daisyui.com/components/alert/)
-  - [ ] write tests
 - Working with notifications is documented in `AGENTS.md`.
-
-### e. **Example Components**
-
-- Create `demo` directory of example components
-  - Components are created in new projects but ignored when pulling upstream template changes
-- In Svelte, use `context` to share functions and values
-- Use persistent stores only when data should persist, otherwise use `context`
-  - Enforce with lint rules
-- Review existing projects, make list of every kind of component and element used
-  - [ ] review [DaisyUI components](https://daisyui.com/components/)
-  - [ ] review [HyperUI](https://www.hyperui.dev/)
-  - [ ] review [Preline UI](https://preline.co/examples.html) ([Svelte docs](https://preline.co/docs/frameworks-svelte.html))
-- Every example should have
-  - Functional demo examples
-  - Code to be copied
-  - E2E tests
-- The nature and purpose of the example components collection are documented in `AGENTS.md`.
 
 ## 3. **Theming**
 
 - Theming (e.g. dark/light) just works
-- Builds on UX foundation
 
-### a. **Automatic System Theme Detection**
+### a. ✓ **Automatic System Theme Detection**
 
 - App automatically switches dark/light according to user system preference.
 
-### b. **User-Facing Theme Switcher**
+### b. ✓ **User-Facing Theme Switcher**
 
 - User-facing theme switcher is available.
-  - [ ] read over DaisyUI docs on [Colors](https://daisyui.com/docs/colors/#list-of-all-daisyui-color-names)
-- Read up on semantic color palettes
-  - [How to define color usage through semantic sets for design systems | by Katie Cooper | UX Collective](https://uxdesign.cc/how-to-define-color-usage-through-semantic-sets-for-design-systems-99445804233d)
-  - [Designing semantic colors for your system](https://imperavi.com/blog/designing-semantic-colors-for-your-system/)
-  - [Vercel Geist system](https://vercel.com/geist/colors)
-  - [Overview - Color new - Atlassian Design System](https://atlassian.design/foundations/color-new)
-  - [Design tokens explained - Tokens - Atlassian Design System](https://atlassian.design/tokens/design-tokens)
-  - [Design tokens - All tokens - Components - Atlassian Design System](https://atlassian.design/components/tokens/all-tokens)
-  - [Siddharth11/Colorful: A curated list of awesome resources to choose your next color scheme](https://github.com/Siddharth11/Colorful)
-- Settle on semantic color scheme list and quality/accessibility checklist
-  - Review [Tailwind color theming docs](https://tailwindcss.com/docs/theme), [custom semantic classes](https://tailwindcss.com/docs/adding-custom-styles#functional-utilities)
-  - Review [Tailwind Color Schemes | Tailwind | Steve Kinney](https://stevekinney.com/courses/tailwind/tailwind-color-schemes)
-  - How to use Tailwind classes in CSS file, [Functions and directives - Core concepts - Tailwind CSS](https://tailwindcss.com/docs/functions-and-directives#apply-directive) `@apply`
 
 ### c. **Print Styling**
 
