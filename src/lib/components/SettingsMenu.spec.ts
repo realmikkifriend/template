@@ -20,7 +20,7 @@ test.describe('SettingsMenu Component', () => {
 		await expect(themeSelect).toBeVisible();
 		await expect(themeSelect).toHaveCount(1);
 
-		const expectedThemes = ['Default (Dark)', 'Synthwave'];
+		const expectedThemes = ['Default (Light)', 'Synthwave'];
 
 		for (const theme of expectedThemes) {
 			await expect(
