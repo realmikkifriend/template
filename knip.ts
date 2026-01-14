@@ -6,6 +6,7 @@ export default {
 		type: true
 	},
 	ignoreDependencies: ['@tailwindcss/typography', 'daisyui', '@iconify*'],
+	ignoreBinaries: ['read'],
 	compilers: {
 		css: (text: string) =>
 			[...text.matchAll(/(?:@(?:import|plugin)\s+['"]([^'"]+)['"])/g)]

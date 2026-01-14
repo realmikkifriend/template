@@ -23,6 +23,12 @@ export default defineConfig({
 						return 'vendor';
 					}
 				}
+			},
+			onLog(level, log, handler) {
+				if (log.message?.includes('are imported from external module')) {
+					return;
+				}
+				handler(level, log);
 			}
 		}
 	}
