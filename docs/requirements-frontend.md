@@ -1,6 +1,6 @@
 This document outlines the requirements for front-end design of an ideal template repository. Every heading with a ✓ between the numbering and name has been implemented.
 
-- [A. **Design Requirements**](#a-design-requirements)
+- [A. ✓ **Design Requirements**](#a--design-requirements)
   - [1. ✓ **Design Development**](#1--design-development)
     - [a. ✓ **CSS \& HTML File Structure**](#a--css--html-file-structure)
     - [b. ✓ **Tailwind \& DaisyUI**](#b--tailwind--daisyui)
@@ -14,13 +14,11 @@ This document outlines the requirements for front-end design of an ideal templat
     - [a. ✓ **Automatic System Theme Detection**](#a--automatic-system-theme-detection)
     - [b. ✓ **User-Facing Theme Switcher**](#b--user-facing-theme-switcher)
     - [c. ✓ **Print Styling**](#c--print-styling)
-  - [4. **Accessibility**](#4-accessibility)
-    - [a. **Accessibility Metrics Compliance**](#a-accessibility-metrics-compliance)
-    - [b. **Internationalization (i18n)**](#b-internationalization-i18n)
+  - [4. ✓ **Accessibility**](#4--accessibility)
+    - [a. ✓ **Accessibility Metrics Compliance**](#a--accessibility-metrics-compliance)
   - [5. **Mobile Responsiveness**](#5-mobile-responsiveness)
     - [a. **Mobile Performance Metrics**](#a-mobile-performance-metrics)
     - [b. **Perfect Responsiveness**](#b-perfect-responsiveness)
-    - [c. **PWA Support**](#c-pwa-support)
 - [B. **Documentation Requirements**](#b-documentation-requirements)
   - [6. **Feature Documentation**](#6-feature-documentation)
     - [a. **README.md Creation**](#a-readmemd-creation)
@@ -32,7 +30,7 @@ This document outlines the requirements for front-end design of an ideal templat
     - [c. **Documented License Selection**](#c-documented-license-selection)
     - [d. **Documentation Auto-Generation**](#d-documentation-auto-generation)
 
-# A. **Design Requirements**
+# A. ✓ **Design Requirements**
 
 ## 1. ✓ **Design Development**
 
@@ -92,42 +90,26 @@ This document outlines the requirements for front-end design of an ideal templat
 
 - The app looks good when printed, and there is a print stylesheet for ready customization.
 
-## 4. **Accessibility**
+## 4. ✓ **Accessibility**
 
-- Design meets accessibility (a11y) and internationalization (i18n) metrics
+- Design meets accessibility (a11y) metrics
+- Internationalization (i18n) [can be set up](https://wuchale.dev/).
 
-### a. **Accessibility Metrics Compliance**
-
-- Accessibility standards are enforced using a [Playwright `axe` test](https://playwright.dev/docs/accessibility-testing).
-- Fonts are attractive and accessible.
-  - [ ] set up Fontsource with Atkinson Hyperlegible
-  - [ ] look for other hyperlegible web fonts
-  - [ ] ensure bold and italics work
-
-### b. **Internationalization (i18n)**
-
-- Components are i18n-ready.
-  - [Internationalization (i18n) • Packages • Svelte](<https://svelte.dev/packages#internationalization-(i18n)>)
+### a. ✓ **Accessibility Metrics Compliance**
 
 ## 5. **Mobile Responsiveness**
 
-- The app functions well on mobile (breakpoints: 320px, 768px, 1024px)
-- Builds on all other design aspects
-- Mobile must be flawless and easy to use
+- The app functions well on mobile
 
 ### a. **Mobile Performance Metrics**
 
-- [ ] Research metrics
-- Mobile design is documented in `AGENTS.md`.
+- [ ] research metrics
+- The app [can be set up as an installable PWA](https://svelte.dev/docs/svelte/faq#How-do-I-write-a-mobile-app-with-Svelte).
 
 ### b. **Perfect Responsiveness**
 
-- The design is perfectly responsive.
-
-### c. **PWA Support**
-
-- The app can be installed as a PWA.
-  - [How do I write a mobile app with Svelte? • Frequently asked questions • Svelte Docs](https://svelte.dev/docs/svelte/faq#How-do-I-write-a-mobile-app-with-Svelte)
+- Mobile breakpoints (breakpoints: 320px, 768px, 1024px) just work.
+- Mobile design is documented in `AGENTS.md`.
 
 # B. **Documentation Requirements**
 
