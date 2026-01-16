@@ -59,10 +59,13 @@
 		<span class="iconify material-symbols--partly-cloudy-day-outline-rounded"></span>
 		<legend class="fieldset-legend">Weather</legend>
 	</div>
+	<label for="location">Location:</label>
 	<div class="join">
 		<div class="flex flex-col">
 			<input
 				bind:this={locationInput}
+				id="location"
+				name="location"
 				class="input-bordered validator input w-full"
 				minlength="4"
 				pattern="[A-Za-z0-9 ]*"
