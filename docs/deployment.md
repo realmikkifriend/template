@@ -1,7 +1,7 @@
 These instructions cover deploying a local project to a new Github repo and new Netlify site.
 
 - [1. Github](#1-github)
-  - [a. Initializing a Repo](#a-initializing-a-repo)
+  - [a. Initializing a GitHub Repo](#a-initializing-a-github-repo)
   - [b. Pushing a New Branch](#b-pushing-a-new-branch)
   - [c. Merging a PR](#c-merging-a-pr)
 - [2. Netlify](#2-netlify)
@@ -10,16 +10,18 @@ These instructions cover deploying a local project to a new Github repo and new 
 
 # 1. Github
 
-## a. Initializing a Repo
+## a. Initializing a GitHub Repo
 
-2. Run `gh repo create` and answer the questions. Allow it to make an initial commit.
+1. Run `gh repo create` and answer the questions. Allow it to make an initial commit.
+2. Add new repository as 'origin' remote: `git remote add origin git@github.com:you/my-new-project.git`
 3. Run `git push origin main` to create the `main` branch and push all commits to it.
-4. Run `git branch --all` to confirm that the main was created.
+4. Run `git branch --all` to confirm that the main branch was created.
 
 ## b. Pushing a New Branch
 
-1. Push new branch to remote repository (`git push -u origin BRANCHNAME`).
-2. Push any new commits (`git push`).
+1. Open Command Palette and use Conventional Branch to create a new feature branch.
+1. Use 'Publish Branch' button or manually push new branch to remote repository (`git push -u origin BRANCHNAME`).
+1. Push any new commits (`git push`).
 
 ## c. Merging a PR
 

@@ -1,44 +1,31 @@
 This document outlines the version control commands and workflows for using this template repository.
 
 - [Setting Up a New Cloned Project](#setting-up-a-new-cloned-project)
-  - [1. Clone the Template Repository](#1-clone-the-template-repository)
-  - [2. Set Up a New GitHub Repository](#2-set-up-a-new-github-repository)
 - [Version Control Flow](#version-control-flow)
   - [1. Pull Changes from Main](#1-pull-changes-from-main)
   - [2. Prep a Feature Branch](#2-prep-a-feature-branch)
-  - [3. Add Template Changes](#3-add-template-changes)
+  - [3. Pull Template Changes](#3-pull-template-changes)
   - [3. Make, Check, \& Commit Changes](#3-make-check--commit-changes)
   - [4. Push the Branch](#4-push-the-branch)
 
 # Setting Up a New Cloned Project
 
-## 1. Clone the Template Repository
-
 To clone the template repository and set it up as a new project:
 
-1. Create a new project directory.
-2. Clone template repository (`git clone git@github.com:you/template.git .`).
-   - [ ] after pushing template to Github, replace URL with template remote
-3. Rename remote to `upstream` to track template repository (`git remote rename origin upstream`).
-
-## 2. Set Up a New GitHub Repository
-
-Use the `gh` CLI to create a new empty repository on GitHub:
-
-1. Create new empty repository on GitHub:
-   `gh repo create my-new-project --public --disable-issues --disable-wiki --disable-projects`
-2. Add new repository as 'origin' remote:
-   `git remote add origin git@github.com:you/my-new-project.git`
-3. Push cloned template code to the new repository:
-   `git push -u origin main`
+1. Open new terminal (`CTRL+K`) or use Yakuake
+2. `DIR="PROJECTNAME" && mkdir ~/Development/"$DIR" && code ~/Development/"$DIR"`
+   - This will create a new project directory and open VS Code in it.
+3. Clone template repository (`git clone git@github.com:realmikkifriend/template.git .`)
+4. `git remote rename origin upstream`
+   - This renames the remote to `upstream` to track it as a template repository.
 
 # Version Control Flow
 
 ## 1. Pull Changes from Main
 
-Before starting new work, ensure your local repository is up to date.
+Before starting new work, ensure your local main branch is up to date.
 
-Install the [Git Auto Pull](https://marketplace.visualstudio.com/items?itemName=tapasthakkar.auto-git-pull) extension in VS Code to automatically pull changes from remote and upstream. Manually:
+Install a [git auto-pull](https://marketplace.visualstudio.com/items?itemName=ChaitanyaPRamod.git-auto-pull) VS Code extension to automatically pull changes from remote/upstream. Manually:
 
 1. Switch to main branch. (`git checkout main`)
 2. Pull latest changes from remote (`git pull origin main`)
@@ -48,15 +35,14 @@ Install the [Git Auto Pull](https://marketplace.visualstudio.com/items?itemName=
 Create a new branch for your feature or bug fix.
 
 1. Use the VS Code extension Conventional Branches from the Command Palette. (`git checkout -b type/short-description`)
-2. Run `npm run deps` to audit dependencies.
+2. Run `npm run auditdeps` to check for dependencies to update.
 
-## 3. Add Template Changes
+## 3. Pull Template Changes
 
-If template changes are expected to be minor, or if an update-specific branch has been created:
-
-1. Pull in changes from the upstream template repo (`git fetch upstream`).
-2. Merge desired changes using VS Code's interface.
-3. To permanently exclude specific files from upstream changes,
+1. If template changes are expected to be minor, they can be merged during a different branch. If changes are major or breaking, create an update-specific branch.
+2. Pull in changes from the upstream template repo (`git fetch upstream`).
+3. Merge desired changes using VS Code's interface.
+4. To permanently exclude specific files from upstream changes,
    a. Create a `.gitattributes` file in project root.
    b. Specify files to ignore: `path/to/file merge=ours`
    c. Configure Git to use a custom merge strategy for these files.
