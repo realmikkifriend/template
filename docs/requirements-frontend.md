@@ -98,24 +98,11 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ### a. **Accessibility Metrics Compliance**
 
-- [ ] process [Accessibility testing | Playwright](https://playwright.dev/docs/accessibility-testing)
-  - [ ] process [1.5 Testing with Playwright | playwright-a11y-demo](https://playwright-fyi.github.io/playwright-a11y-demo/steps/01-about/5-playwright.html)
-  - [ ] process [Automating Accessibility Testing With Playwright - DEV Community](https://dev.to/leading-edje/automating-accessibility-testing-with-playwright-3el7)
-  - [ ] [Making Web More Accessible: a11y Testing Tools and Techniques with Playwright](https://ray.run/blog/accessibility-testing-with-playwright)
-
-- [ ] look into automated a11y testing
-  - [ ] [axe-core](https://github.com/dequelabs/axe-core)
-  - [ ] [pa11y](https://github.com/pa11y/pa11y)
-- Colors have sufficient contrast.
-  - [WCAG - Contrast Checker](https://contrastchecker.com/)
+- Accessibility standards are enforced using a [Playwright `axe` test](https://playwright.dev/docs/accessibility-testing).
 - Fonts are attractive and accessible.
-  - [ ] process webfonts § [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist?tab=readme-ov-file#webfonts)
-  - [ ] process fonts § [thedaviddias/Front-End-Design-Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#13---fonts-and-texts)
-  - [ ] look up comparisons to Fontsource
   - [ ] set up Fontsource with Atkinson Hyperlegible
   - [ ] look for other hyperlegible web fonts
   - [ ] ensure bold and italics work
-- Essential accessibility standards are documented in `AGENTS.md`.
 
 ### b. **Internationalization (i18n)**
 
