@@ -20,14 +20,12 @@ This document outlines the requirements for front-end design of an ideal templat
     - [a. ✓ **Mobile Performance Metrics**](#a--mobile-performance-metrics)
     - [b. ✓ **Perfect Responsiveness**](#b--perfect-responsiveness)
 - [B. **Documentation Requirements**](#b-documentation-requirements)
-  - [6. **Feature Documentation**](#6-feature-documentation)
-    - [a. **README.md Creation**](#a-readmemd-creation)
-    - [b. **Stack Documentation**](#b-stack-documentation)
+  - [6. ✓ **Feature Documentation**](#6--feature-documentation)
+    - [a. ✓ **Documentation Index**](#a--documentation-index)
   - [7. **Project Documentation**](#7-project-documentation)
     - [a. **Documentation Templates**](#a-documentation-templates)
-    - [b. **IDE Setup Documentation**](#b-ide-setup-documentation)
-    - [c. **Documented License Selection**](#c-documented-license-selection)
-    - [d. **Documentation Auto-Generation**](#d-documentation-auto-generation)
+    - [b. **Documented License Selection**](#b-documented-license-selection)
+    - [c. **Component Documentation Auto-Generation**](#c-component-documentation-auto-generation)
 
 # A. ✓ **Design Requirements**
 
@@ -112,70 +110,45 @@ This document outlines the requirements for front-end design of an ideal templat
 
 # B. **Documentation Requirements**
 
-## 6. **Feature Documentation**
+## 6. ✓ **Feature Documentation**
 
 - Documentation of template features is comprehensive and useful
-- Comes after features are implemented
 
-### a. **README.md Creation**
+### a. ✓ **Documentation Index**
 
-- Create `README.md` in project root
-- Contains Initiation section (leave empty, will write below)
-- Section that lists files in remote `/docs` directory (not local because not copied during clone)
-- [technote-space/toc-generator: GitHub Actions to generate TOC (Table of Contents)](https://github.com/technote-space/toc-generator)
-
-### b. **Stack Documentation**
-
-- Create `/docs/stack.md`
-- Write up table with package name, purpose, docs URL, llms.txt URL
-- Include:
-  - VS Code
-    - ESLint
-    - Prettier
-    - Knip
-  - NodeJS, `npm`
-  - Svelte
-    - Add import aliases
-      - [How to add module import aliases in SvelteKit - DEV Community](https://dev.to/danawoodman/how-to-add-module-import-aliases-in-sveltekit-2ck)
-    - Still recommended by official Svelte docs? try other PWA options
-  - Helper libraries
-    - Time: `luxon`, `chrono-node` for parsing strings
-    - Markdown: `svelte-exmarkdown` or [`mdsvex`](https://svelte.dev/docs/cli/mdsvex)
-    - Persistent store: `svelte-persisted-store` (used before) or `svelte-persistent-store`
-  - TailwindCSS
-    - DaisyUI
-    - HeroIcons with `svelte-hero-icons`
-    - Fontsource
-- The stack documentation is referenced in `AGENTS.md`.
+- The template's `README.md` explains the project purpose, stack, and links to the other docs.
 
 ## 7. **Project Documentation**
 
 - Subsequent project documentation is easy to write, organize, access, and maintain
-- Builds on initial docs
 
 ### a. **Documentation Templates**
 
 - Templates for `README.md` and other minimal project documentation.
   - [Louis3797/awesome-readme-template: An awesome README template for your projects!](https://github.com/Louis3797/awesome-readme-template)
-  - [noahbald/awesome-architecture-md: A list of awesome ARCHITECTURE.md files](https://github.com/noahbald/awesome-architecture-md)
   - [Awesome README | Curated list of awesome lists | Project-Awesome.org](https://github.com/sindresorhus/awesome#readme)
   - [matiassingers/awesome-readme: A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
+- `ARCHITECTURE.md`
+  - [noahbald/awesome-architecture-md: A list of awesome ARCHITECTURE.md files](https://github.com/noahbald/awesome-architecture-md)
 - `CONTRIBUTING.md`
+  - [mntnr/awesome-contributing: Awesome contributing guides for open source development.](https://github.com/mntnr/awesome-contributing)
+  - [awesome-copilot/CONTRIBUTING.md at main · github/awesome-copilot](https://github.com/github/awesome-copilot/blob/main/CONTRIBUTING.md)
+  - [How to Build a CONTRIBUTING.md - Best Practices](https://contributing.md/how-to-build-contributing-md/)
 - `CODE_OF_CONDUCT.md`
+  - [awesome/code-of-conduct.md at main · sindresorhus/awesome](https://github.com/sindresorhus/awesome/blob/main/code-of-conduct.md)
+  - [awesome-copilot/CODE_OF_CONDUCT.md at main · github/awesome-copilot](https://github.com/github/awesome-copilot/blob/main/CODE_OF_CONDUCT.md)
 - `SECURITY.md`
+  - [awesome-copilot/SECURITY.md at main · github/awesome-copilot](https://github.com/github/awesome-copilot/blob/main/SECURITY.md)
 
-### b. **IDE Setup Documentation**
-
-- Create `/docs/ide.md` with setup instructions for VS Code, essential extensions, settings sync
-
-### c. **Documented License Selection**
+### b. **Documented License Selection**
 
 - Licensing a project is quick and easy
-- Important but can be handled last
 - The process of choosing a `LICENSE.md` is documented.
 
-### d. **Documentation Auto-Generation**
+### c. **Component Documentation Auto-Generation**
 
 - JSDoc is configured and can be used to generate documentation.
 - Components and individual page elements are documented with comments. These appear as user help and are compiled into documentation.
   - [How do I document my components? • Frequently asked questions • Svelte Docs](https://svelte.dev/docs/svelte/faq#How-do-I-document-my-components)
+
+- [ ] set up Github repo
