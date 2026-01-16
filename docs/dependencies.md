@@ -16,7 +16,7 @@ This document explains how to manage project dependencies.
 
 `npm run check`
 
-`npm run deps` shows outdated dependencies
+`npm run outdateddeps` shows outdated dependencies
 
 ## Major Packages
 
@@ -37,9 +37,8 @@ To update Node.js:
 
 ### Getting Package Info
 
-To view the list of versions:
-
-`npm view PACKAGENAME versions`
+- `npm view PACKAGENAME versions` lists available versions
+- `npm ls PACKAGENAME` displays dependency tree
 
 ### Manual Updates
 
