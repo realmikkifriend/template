@@ -9,8 +9,6 @@ This document outlines the version control commands and workflows for using this
   - [3. Add Template Changes](#3-add-template-changes)
   - [3. Make, Check, \& Commit Changes](#3-make-check--commit-changes)
   - [4. Push the Branch](#4-push-the-branch)
-    - [a. Local Projects](#a-local-projects)
-    - [b. Remote Projects](#b-remote-projects)
 
 # Setting Up a New Cloned Project
 
@@ -68,13 +66,11 @@ If template changes are expected to be minor, or if an update-specific branch ha
 
 After making all desired changes:
 
-1. Run `npm run check` to re-check dependencies, confirm there are no linting errors, generate a dependency graph, and check the codebase for issues.
+1. Run `npm run finish` to re-check dependencies, confirm there are no linting errors, generate a dependency graph, and check the codebase for issues.
    a. Resolve any issues and repeat this step until the command exits cleanly.
 2. Commit final changes.
 
 ## 4. Push the Branch
-
-### a. Local Projects
 
 If working locally:
 
@@ -82,11 +78,4 @@ If working locally:
 2. Merge in changes from the new branch.
 3. Delete the old branch.
 
-### b. Remote Projects
-
-If working with a remote repository:
-
-1. Push new branch to remote repository (`git push -u origin BRANCHNAME`).
-2. Push any subsequent changes (`git push`).
-3. Create a branch pull request using the [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) extension in VS Code.
-4. After branch is merged into main, delete old branch.
+For remote repositories, see [Deployment](deployment.md).

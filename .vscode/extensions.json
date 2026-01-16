@@ -45,6 +45,8 @@
         "vivaxy.vscode-conventional-commits",
         // improves display of branches
         "eamodio.gitlens",
+        // improves working with GitHub PRs
+        "github.vscode-pull-request-github",
         //
         // // DESIGN
         // highlights Tailwind classes

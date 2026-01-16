@@ -46,10 +46,13 @@ This template provides a starting point for new web projects. It has been design
 - Project documentation for you to customize:
   - This file! (For ideas, see [matiassingers/awesome-readme](https://github.com/matiassingers/awesome-readme))
   - [Project Requirements](./docs/requirements.md)
+  - [License](LICENSE.md)
+  - If you plan on collaboration, add [`CONTRIBUTING.md`](https://contributing.md/generator/) and [`CODE_OF_CONDUCT.md`](https://opensource.guide/code-of-conduct/)
 - Template documentation:
   - [Version Control](./docs/version-control.md) includes setup instructions
   - [Dependencies](./docs/dependencies.md) instructs on updating dependencies
   - [Deployment](./docs/deployment.md) instructs on deploying to repo and production
   - [Agent Knowledge](AGENTS.md)
+  - [Architecture](ARCHITECTURE.md)
   - [Backend Requirements](./docs/requirements-backend.md)
   - [Frontend Requirements](./docs/requirements-frontend.md)
