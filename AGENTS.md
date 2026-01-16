@@ -212,3 +212,5 @@ npm run dev
   - `src/lib/styles/typography.css` styling text and paragraphs
   - `src/lib/styles/components/COMPONENTTYPE.css` e.g. buttons, forms, cards
 - **Component Styles**: Use Tailwind classes directly in components for initial designs, but move them to `src/lib/styles`
+- Styling is mobile-first, so designs assume a small screen by default.
+  - Mobile breakpoints are used to style for larger screens: `xxs:` and `xs:` for large phones, `sm:` and `md:` for tablets and most browsers, and `lg:`, `xl:`, `2xl:`, and `3xl:` for larger screens.

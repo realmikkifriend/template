@@ -16,14 +16,13 @@ This document outlines the requirements for front-end design of an ideal templat
     - [c. ✓ **Print Styling**](#c--print-styling)
   - [4. ✓ **Accessibility**](#4--accessibility)
     - [a. ✓ **Accessibility Metrics Compliance**](#a--accessibility-metrics-compliance)
-  - [5. **Mobile Responsiveness**](#5-mobile-responsiveness)
-    - [a. **Mobile Performance Metrics**](#a-mobile-performance-metrics)
-    - [b. **Perfect Responsiveness**](#b-perfect-responsiveness)
+  - [5. ✓ **Mobile Responsiveness**](#5--mobile-responsiveness)
+    - [a. ✓ **Mobile Performance Metrics**](#a--mobile-performance-metrics)
+    - [b. ✓ **Perfect Responsiveness**](#b--perfect-responsiveness)
 - [B. **Documentation Requirements**](#b-documentation-requirements)
   - [6. **Feature Documentation**](#6-feature-documentation)
     - [a. **README.md Creation**](#a-readmemd-creation)
     - [b. **Stack Documentation**](#b-stack-documentation)
-    - [c. **High Documentation Coverage**](#c-high-documentation-coverage)
   - [7. **Project Documentation**](#7-project-documentation)
     - [a. **Documentation Templates**](#a-documentation-templates)
     - [b. **IDE Setup Documentation**](#b-ide-setup-documentation)
@@ -97,18 +96,18 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ### a. ✓ **Accessibility Metrics Compliance**
 
-## 5. **Mobile Responsiveness**
+## 5. ✓ **Mobile Responsiveness**
 
 - The app functions well on mobile
 
-### a. **Mobile Performance Metrics**
+### a. ✓ **Mobile Performance Metrics**
 
-- [ ] research metrics
+- End-to-end tests are run on an emulated mobile browser.
 - The app [can be set up as an installable PWA](https://svelte.dev/docs/svelte/faq#How-do-I-write-a-mobile-app-with-Svelte).
 
-### b. **Perfect Responsiveness**
+### b. ✓ **Perfect Responsiveness**
 
-- Mobile breakpoints (breakpoints: 320px, 768px, 1024px) just work.
+- [Mobile breakpoints](https://tailwindcss.com/docs/responsive-design) just work.
 - Mobile design is documented in `AGENTS.md`.
 
 # B. **Documentation Requirements**
@@ -148,10 +147,6 @@ This document outlines the requirements for front-end design of an ideal templat
     - HeroIcons with `svelte-hero-icons`
     - Fontsource
 - The stack documentation is referenced in `AGENTS.md`.
-
-### c. **High Documentation Coverage**
-
-- High template documentation coverage.
 
 ## 7. **Project Documentation**
 
