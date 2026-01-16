@@ -19,11 +19,13 @@ These instructions cover deploying a local project to a new Github repo and new 
 ## b. Pushing a New Branch
 
 1. Push new branch to remote repository (`git push -u origin BRANCHNAME`).
-2. Push any subsequent changes (`git push`).
+2. Push any new commits (`git push`).
 
 ## c. Merging a PR
 
-3. Create a branch pull request using the [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) extension in VS Code.
+1. Run `npm run finish` to complete final checks and bump version. Commit any changes.
+2. Switch to `main` branch.
+3. Create a branch pull request using [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) extension in VS Code.
 4. After branch is merged into main, delete old branch.
 
 # 2. Netlify
