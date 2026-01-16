@@ -1,0 +1,8 @@
+@media print {
+	body * {
+		color: black;
+	}
+	.navbar {
+		display: none;
+	}
+}

@@ -10,10 +10,10 @@ This document outlines the requirements for front-end design of an ideal templat
     - [b. ✓ **Quality Icon Library**](#b--quality-icon-library)
     - [c. ✓ **Modal and Dialog Support**](#c--modal-and-dialog-support)
     - [d. ✓ **Notification System**](#d--notification-system)
-  - [3. **Theming**](#3-theming)
+  - [3. ✓ **Theming**](#3--theming)
     - [a. ✓ **Automatic System Theme Detection**](#a--automatic-system-theme-detection)
     - [b. ✓ **User-Facing Theme Switcher**](#b--user-facing-theme-switcher)
-    - [c. **Print Styling**](#c-print-styling)
+    - [c. ✓ **Print Styling**](#c--print-styling)
   - [4. **Accessibility**](#4-accessibility)
     - [a. **Accessibility Metrics Compliance**](#a-accessibility-metrics-compliance)
     - [b. **Internationalization (i18n)**](#b-internationalization-i18n)
@@ -76,7 +76,7 @@ This document outlines the requirements for front-end design of an ideal templat
 - Notifications (e.g. toasts) are easy to implement and display properly.
 - Working with notifications is documented in `AGENTS.md`.
 
-## 3. **Theming**
+## 3. ✓ **Theming**
 
 - Theming (e.g. dark/light) just works
 
@@ -88,21 +88,33 @@ This document outlines the requirements for front-end design of an ideal templat
 
 - User-facing theme switcher is available.
 
-### c. **Print Styling**
+### c. ✓ **Print Styling**
 
-- The app looks good when printed.
+- The app looks good when printed, and there is a print stylesheet for ready customization.
 
 ## 4. **Accessibility**
 
-- Design meets accessibility (a11y) metrics (e.g. color contrast, font use)
-- Builds on theming
+- Design meets accessibility (a11y) and internationalization (i18n) metrics
 
 ### a. **Accessibility Metrics Compliance**
 
-- Research metrics (e.g. axe or pa11y)
-- [§ accessibility elsewhencode/project-guidelines: A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines)
+- [ ] process [Accessibility testing | Playwright](https://playwright.dev/docs/accessibility-testing)
+  - [ ] process [1.5 Testing with Playwright | playwright-a11y-demo](https://playwright-fyi.github.io/playwright-a11y-demo/steps/01-about/5-playwright.html)
+  - [ ] process [Automating Accessibility Testing With Playwright - DEV Community](https://dev.to/leading-edje/automating-accessibility-testing-with-playwright-3el7)
+  - [ ] [Making Web More Accessible: a11y Testing Tools and Techniques with Playwright](https://ray.run/blog/accessibility-testing-with-playwright)
+
+- [ ] look into automated a11y testing
+  - [ ] [axe-core](https://github.com/dequelabs/axe-core)
+  - [ ] [pa11y](https://github.com/pa11y/pa11y)
 - Colors have sufficient contrast.
   - [WCAG - Contrast Checker](https://contrastchecker.com/)
+- Fonts are attractive and accessible.
+  - [ ] process webfonts § [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist?tab=readme-ov-file#webfonts)
+  - [ ] process fonts § [thedaviddias/Front-End-Design-Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#13---fonts-and-texts)
+  - [ ] look up comparisons to Fontsource
+  - [ ] set up Fontsource with Atkinson Hyperlegible
+  - [ ] look for other hyperlegible web fonts
+  - [ ] ensure bold and italics work
 - Essential accessibility standards are documented in `AGENTS.md`.
 
 ### b. **Internationalization (i18n)**
@@ -165,11 +177,7 @@ This document outlines the requirements for front-end design of an ideal templat
   - TailwindCSS
     - DaisyUI
     - HeroIcons with `svelte-hero-icons`
-    - Fontsource, Atkinson Hyperlegible
-      - Add italic
-      - Look for other Hyperlegible web fonts
-      - webfonts § [thedaviddias/Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist?tab=readme-ov-file#webfonts)
-      - fonts § [thedaviddias/Front-End-Design-Checklist](https://github.com/thedaviddias/Front-End-Design-Checklist?tab=readme-ov-file#13---fonts-and-texts)
+    - Fontsource
 - The stack documentation is referenced in `AGENTS.md`.
 
 ### c. **High Documentation Coverage**
