@@ -2,47 +2,14 @@
 
 This document provides project style guidelines that coding agents must follow.
 
-This is a Svelte 5 codebase using TypeScript and ESLint for code quality, TailwindCSS and DaisyUI for styling, Vite to serve, and Playwright for testing.
+For detailed architectural information including project structure, layer boundaries, and component organization, refer to the [ARCHITECTURE.md](ARCHITECTURE.md) document.
 
 ## General Guidelines
-
-### Key Directories
-
-- **`src/`**: Contains the main application code
-  - **`src/lib/`**: Reusable components and utilities (imported via `$lib` alias)
-  - **`src/routes/`**: Application routes and pages
-- **`static/`**: Static assets served directly (e.g., `robots.txt`)
-
-### Important Files
-
-- **`src/app.html`**: Contains SvelteKit placeholders
-- **`src/routes/+error.svelte`**: Custom error page
-- **`src/routes/+layout.svelte`**: `<head>`, header, footer, and menus for every page
-- **`src/routes/+page.svelte`**: Content of the homepage
-
-#### Configuration Files
-
-- **App**: `svelte.config.ts`, `vite.config.ts`
-- **Code Quality**: `tsconfig.json`, `eslint.config.mts`, `.prettierrc`, `knip.ts`, `.dependency-cruiser.ts`
-- **Testing**: `playwright.config.ts`
-
-### Layer Boundaries
-
-- **View**
-  - `src/routes/` contain Svelte components that receive and display data.
-  - `src/lib/styles/` contains stylesheets and style utilities.
-  - `src/lib/components/` contains reusable Svelte components.
-- **Model**
-  - `src/lib/types` contains type/interface definitions.
-  - `src/lib/stores` contains persistent Svelte stores.
-- **Controller**
-  - `src/lib/services` contains functions that access stores or handle business logic.
-  - `src/lib/utils` contains only pure, stateless functions and no side effects.
 
 ### Code Style
 
 - **Maximum file length**: Svelte and Typescript files should have limited length. Extract code to a new file when necessary.
-- **JSDoc required** for all public/arrow functions
+- **JSDoc**: Required for all public/arrow functions.
 - **Don't Repeat Yourself**: If code is used more than once, extract it to a reusable function/component.
 - **No comments**: Do not include comments. Write code that is self-explanatory.
 - **Maximum nesting depth**: Do not deeply nest code. Refactor or extract to functions.
@@ -52,93 +19,38 @@ This is a Svelte 5 codebase using TypeScript and ESLint for code quality, Tailwi
 #### **Type Safety**:
 
 - Use TypeScript interfaces for props and data
-- Define types in `$lib/types` directory
-- Document all public functions with JSDoc
-- Use ES modules (`import/export` syntax)
 - Browser globals are available
-- Use appropriate polyfills for Node.js environments
+- Define types/interfaces in `$lib/types`
 
 #### Functional Programming
 
-- Follow functional programming patterns where applicable
-- Avoid mutable state when possible
+- Follow functional programming patterns where applicable, avoid mutable state when possible
+- If rules seem overly restrictive, ask the user whether to override
 - Functional programming rules are ignored in test files (`**/*.spec.ts`)
 
 #### Console Usage
 
 - **Allowed**:
   - `console.error()` for error logging
-  - `{@debug VALUE}` logs the value when changed, pauses execution if devtools open
+  - `{@debug VALUE}` logs the value when changed, pauses execution if browser devtools is open
 - **Avoid**: `console.log()`, `console.warn()`, Svelte's `$inspect(count, message)` rune, etc.
 
 ## Development Workflow
-
-### Common Commands
-
-```bash
-# Check dependencies for updates and security issues
-npm run deps
-
-# Lint and type check
-npm run lint
-
-# Builds dependency graph, checks for Svelte issues, runs Knip
-npm run scan
-
-# Run tests
-npm test
-
-# Start development server
-npm run dev
-```
-
-### Environment Variables
-
-- **Template**: `.env.example` provides variable templates
-- **Public Variables**: Prefix with `PUBLIC_` (e.g., `PUBLIC_API_URL`)
-- **Private Variables**: Use in server-side code only
 
 ### Testing
 
 - Write Playwright tests for critical user flows (both happy paths and error cases)
 - Store tests next to the code they test
 - Use `test.describe()` to group related tests for a component or feature
-- Define locators at the top level if reused across tests
 - Use `test.beforeEach()` for common setup that runs before each test
+  - Define locators at the top level if reused across tests
 - Use descriptive test names starting with "should"
 - Use `page.route()` to mock API responses
 - Create helper functions for repeated logic
 
 ## Svelte Guidelines
 
-### Component Organization
-
-- Keep components small and focused
-- Use `$lib` for reusable components and functions
-  - `$lib/assets` for images and other static files
-  - `$lib/components` for re-used Svelte components
-  - `$lib/styles` for stylesheets and style utilities
-  - `$lib/types` for type/interface definitions
-  - `$lib/stores` contains persistent Svelte stores
-  - `$lib/services` contains functions that access stores or handle business logic.
-  - `$lib/utils` contains only pure, stateless functions and no side effects.
-- Create new page components under new route sub-directories
-  - `src/routes/blog/[slug]` creates a route with `slug` parameter (like `/blog/hello-world`)
-  - `src/routes/blog/+page.svelte` creates a `site.com/blog` page
-  - `src/routes/blog/+page.ts` exports load function before page render
-  - `src/routes/blog/+layout.svelte` adds to surrounding layout (especially `<head>`)
-  - `src/routes/blog/+layout.ts` exports load function for layout
-  - `src/routes/blog/+error.svelte` creates a custom error page for this route
-- Couple sub-components with their parents where possible.
-  - `src/routes/blog/_components/BlogPost.svelte` is page sub-component
-  - `$lib/components` for re-used components
-- Create server functions for fetching, form actions, and handling `env` variables.
-  - `src/routes/blog/+server.ts` defines API endpoints by exporting `GET`/`POST`/etc HTTP methods
-    - couple server endpoints with the pages they directly support
-    - use `src/routes/api/` to organize projects with many endpoints not coupled to pages
-  - `src/routes/blog/+page.server.ts` load function that only runs on server
-  - `src/routes/blog/+layout.server.ts` only runs on server
-  - `src/*/name.remote.ts` exports functions that run on server
+For detailed component organization and routing patterns, refer to the [ARCHITECTURE.md](ARCHITECTURE.md) document.
 
 ### State Management
 
@@ -146,13 +58,13 @@ npm run dev
   - `$state` creates reactive values
   - `$derived` runs again if relevant values change
   - `$effect` functions run when state changes
-  - Never use `writable` from `svelte/store`.
-  - Never use `$:`.
+  - Never use `writable` from `svelte/store`
+  - Never use `$:`
 - **Store initialization**:
-  - Create new stores in `lib/stores` as `storeName.svelte.ts`.
-  - Always provide initial values to stores.
-  - Use `persistedState` from `svelte-persisted-state` to make stores persist across page loads.
-  - Minimal functions that directly mutate state live in a store's file or co-located utility file.
+  - Create new stores in `lib/stores` as `storeName.svelte.ts`
+  - Always provide initial values to stores
+  - Use `persistedState` from `svelte-persisted-state` to make stores persist across page loads
+  - Minimal functions that directly mutate state live in a store's file or co-located utility file
 - **Context**:
   - Context enables components to access parent component values without prop-drilling.
     - `setContext(key, value)` in parent components
@@ -164,7 +76,7 @@ npm run dev
       export const [getUserContext, setUserContext] = createContext<User>();
       ```
   - Keys and values can be any JavaScript type.
-  - `Notifications.svelte` provides a context-based notification system.
+  - `Notifications.svelte` provides an example context-based notification system.
 
     ```svelte
     <script lang="ts">

@@ -24,8 +24,7 @@ This document outlines the requirements for front-end design of an ideal templat
     - [a. ✓ **Documentation Index**](#a--documentation-index)
   - [7. **Project Documentation**](#7-project-documentation)
     - [a. **Documentation Templates**](#a-documentation-templates)
-    - [b. **Documented License Selection**](#b-documented-license-selection)
-    - [c. **Component Documentation Auto-Generation**](#c-component-documentation-auto-generation)
+    - [b. **Component Documentation Auto-Generation**](#b-component-documentation-auto-generation)
 
 # A. ✓ **Design Requirements**
 
@@ -124,28 +123,20 @@ This document outlines the requirements for front-end design of an ideal templat
 
 ### a. **Documentation Templates**
 
-- Templates for `README.md` and other minimal project documentation.
-  - [Louis3797/awesome-readme-template: An awesome README template for your projects!](https://github.com/Louis3797/awesome-readme-template)
-  - [Awesome README | Curated list of awesome lists | Project-Awesome.org](https://github.com/sindresorhus/awesome#readme)
-  - [matiassingers/awesome-readme: A curated list of awesome READMEs](https://github.com/matiassingers/awesome-readme)
-- `ARCHITECTURE.md`
-  - [noahbald/awesome-architecture-md: A list of awesome ARCHITECTURE.md files](https://github.com/noahbald/awesome-architecture-md)
-- `CONTRIBUTING.md`
-  - [mntnr/awesome-contributing: Awesome contributing guides for open source development.](https://github.com/mntnr/awesome-contributing)
-  - [awesome-copilot/CONTRIBUTING.md at main · github/awesome-copilot](https://github.com/github/awesome-copilot/blob/main/CONTRIBUTING.md)
-  - [How to Build a CONTRIBUTING.md - Best Practices](https://contributing.md/how-to-build-contributing-md/)
-- `CODE_OF_CONDUCT.md`
-  - [awesome/code-of-conduct.md at main · sindresorhus/awesome](https://github.com/sindresorhus/awesome/blob/main/code-of-conduct.md)
-  - [awesome-copilot/CODE_OF_CONDUCT.md at main · github/awesome-copilot](https://github.com/github/awesome-copilot/blob/main/CODE_OF_CONDUCT.md)
-- `SECURITY.md`
-  - [awesome-copilot/SECURITY.md at main · github/awesome-copilot](https://github.com/github/awesome-copilot/blob/main/SECURITY.md)
+- Templates for `README.md`, [`ARCHITECTURE.md`](https://architecture.md/), `LICENSE.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` are ready to be customized.
+  - `CONTRIBUTING.md`
+    - [mntnr/awesome-contributing](https://github.com/mntnr/awesome-contributing)
+    - [awesome-copilot/CONTRIBUTING.md](https://github.com/github/awesome-copilot/blob/main/CONTRIBUTING.md)
+    - [How to Build a CONTRIBUTING.md](https://contributing.md/how-to-build-contributing-md/)
+  - `CODE_OF_CONDUCT.md`
+    - [awesome/code-of-conduct.md at main](https://github.com/sindresorhus/awesome/blob/main/code-of-conduct.md)
+    - [awesome-copilot/CODE_OF_CONDUCT.md](https://github.com/github/awesome-copilot/blob/main/CODE_OF_CONDUCT.md)
+  - `SECURITY.md`
+    - [awesome-copilot/SECURITY.md](https://github.com/github/awesome-copilot/blob/main/SECURITY.md)
+  - `LICENSE.md`
+    - [ ] find resources for choosing project license
 
-### b. **Documented License Selection**
-
-- Licensing a project is quick and easy
-- The process of choosing a `LICENSE.md` is documented.
-
-### c. **Component Documentation Auto-Generation**
+### b. **Component Documentation Auto-Generation**
 
 - JSDoc is configured and can be used to generate documentation.
 - Components and individual page elements are documented with comments. These appear as user help and are compiled into documentation.
