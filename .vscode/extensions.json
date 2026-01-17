@@ -47,6 +47,8 @@
         "eamodio.gitlens",
         // improves working with GitHub PRs
         "github.vscode-pull-request-github",
+        // auto-pulls remote changes
+        "chaitanyapramod.git-auto-pull",
         //
         // // DESIGN
         // highlights Tailwind classes

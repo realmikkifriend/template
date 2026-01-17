@@ -12,8 +12,8 @@ if [ "$BRANCH_NAME" = "main" ]; then
   fi
 else
   # Enforce branch naming convention for non-main branches
-  if ! echo "$BRANCH_NAME" | grep -E '^(feature|bugfix|docs|chore|refactor|test|style|perf|release)/'; then
-    echo "ERROR: Branch name must follow the Conventional Branch naming convention (e.g., feature/add-login, bugfix/fix-header)."
+  if ! echo "$BRANCH_NAME" | grep -E '^(feature|fix|test|chore|release)/'; then
+chore|    echo "ERROR: Branch name must follow the Conventional Branch naming convention (e.g., feature/add-login, fix/fix-header)."
     exit 1
   fi
 fi
