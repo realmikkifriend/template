@@ -21,7 +21,7 @@
 		"check": "npm run outdateddeps && npm run lint && npm run scan",
 		"lint": "eslint . && tsc --noEmit",
 		"scan": "npm run depcruiser -s && svelte-check 1> /dev/null 2>&2 && npm run knip -s -- --no-progress",
-		"depcruiser": "depcruise src --include-only '^src' --output-type x-dot-webpage -f dependencies.htm",
+		"depcruiser": "depcruise src --include-only '^src' --output-type x-dot-webpage -f logs/dependencies.htm",
 		"knip": "knip",
 		"test": "npx playwright test 1> /dev/null 2>&2",
 		"test:ui": "npx playwright test --ui",
