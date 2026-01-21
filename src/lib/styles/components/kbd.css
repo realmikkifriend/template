@@ -1,0 +1,12 @@
+kbd {
+	@apply absolute top-0 -right-2 hidden rounded-xs bg-accent/25 px-0.75 py-px text-tiny text-base-content;
+}
+
+body.show-kbd * kbd,
+.kbd-join:hover kbd {
+	@apply block;
+}
+
+.kbd-join {
+	@apply relative h-fit w-fit;
+}

@@ -5,6 +5,7 @@
 	import { icons } from '@iconify-json/octicon';
 	import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
 	import { themeChange } from 'theme-change';
+	import { shortcut } from '@svelte-put/shortcut';
 	import SettingsMenu from '$lib/components/SettingsMenu.svelte';
 	import Notifications from '$lib/components/Notifications.svelte';
 	import type { IconifyIcon } from '@iconify/types';
@@ -35,6 +36,7 @@
 <svelte:head>
 	<link href={'data:image/svg+xml,' + encodeURIComponent(favicon || '')} rel="icon" />
 	<link href="https://templatesite.com/" rel="canonical" />
+	<link href="site.webmanifest" rel="manifest" />
 	<meta content="Template App" property="og:site_name" />
 	<title>App Homepage</title>
 	<meta content="Home" property="og:title" />
@@ -59,3 +61,17 @@
 </Notifications>
 
 <footer>created 2025-2026</footer>
+
+<svelte:window
+	use:shortcut={{
+		trigger: [
+			{
+				key: '?',
+				callback: () => {
+					document.body.classList.toggle('show-kbd');
+				},
+				modifier: 'shift'
+			}
+		]
+	}}
+/>

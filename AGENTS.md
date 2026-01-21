@@ -97,6 +97,48 @@ For detailed component organization and routing patterns, refer to the [ARCHITEC
 - **Avoid**: `addEventListener` and `createEventDispatcher`
 - **Preferred**: Use callback props pattern for event handling
 
+### Keyboard Shortcuts
+
+To implement a keyboard shortcut in a Svelte component:
+
+```svelte
+<script lang="ts">
+	import { shortcut } from '@svelte-put/shortcut';
+	import type { ShortcutEventDetail } from '@svelte-put/shortcut';
+
+	function toggleFeature() {
+		document.body.classList.toggle('feature-active');
+	}
+
+	// (optional) handle shortcut events for more complex logic
+	function handleShortcut(event: CustomEvent<ShortcutEventDetail>) {
+		if (event.detail.trigger.id === 'toggle-feature') {
+			console.log('Feature toggled via shortcut');
+		}
+	}
+</script>
+
+<div class="kbd-join">
+	<button>toggle the feature</button>
+	<kbd>CTRL+K</kbd>
+</div>
+
+<svelte:window
+	use:shortcut={{
+		trigger: [
+			{
+				key: 'k',
+				modifier: 'ctrl', // 'ctrl', 'alt', 'shift', 'meta'
+				id: 'toggle-feature',
+				callback: toggleFeature,
+				preventDefault: true
+			}
+		]
+	}}
+	onshortcut={handleShortcut}
+/>
+```
+
 ### Component Structure
 
 - **No `<style>` sections**: Use Tailwind CSS classes or external CSS files in `src/*.css`

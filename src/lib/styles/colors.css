@@ -16,6 +16,10 @@ header {
 	@apply text-accent-content;
 }
 
+code {
+	@apply bg-accent/25;
+}
+
 .right-corner ul select {
 	@apply bg-base-100;
 }

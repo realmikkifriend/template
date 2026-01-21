@@ -5,7 +5,7 @@
 }
 
 body {
-	@apply grid-flow-row gap-6 p-6;
+	@apply grid min-h-screen grid-rows-[auto_1fr_auto] gap-6 p-6;
 }
 
 body,
@@ -72,7 +72,7 @@ header {
 	@apply flex items-center gap-2;
 }
 footer {
-	@apply mt-auto;
+	@apply mt-auto h-fit;
 }
 
 .row-container {
@@ -81,4 +81,8 @@ footer {
 
 #popover-settings .btn-link {
 	@apply m-0 mt-2 h-fit p-0;
+}
+
+code {
+	@apply rounded-sm px-1 text-center;
 }

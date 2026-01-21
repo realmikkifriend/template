@@ -1,6 +1,5 @@
 <script lang="ts">
-	import WeatherSection from '$lib/components/demo/weather/WeatherSection.svelte';
-	import VariablesSection from '$lib/components/demo/variables/VariablesSection.svelte';
+	import Demo from '$lib/components/demo/Demo.svelte';
 </script>
 
 <section>
@@ -10,13 +9,5 @@
 </section>
 
 <section>
-	<h2>Variables</h2>
-
-	<VariablesSection />
-</section>
-
-<section>
-	<h2>Example API Call</h2>
-
-	<WeatherSection />
+	<Demo />
 </section>

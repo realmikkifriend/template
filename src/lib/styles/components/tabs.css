@@ -1,0 +1,15 @@
+.tabs {
+	@apply gap-1;
+}
+
+.tab:checked {
+	@apply bg-accent ring-0 ring-offset-0;
+}
+
+.tab {
+	@apply rounded-t-lg border-b-2 bg-base-200 bg-none text-base-content;
+}
+
+.tab-content {
+	@apply -mt-1 rounded-none bg-base-200 p-4;
+}

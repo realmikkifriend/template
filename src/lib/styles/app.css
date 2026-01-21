@@ -31,6 +31,8 @@
 @import './colors.css';
 
 @import './components/buttons.css';
+@import './components/kbd.css';
 @import './components/notifications.css';
+@import './components/tabs.css';
 
 @import './print.css';
