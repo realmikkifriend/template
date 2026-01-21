@@ -15,9 +15,11 @@ To clone the template repository and set it up as a new project:
 1. Open new terminal (`CTRL+K`) or use Yakuake
 2. `DIR="PROJECTNAME" && mkdir ~/Development/"$DIR" && code ~/Development/"$DIR"`
    - This will create a new project directory and open VS Code in it.
-3. Clone template repository (`git clone git@github.com:realmikkifriend/template.git .`)
-4. `git remote rename origin upstream`
-   - This renames the remote to `upstream` to track it as a template repository.
+3. Clone template repository (`degit github:realmikkifriend/template`)
+4. `git remote add upstream git@github.com:realmikkifriend/template.git`
+   - This tracks the template repo as an `upstream` remote.
+5. `npm install` sets up dependencies.
+   - `npm ci` deletes existing dependencies and installs from scratch.
 
 # Version Control Flow
 
