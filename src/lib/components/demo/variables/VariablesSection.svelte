@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { exampleCount, incrementCount, resetCount } from '$lib/stores/example.svelte';
 </script>
 
