@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AboutModal from '$lib/components/AboutModal.svelte';
+	import { shortcut } from '@svelte-put/shortcut';
 
 	let modal_about: HTMLDialogElement | undefined = $state();
 </script>
@@ -26,7 +27,12 @@
 		<option value="synthwave">Synthwave</option>
 	</select>
 
-	<button class="btn btn-link" onclick={() => modal_about?.showModal()} type="button">About</button>
+	<div class="kbd-join">
+		<button class="btn btn-link" onclick={() => modal_about?.showModal()} type="button">
+			About
+		</button>
+		<kbd>a</kbd>
+	</div>
 </ul>
 <button
 	style:anchor-name="--anchor-settings"
@@ -37,5 +43,19 @@
 >
 	<span class="iconify octicon--sliders-16"></span>
 </button>
+
+<svelte:window
+	use:shortcut={{
+		trigger: [
+			{
+				key: 'a',
+				callback: () => {
+					modal_about?.showModal();
+				},
+				modifier: false
+			}
+		]
+	}}
+/>
 
 <AboutModal bind:modal_about />

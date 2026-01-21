@@ -13,6 +13,7 @@
 		</div>
 		<h2>About</h2>
 		<p>This is a template repo.</p>
+		<p>Type <code>?</code> to reveal keyboard shortcuts.</p>
 	</div>
 	<a
 		class="modal-backdrop"

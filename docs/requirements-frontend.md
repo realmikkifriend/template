@@ -16,6 +16,7 @@ This document outlines the requirements for front-end design of an ideal templat
     - [c. ✓ **Print Styling**](#c--print-styling)
   - [4. ✓ **Accessibility**](#4--accessibility)
     - [a. ✓ **Accessibility Metrics Compliance**](#a--accessibility-metrics-compliance)
+    - [b. ✓ **Keyboard Shortcuts**](#b--keyboard-shortcuts)
   - [5. ✓ **Mobile Responsiveness**](#5--mobile-responsiveness)
     - [a. ✓ **Mobile Performance Metrics**](#a--mobile-performance-metrics)
 - [B. ✓ **Documentation Requirements**](#b--documentation-requirements)
@@ -90,6 +91,14 @@ This document outlines the requirements for front-end design of an ideal templat
 - Internationalization (i18n) [can be set up](https://wuchale.dev/).
 
 ### a. ✓ **Accessibility Metrics Compliance**
+
+- Accessibility standards are enforced using a [Playwright `axe` test](https://playwright.dev/docs/accessibility-testing).
+
+### b. ✓ **Keyboard Shortcuts**
+
+- Interacting using keyboard shortcuts just works.
+- Keyboard shortcuts are documented using `<kbd>key</kbd>` and visible in-context on hover and `?`.
+- Adding new keyboard shortcuts is documented in `AGENTS.md`.
 
 ## 5. ✓ **Mobile Responsiveness**
 
