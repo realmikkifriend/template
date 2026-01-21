@@ -35,6 +35,7 @@
 <svelte:head>
 	<link href={'data:image/svg+xml,' + encodeURIComponent(favicon || '')} rel="icon" />
 	<link href="https://templatesite.com/" rel="canonical" />
+	<link href="site.webmanifest" rel="manifest" />
 	<meta content="Template App" property="og:site_name" />
 	<title>App Homepage</title>
 	<meta content="Home" property="og:title" />

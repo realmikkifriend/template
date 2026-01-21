@@ -22,6 +22,7 @@ This document outlines the requirements for this project, following BDD principl
 - [ ] customize `src/routes/+page.svelte`
 - [ ] customize `LICENSE.md`
 - [ ] customize `README.md`
+- [ ] customize `static/site.webmanifest`
 
 # B. Minimum Functional Product
 

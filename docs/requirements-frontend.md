@@ -18,7 +18,6 @@ This document outlines the requirements for front-end design of an ideal templat
     - [a. ✓ **Accessibility Metrics Compliance**](#a--accessibility-metrics-compliance)
   - [5. ✓ **Mobile Responsiveness**](#5--mobile-responsiveness)
     - [a. ✓ **Mobile Performance Metrics**](#a--mobile-performance-metrics)
-    - [b. ✓ **Perfect Responsiveness**](#b--perfect-responsiveness)
 - [B. ✓ **Documentation Requirements**](#b--documentation-requirements)
   - [6. ✓ **Feature Documentation**](#6--feature-documentation)
     - [a. ✓ **Documentation Index**](#a--documentation-index)
@@ -99,10 +98,6 @@ This document outlines the requirements for front-end design of an ideal templat
 ### a. ✓ **Mobile Performance Metrics**
 
 - End-to-end tests are run on an emulated mobile browser.
-- The app [can be set up as an installable PWA](https://svelte.dev/docs/svelte/faq#How-do-I-write-a-mobile-app-with-Svelte).
-
-### b. ✓ **Perfect Responsiveness**
-
 - [Mobile breakpoints](https://tailwindcss.com/docs/responsive-design) just work.
 - Mobile design is documented in `AGENTS.md`.
 
