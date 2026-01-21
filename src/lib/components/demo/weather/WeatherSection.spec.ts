@@ -18,6 +18,7 @@ test.describe('WeatherSection Component', () => {
 
 	test.beforeEach(async ({ page }) => {
 		await page.goto('/');
+		await page.locator('input[aria-label="Example API Call"]').click();
 		input = page.locator('input[placeholder="Enter location or ZIP code"]');
 		button = page.locator('button:has-text("Get Weather")');
 	});
