@@ -12,14 +12,22 @@ This document outlines the version control commands and workflows for using this
 
 To clone the template repository and set it up as a new project:
 
-1. Open new terminal (`CTRL+K`) or use Yakuake
+1. Open new terminal (`CTRL+K`) or use `Yakuake`
 2. `DIR="PROJECTNAME" && mkdir ~/Development/"$DIR" && code ~/Development/"$DIR"`
    - This will create a new project directory and open VS Code in it.
-3. Clone template repository (`degit github:realmikkifriend/template`)
-4. `git remote add upstream git@github.com:realmikkifriend/template.git`
-   - This tracks the template repo as an `upstream` remote.
-5. `npm install` sets up dependencies.
-   - `npm ci` deletes existing dependencies and installs from scratch.
+   - For the rest of the commands, use the terminal inside VS Code.
+3. `degit github:realmikkifriend/template`
+   - This will scaffold the template files.
+4. `git init`
+5. `git remote add upstream https://github.com/realmikkifriend/template.git && git fetch`
+   - Use `git remote -v` to view info about current remotes.
+6. `git add . && git commit -m "build: initial commit"`
+7. `git branch --set-upstream-to=upstream/main main && git remote set-url --push upstream DISABLED`
+8. `git pull --no-rebase --allow-unrelated-histories --no-edit`
+   - To add a remote repository, see [Deployment](deployment.md).
+9. `npm install` sets up dependencies.
+
+- `npm ci` deletes existing dependencies and installs from scratch.
 
 # Version Control Flow
 
